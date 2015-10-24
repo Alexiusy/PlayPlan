@@ -1,5 +1,5 @@
 from django.db import models
 
 # Create your models here.
-class BasicInformation(object):
+class BasicInformation(models.Model):
 	
