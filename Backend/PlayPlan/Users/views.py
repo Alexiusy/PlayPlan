@@ -15,8 +15,4 @@ class UserList(generics.ListCreateAPIView):
 class UserDetail(generics.RetrieveUpdateDestroyAPIView):
 	queryset = Users.objects.all()
 	serializer_class = UsersSerializer
-	renderer_classes = (TemplateHTMLRenderer, JSONRenderer,)
-
-	def get(self, request, *args, **kwargs):
-		self.object = self.get_object()
-		return Response({'user': self.object}, template_name='user_list.html')
+	TemplateHTMLRenderer.template_name = 'user_list.html'
