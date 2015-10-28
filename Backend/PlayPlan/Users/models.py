@@ -21,7 +21,7 @@ class Users(models.Model):
     location = models.CharField(max_length=50, blank=True, null=True)
     gender = models.CharField(max_length=6, blank=True, null=True)
     birth = models.DateField(blank=True, null=True)
-    created = models.DateTimeField()
+    created = models.DateTimeField(auto_now_add=True)
     avatar = models.CharField(max_length=100, blank=True, null=True)
     school = models.CharField(max_length=50, blank=True, null=True)
     company = models.CharField(max_length=50, blank=True, null=True)
