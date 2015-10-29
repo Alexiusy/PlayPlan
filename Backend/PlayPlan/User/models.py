@@ -12,7 +12,7 @@ from __future__ import unicode_literals
 from django.db import models
 
 
-class Users(models.Model):
+class User(models.Model):
     realname = models.CharField(max_length=30, blank=True, null=True)
     nickname = models.CharField(max_length=30)
     identity = models.CharField(max_length=18, blank=True, null=True)
@@ -21,16 +21,16 @@ class Users(models.Model):
     location = models.CharField(max_length=50, blank=True, null=True)
     gender = models.CharField(max_length=6, blank=True, null=True)
     birth = models.DateField(blank=True, null=True)
-    created = models.DateTimeField(auto_now_add=True)
+    created = models.DateTimeField(auto_now_add=True, blank=True, null=True)
     avatar = models.CharField(max_length=100, blank=True, null=True)
     school = models.CharField(max_length=50, blank=True, null=True)
     company = models.CharField(max_length=50, blank=True, null=True)
     relationship_status = models.CharField(max_length=9, blank=True, null=True)
     introduction = models.CharField(max_length=100, blank=True, null=True)
     label = models.CharField(max_length=50, blank=True, null=True)
-    user_id = models.CharField(primary_key=True, max_length=100)
+    user_id = models.FloatField(primary_key=True)
     password = models.CharField(max_length=40)
 
     class Meta:
         managed = False
-        db_table = 'Users'
+        db_table = 'User'

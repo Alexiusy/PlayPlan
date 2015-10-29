@@ -1,5 +1,5 @@
 from django.contrib import admin
-from Users.models import Users
+from .models import User
 
 # Register your models here.
 
@@ -7,4 +7,4 @@ from Users.models import Users
 class UserAdmin(admin.ModelAdmin):
 	fields = ('nickname', 'gender', 'phone_number', 'email', 'birth', 'location', 'avatar', 'school', 'company', 'relationship_status', 'introduction', 'label')
 
-admin.site.register(Users, UserAdmin)
+admin.site.register(User, UserAdmin)
