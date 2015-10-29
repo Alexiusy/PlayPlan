@@ -1,5 +1,6 @@
 from User.models import User
 from User.serializers import UserSerializer
+from User.forms import UserForm
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.renderers import JSONRenderer
@@ -27,4 +28,6 @@ class UserList(View):
 		return render_to_response('user_list.html', {'users': users})
 
 	def post(self, request, format = None):
-		pass
+		form = UserForm(request.post, request.files)
+		if form.is_valid():
+			
