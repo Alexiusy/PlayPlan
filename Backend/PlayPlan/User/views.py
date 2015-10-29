@@ -5,23 +5,26 @@ from rest_framework.response import Response
 from rest_framework.renderers import JSONRenderer
 from rest_framework.renderers import TemplateHTMLRenderer
 from rest_framework import generics
+from django.views.generic import ListView, TemplateView, View
+from django.http import HttpResponse
+from django.shortcuts import render_to_response
 
 
 # Create your views here.
-class UserList(generics.ListCreateAPIView):
+class UserListAPI(generics.ListCreateAPIView):
 	queryset = User.objects.all()
 	serializer_class = UserSerializer
-	renderer_classes = (TemplateHTMLRenderer, JSONRenderer,)
 
-	def get(self, request, *args, **kwargs):
-		self.objects = User.objects.all()
-		return Response({'users': self.objects}, template_name = 'user_list.html')
-
-class UserDetail(generics.RetrieveUpdateDestroyAPIView):
+class UserDetailAPI(generics.RetrieveUpdateDestroyAPIView):
 	queryset = User.objects.all()
 	serializer_class = UserSerializer
-	renderer_classes = (TemplateHTMLRenderer, JSONRenderer,)
 
-	def get(self, request, *args, **kwargs):
-		self.object = self.get_object()
-		return Response({'user': self.object}, template_name = 'user_list.html')
+
+class UserList(View):
+
+	def get(self, request, format = None):
+		users = User.objects.all()
+		return render_to_response('user_list.html', {'users': users})
+
+	def post(self, request, format = None):
+		pass
