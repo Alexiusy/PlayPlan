@@ -11,6 +11,7 @@ from rest_framework import generics
 class UserList(generics.ListCreateAPIView):
 	queryset = User.objects.all()
 	serializer_class = UserSerializer
+	renderer_classes = (TemplateHTMLRenderer, JSONRenderer,)
 
 	def get(self, request, *args, **kwargs):
 		self.objects = User.objects.all()
@@ -19,6 +20,7 @@ class UserList(generics.ListCreateAPIView):
 class UserDetail(generics.RetrieveUpdateDestroyAPIView):
 	queryset = User.objects.all()
 	serializer_class = UserSerializer
+	renderer_classes = (TemplateHTMLRenderer, JSONRenderer,)
 
 	def get(self, request, *args, **kwargs):
 		self.object = self.get_object()
