@@ -15,6 +15,7 @@
 		631CE59B1BDD00EB00715430 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 631CE5991BDD00EB00715430 /* LaunchScreen.storyboard */; };
 		631CE5A61BDD00EC00715430 /* PlayPlanTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 631CE5A51BDD00EC00715430 /* PlayPlanTests.m */; };
 		631CE5B11BDD00EC00715430 /* PlayPlanUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 631CE5B01BDD00EC00715430 /* PlayPlanUITests.m */; };
+		6357D0DD1BE3C22D00F8E94A /* BrokenGlass.m in Sources */ = {isa = PBXBuildFile; fileRef = 6357D0DC1BE3C22D00F8E94A /* BrokenGlass.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		631CE5AC1BDD00EC00715430 /* PlayPlanUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlayPlanUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		631CE5B01BDD00EC00715430 /* PlayPlanUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlayPlanUITests.m; sourceTree = "<group>"; };
 		631CE5B21BDD00EC00715430 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6357D0DB1BE3C22D00F8E94A /* BrokenGlass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrokenGlass.h; sourceTree = "<group>"; };
+		6357D0DC1BE3C22D00F8E94A /* BrokenGlass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrokenGlass.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +104,7 @@
 		631CE58A1BDD00EB00715430 /* PlayPlan */ = {
 			isa = PBXGroup;
 			children = (
+				6357D0DA1BE3C1FE00F8E94A /* Animation */,
 				631CE58E1BDD00EB00715430 /* AppDelegate.h */,
 				631CE58F1BDD00EB00715430 /* AppDelegate.m */,
 				631CE5911BDD00EB00715430 /* ViewController.h */,
@@ -138,6 +142,15 @@
 				631CE5B21BDD00EC00715430 /* Info.plist */,
 			);
 			path = PlayPlanUITests;
+			sourceTree = "<group>";
+		};
+		6357D0DA1BE3C1FE00F8E94A /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				6357D0DB1BE3C22D00F8E94A /* BrokenGlass.h */,
+				6357D0DC1BE3C22D00F8E94A /* BrokenGlass.m */,
+			);
+			path = Animation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,6 +286,7 @@
 				631CE5931BDD00EB00715430 /* ViewController.m in Sources */,
 				631CE5901BDD00EB00715430 /* AppDelegate.m in Sources */,
 				631CE58D1BDD00EB00715430 /* main.m in Sources */,
+				6357D0DD1BE3C22D00F8E94A /* BrokenGlass.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -498,6 +512,7 @@
 				631CE5B71BDD00EC00715430 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		631CE5B81BDD00EC00715430 /* Build configuration list for PBXNativeTarget "PlayPlanTests" */ = {
 			isa = XCConfigurationList;
@@ -506,6 +521,7 @@
 				631CE5BA1BDD00EC00715430 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		631CE5BB1BDD00EC00715430 /* Build configuration list for PBXNativeTarget "PlayPlanUITests" */ = {
 			isa = XCConfigurationList;
@@ -514,6 +530,7 @@
 				631CE5BD1BDD00EC00715430 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
