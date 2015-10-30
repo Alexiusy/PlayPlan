@@ -27,6 +27,7 @@
     
     for (NSInteger x = 0; x < 20; x++) {
         for (NSInteger y = 0; y < 40; y++) {
+            
             CAShapeLayer *shapeLayer = [CAShapeLayer layer];
         }
     }
