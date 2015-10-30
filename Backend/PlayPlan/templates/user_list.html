@@ -5,6 +5,9 @@
 </head>
 
 <body>
+    {% load staticfiles %}
+
+    <img src="{% static "images/sunrise.jpg" %}" alt="Sunrise">
     <p>Dear <i>{{ nickname }}</i>,</p>
     <p>{{ status_code }}</p>
     <p>Thanks for placing an order from {{ company }}. It's scheduled to ship on {{ created |date:"F j, Y" }}.</p>
