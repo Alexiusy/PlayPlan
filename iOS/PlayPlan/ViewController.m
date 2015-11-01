@@ -8,6 +8,8 @@
 
 #import "ViewController.h"
 
+#define SCREEN_SIZE [[UIScreen mainScreen] bounds].size
+
 @interface ViewController ()
 
 @property (nonatomic) UITableView *tableview;
@@ -20,7 +22,82 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    [self loadTableView];
+//    [self loadTableView];
+    [self mainInterface];
+}
+
+- (void)mainInterface {
+    UIView *showView = ({
+        UIView *view = [[UIView alloc] initWithFrame:CGRectMake(SCREEN_SIZE.width * 0.15, SCREEN_SIZE.height * 0.15, SCREEN_SIZE.width * 0.7, SCREEN_SIZE.height * 0.7)];
+        view.backgroundColor = [UIColor redColor];
+        view.layer.borderColor = [UIColor blackColor].CGColor;
+        view.layer.borderWidth = 1.0;
+        view.tag = 100;
+        view;
+    });
+    
+    UIView *secondView = ({
+        UIView *view = [[UIView alloc] initWithFrame:CGRectMake(SCREEN_SIZE.width * 0.15, SCREEN_SIZE.height * 0.15, SCREEN_SIZE.width * 0.7, SCREEN_SIZE.height * 0.7)];
+        view.backgroundColor = [UIColor greenColor];
+        view.layer.borderColor = [UIColor blackColor].CGColor;
+        view.layer.borderWidth = 1.0;
+        view;
+    });
+    
+    UIView *thirdView = ({
+        UIView *view = [[UIView alloc] initWithFrame:CGRectMake(SCREEN_SIZE.width * 0.15 + 10, SCREEN_SIZE.height * 0.85, SCREEN_SIZE.width * 0.7 - 20, 10)];
+        view.backgroundColor = [UIColor clearColor];
+        view.layer.borderColor = [UIColor blackColor].CGColor;
+        view.layer.borderWidth = 1.0;
+        view;
+    });
+    
+    UIView *fourthView = ({
+        UIView *view = [[UIView alloc] initWithFrame:CGRectMake(SCREEN_SIZE.width * 0.15 + 20, SCREEN_SIZE.height * 0.85 + 10, SCREEN_SIZE.width * 0.7 - 40, 10)];
+        view.backgroundColor = [UIColor clearColor];
+        view.layer.borderColor = [UIColor blackColor].CGColor;
+        view.layer.borderWidth = 1.0;
+        view;
+    });
+    
+    [self.view addSubview:thirdView];
+    [self.view addSubview:fourthView];
+    
+//    UIBezierPath *firstPath = ({
+//        UIBezierPath *path = [UIBezierPath bezierPathWithRect:CGRectMake(SCREEN_SIZE.width * 0.15 + 3, SCREEN_SIZE.height * 0.85, SCREEN_SIZE.width * 0.7 - 6, 3)];
+//        [[UIColor purpleColor] setStroke];
+//        [[UIColor purpleColor] setFill];
+//        path.lineWidth = 1.0;
+//        path;
+//    });
+//    [firstPath fill];
+//    [firstPath stroke];
+//    
+//    UIBezierPath *secondPath = ({
+//        UIBezierPath *path = [UIBezierPath bezierPathWithRect:CGRectMake(SCREEN_SIZE.width * 0.15 + 6, SCREEN_SIZE.height * 0.85 + 3, SCREEN_SIZE.width * 0.7 - 12, 3)];
+//        [[UIColor purpleColor] setStroke];
+//        [[UIColor purpleColor] setFill];
+//        path.lineWidth = 1.0;
+//        path;
+//    });
+//    [secondPath fill];
+//    [secondPath stroke];
+    
+    [self.view addSubview:secondView];
+    [self.view addSubview:showView];
+    UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(dragView:)];
+    [showView addGestureRecognizer:pan];
+}
+
+- (void)dragView:(UIPanGestureRecognizer *)gesture {
+    if (gesture.state == UIGestureRecognizerStateChanged) {
+        CGPoint offset = [gesture translationInView:self.view];
+        UIView *showView = [self.view viewWithTag:100];
+        [showView setCenter:CGPointMake(showView.center.x + offset.x, showView.center.y + offset.y)];
+        [gesture setTranslation:CGPointMake(0, 0) inView:self.view];
+    } else if (gesture.state == UIGestureRecognizerStateEnded) {
+        
+    }
 }
 
 - (void)loadTableView {
