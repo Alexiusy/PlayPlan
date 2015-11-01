@@ -98,7 +98,9 @@
     } else if (gesture.state == UIGestureRecognizerStateEnded) {
         if (offset.x > showView.center.x && offset.x - showView.center.x > 30) {
             NSLog(@"Delete");
-        } 
+        } else if (offset.x < showView.center.x && showView.center.x - offset.x > 30) {
+            NSLog(@"Add");
+        }
     }
 }
 
