@@ -100,6 +100,8 @@
             NSLog(@"Delete");
         } else if (offset.x < showView.center.x && showView.center.x - offset.x > 30) {
             NSLog(@"Add");
+        } else {
+            NSLog(@"Cancel all operation.");
         }
     }
 }
