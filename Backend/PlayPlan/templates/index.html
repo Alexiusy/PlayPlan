@@ -1,24 +1,11 @@
 <html>
 
 <head>
-    <title>Ordering notice</title>
+    <title>PlayPlan - Help you make tour plan</title>
 </head>
 
 <body>
-    <p>Dear <i>{{ nickname }}</i>,</p>
-    <p>{{ status_code }}</p>
-    <p>Thanks for placing an order from {{ company }}. It's scheduled to ship on {{ created |date:"F j, Y" }}.</p>
-    <p>Here are the items you've ordered:</p>
-    <ul>
-        {% for item in users %}
-        <li>{{ item.nickname }}</li>
-        {% endfor %}
-    </ul>
-    {% if ordered_warranty %}
-    <p>Your warranty information will be included in the packaging.</p>
-    {% endif %}
-    <p>Sincerely,
-        <br />{{ company }}</p>
+    
 </body>
 
 </html>
