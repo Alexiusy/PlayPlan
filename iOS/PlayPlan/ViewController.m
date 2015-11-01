@@ -90,13 +90,15 @@
 }
 
 - (void)dragView:(UIPanGestureRecognizer *)gesture {
+    CGPoint offset = [gesture translationInView:self.view];
+    UIView *showView = [self.view viewWithTag:100];
     if (gesture.state == UIGestureRecognizerStateChanged) {
-        CGPoint offset = [gesture translationInView:self.view];
-        UIView *showView = [self.view viewWithTag:100];
         [showView setCenter:CGPointMake(showView.center.x + offset.x, showView.center.y + offset.y)];
         [gesture setTranslation:CGPointMake(0, 0) inView:self.view];
     } else if (gesture.state == UIGestureRecognizerStateEnded) {
-        
+        if (offset.x > showView.center.x && offset.x - showView.center.x > 30) {
+            NSLog(@"Delete");
+        } 
     }
 }
 
