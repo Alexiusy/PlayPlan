@@ -111,13 +111,6 @@
 }
 
 - (void)rotateAnimationWithView:(UIView *)view offset:(CGPoint)offset {
-//    CABasicAnimation *rotate = [CABasicAnimation animationWithKeyPath:@"transform.rotation"];
-//    rotate.fromValue = @(0);
-//    rotate.toValue = @(M_PI / 10);
-//    rotate.duration = 2.0;
-//    rotate.speed = 2.0;
-//    [view.layer addAnimation:rotate forKey:@"rotate"];
-    
     view.transform = CGAffineTransformMakeRotation(-M_PI_2 / 3);
     view.transform = CGAffineTransformTranslate(view.transform, -500, 200);
     view.alpha = 0.5;
