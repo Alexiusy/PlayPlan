@@ -125,12 +125,6 @@
         view.transform = CGAffineTransformIdentity;
         view.alpha = 1;
     }];
-    
-//    CGRect oldFrame = view.frame;
-//    view.layer.anchorPoint = CGPointMake(0.0, 0.0);
-//    view.frame = oldFrame;
-//    CGAffineTransform transform = CGAffineTransformMakeRotation(M_PI / 10);
-//    view.transform = transform;
 }
 
 - (void)loadTableView {
