@@ -118,11 +118,19 @@
 //    rotate.speed = 2.0;
 //    [view.layer addAnimation:rotate forKey:@"rotate"];
     
-    CGRect oldFrame = view.frame;
-    view.layer.anchorPoint = CGPointMake(0.0, 0.0);
-    view.frame = oldFrame;
-    CGAffineTransform transform = CGAffineTransformMakeRotation(M_PI / 10);
-    view.transform = transform;
+    view.transform = CGAffineTransformMakeRotation(-M_PI_2 / 3);
+    view.transform = CGAffineTransformTranslate(view.transform, -500, 200);
+    view.alpha = 0.5;
+    [UIView animateWithDuration:0.3 animations:^{
+        view.transform = CGAffineTransformIdentity;
+        view.alpha = 1;
+    }];
+    
+//    CGRect oldFrame = view.frame;
+//    view.layer.anchorPoint = CGPointMake(0.0, 0.0);
+//    view.frame = oldFrame;
+//    CGAffineTransform transform = CGAffineTransformMakeRotation(M_PI / 10);
+//    view.transform = transform;
 }
 
 - (void)loadTableView {
