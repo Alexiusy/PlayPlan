@@ -96,11 +96,7 @@
 //        [showView setCenter:CGPointMake(showView.center.x + offset.x, showView.center.y + offset.y)];
 //        [gesture setTranslation:CGPointMake(0, 0) inView:self.view];
         
-        [self rotateAnimationWithView:showView];
-//        showView.layer.anchorPoint = CGPointMake(0.0, 0.0);
-//        CGAffineTransform transform = CGAffineTransformMakeRotation(M_PI / 20);
-//        showView.transform = transform;
-        
+        [self rotateAnimationWithView:showView offset:offset];
         
     } else if (gesture.state == UIGestureRecognizerStateEnded) {
         if (offset.x > showView.center.x && offset.x - showView.center.x > 30) {
@@ -114,16 +110,19 @@
     }
 }
 
-- (void)rotateAnimationWithView:(UIView *)view {
-    CABasicAnimation *rotate = [CABasicAnimation animationWithKeyPath:@"transform.rotation"];
-    rotate.fromValue = @(0);
-    rotate.toValue = @(M_PI / 10);
-    rotate.duration = 2.0;
-    rotate.speed = 2.0;
+- (void)rotateAnimationWithView:(UIView *)view offset:(CGPoint)offset {
+//    CABasicAnimation *rotate = [CABasicAnimation animationWithKeyPath:@"transform.rotation"];
+//    rotate.fromValue = @(0);
+//    rotate.toValue = @(M_PI / 10);
+//    rotate.duration = 2.0;
+//    rotate.speed = 2.0;
+//    [view.layer addAnimation:rotate forKey:@"rotate"];
+    
     CGRect oldFrame = view.frame;
-    view.layer.anchorPoint = CGPointMake(0, 0);
+    view.layer.anchorPoint = CGPointMake(0.0, 0.0);
     view.frame = oldFrame;
-    [view.layer addAnimation:rotate forKey:@"rotate"];
+    CGAffineTransform transform = CGAffineTransformMakeRotation(M_PI / 10);
+    view.transform = transform;
 }
 
 - (void)loadTableView {
