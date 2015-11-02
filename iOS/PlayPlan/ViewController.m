@@ -96,9 +96,11 @@
 //        [showView setCenter:CGPointMake(showView.center.x + offset.x, showView.center.y + offset.y)];
 //        [gesture setTranslation:CGPointMake(0, 0) inView:self.view];
         
-        [self rotateAnimationWithView:showView offset:offset];
+        
         
     } else if (gesture.state == UIGestureRecognizerStateEnded) {
+        [self rotateAnimationWithView:showView offset:offset];
+        
         if (offset.x > showView.center.x && offset.x - showView.center.x > 30) {
             NSLog(@"Delete");
             
@@ -111,10 +113,10 @@
 }
 
 - (void)rotateAnimationWithView:(UIView *)view offset:(CGPoint)offset {
-    view.transform = CGAffineTransformMakeRotation(-M_PI_2 / 3);
+    view.transform = CGAffineTransformMakeRotation(M_PI_2 / 3);
     view.transform = CGAffineTransformTranslate(view.transform, -500, 200);
     view.alpha = 0.5;
-    [UIView animateWithDuration:0.3 animations:^{
+    [UIView animateWithDuration:0.8 animations:^{
         view.transform = CGAffineTransformIdentity;
         view.alpha = 1;
     }];
