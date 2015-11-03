@@ -105,15 +105,8 @@
         // 计算adjacent / opposite 的反正切
         float angle = atan2f(adjacent, opposite);
         
-//        [UIView animateWithDuration:1 animations:^{
-            [showView setTransform:CGAffineTransformMakeRotation(angle*-1)];
-//        }];
-        
+        [showView setTransform:CGAffineTransformMakeRotation(angle*-1)];
         [gesture setTranslation:CGPointZero inView:self.view];
-        
-//        [UIView animateWithDuration:5 animations:^{
-//            showView.transform = CGAffineTransformMakeRotation(M_PI_4 * 10 / offset.x);
-//        }];
         
     } else if (gesture.state == UIGestureRecognizerStateEnded) {
 //        [self rotateAnimationWithView:showView offset:offset];
