@@ -94,23 +94,22 @@
     UIView *showView = [self.view viewWithTag:100];
     
     if (gesture.state == UIGestureRecognizerStateBegan) {
-    }
-    if (gesture.state == UIGestureRecognizerStateChanged) {
         
-        [showView setCenter:CGPointMake( showView.center.x + offset.x , showView.center.y + offset.y )];
+    } else if (gesture.state == UIGestureRecognizerStateChanged) {
         
-        float adjacent = showView.center.x - offset.x;
-        float opposite = showView.center.y - offset.y;
+        [showView setCenter:CGPointMake(showView.center.x + offset.x , showView.center.y + offset.y)];
+        
+        CGFloat adjacent = showView.center.x - offset.x;
+        CGFloat opposite = showView.center.y - offset.y;
         
         // 计算adjacent / opposite 的反正切
         float angle = atan2f(adjacent, opposite);
         
-        [showView setTransform:CGAffineTransformMakeRotation(angle*-1)];
+        showView.transform = CGAffineTransformMakeRotation(angle * 1);
         [gesture setTranslation:CGPointZero inView:self.view];
         
     } else if (gesture.state == UIGestureRecognizerStateEnded) {
 //        [self rotateAnimationWithView:showView offset:offset];
-        
         
         if (offset.x > showView.center.x && offset.x - showView.center.x > 30) {
             NSLog(@"Delete");
