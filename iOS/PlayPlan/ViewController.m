@@ -92,10 +92,32 @@
 - (void)dragView:(UIPanGestureRecognizer *)gesture {
     CGPoint offset = [gesture translationInView:self.view];
     UIView *showView = [self.view viewWithTag:100];
+    
+    if (gesture.state == UIGestureRecognizerStateBegan) {
+    }
     if (gesture.state == UIGestureRecognizerStateChanged) {
         
+        [showView setCenter:CGPointMake( showView.center.x + offset.x , showView.center.y + offset.y )];
+        
+        CGPoint center = showView.center;
+        
+        float adjacent = center.x - offset.x;
+        float opposite = center.y - offset.y;
+        
+        float angle = atan2f(adjacent, opposite);
+        
+//        [UIView animateWithDuration:1 animations:^{
+            [showView setTransform:CGAffineTransformMakeRotation(angle*-1)];
+//        }];
+        
+        [gesture setTranslation:CGPointZero inView:self.view];
+        
+//        [UIView animateWithDuration:5 animations:^{
+//            showView.transform = CGAffineTransformMakeRotation(M_PI_4 * 10 / offset.x);
+//        }];
+        
     } else if (gesture.state == UIGestureRecognizerStateEnded) {
-        [self rotateAnimationWithView:showView offset:offset];
+//        [self rotateAnimationWithView:showView offset:offset];
         
         if (offset.x > showView.center.x && offset.x - showView.center.x > 30) {
             NSLog(@"Delete");
