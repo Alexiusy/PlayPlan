@@ -97,6 +97,7 @@
         
     } else if (gesture.state == UIGestureRecognizerStateChanged) {
         
+        showView.layer.anchorPoint = CGPointMake(0, 0);
         [showView setCenter:CGPointMake(showView.center.x + offset.x , showView.center.y + offset.y)];
         
         CGFloat adjacent = showView.center.x - offset.x;
@@ -105,7 +106,8 @@
         // 计算adjacent / opposite 的反正切
         float angle = atan2f(adjacent, opposite);
         
-        showView.transform = CGAffineTransformMakeRotation(angle * 1);
+        showView.transform = CGAffineTransformMakeRotation(angle * -1);
+        
         [gesture setTranslation:CGPointZero inView:self.view];
         
     } else if (gesture.state == UIGestureRecognizerStateEnded) {
