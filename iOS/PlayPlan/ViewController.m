@@ -108,6 +108,7 @@
         
         showView.transform = CGAffineTransformMakeRotation(angle * -1);
         
+        // 将 gesture 的 translation 设为（0， 0）
         [gesture setTranslation:CGPointZero inView:self.view];
         
     } else if (gesture.state == UIGestureRecognizerStateEnded) {
