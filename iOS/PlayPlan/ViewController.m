@@ -99,11 +99,10 @@
         
         [showView setCenter:CGPointMake( showView.center.x + offset.x , showView.center.y + offset.y )];
         
-        CGPoint center = showView.center;
+        float adjacent = showView.center.x - offset.x;
+        float opposite = showView.center.y - offset.y;
         
-        float adjacent = center.x - offset.x;
-        float opposite = center.y - offset.y;
-        
+        // 计算adjacent / opposite 的反正切
         float angle = atan2f(adjacent, opposite);
         
 //        [UIView animateWithDuration:1 animations:^{
@@ -118,6 +117,7 @@
         
     } else if (gesture.state == UIGestureRecognizerStateEnded) {
 //        [self rotateAnimationWithView:showView offset:offset];
+        
         
         if (offset.x > showView.center.x && offset.x - showView.center.x > 30) {
             NSLog(@"Delete");
