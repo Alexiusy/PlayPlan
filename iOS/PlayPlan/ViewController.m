@@ -96,8 +96,6 @@
     if (gesture.state == UIGestureRecognizerStateBegan) {
         
     } else if (gesture.state == UIGestureRecognizerStateChanged) {
-        
-        showView.layer.anchorPoint = CGPointMake(0, 0);
         [showView setCenter:CGPointMake(showView.center.x + offset.x , showView.center.y + offset.y)];
         
         CGFloat adjacent = showView.center.x - offset.x;
