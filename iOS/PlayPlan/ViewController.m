@@ -26,9 +26,12 @@
 }
 
 - (void)loadTableView {
-    self.tableview = [[UITableView alloc] initWithFrame:self.view.frame];
-    self.tableview.delegate = self;
-    self.tableview.dataSource = self;
+    self.tableview = ({
+        UITableView *tableview = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, SCREEN_SIZE.width, SCREEN_SIZE.height - 64)];
+        tableview.delegate = self;
+        tableview.dataSource = self;
+        tableview;
+    });
     [self.view addSubview:self.tableview];
     
     NSMutableArray *array1 = [NSMutableArray arrayWithObjects:@"1", @"2", @"3", nil];
