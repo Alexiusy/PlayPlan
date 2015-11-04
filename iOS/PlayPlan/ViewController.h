@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ZYTabBar.h"
 
 @interface ViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
