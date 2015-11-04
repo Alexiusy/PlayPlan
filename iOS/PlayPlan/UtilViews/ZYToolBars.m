@@ -6,7 +6,7 @@
 //  Copyright © 2015年 Zeacone. All rights reserved.
 //
 
-#import "ZYTabBar.h"
+#import "ZYToolBars.h"
 
 @implementation ZYTabBar
 
@@ -29,17 +29,8 @@
 
 @implementation ZYNavgationBar
 
-- (instancetype)initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {
-        NSLog(@"123");
-    }
-    return self;
-}
-
-- (UIColor *)backgroundColor {
-    return [UIColor redColor];
+- (void)drawRect:(CGRect)rect {
+    self.backgroundColor = [UIColor redColor];
 }
 
 @end

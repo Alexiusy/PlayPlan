@@ -16,7 +16,7 @@
 		631CE5A61BDD00EC00715430 /* PlayPlanTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 631CE5A51BDD00EC00715430 /* PlayPlanTests.m */; };
 		631CE5B11BDD00EC00715430 /* PlayPlanUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 631CE5B01BDD00EC00715430 /* PlayPlanUITests.m */; };
 		6357D0DD1BE3C22D00F8E94A /* BrokenGlass.m in Sources */ = {isa = PBXBuildFile; fileRef = 6357D0DC1BE3C22D00F8E94A /* BrokenGlass.m */; settings = {ASSET_TAGS = (); }; };
-		638FE7C51BEA4F6700C8778F /* ZYTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 638FE7C41BEA4F6700C8778F /* ZYTabBar.m */; settings = {ASSET_TAGS = (); }; };
+		638FE7C51BEA4F6700C8778F /* ZYToolBars.m in Sources */ = {isa = PBXBuildFile; fileRef = 638FE7C41BEA4F6700C8778F /* ZYToolBars.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,8 +55,8 @@
 		631CE5B21BDD00EC00715430 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6357D0DB1BE3C22D00F8E94A /* BrokenGlass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrokenGlass.h; sourceTree = "<group>"; };
 		6357D0DC1BE3C22D00F8E94A /* BrokenGlass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrokenGlass.m; sourceTree = "<group>"; };
-		638FE7C31BEA4F6700C8778F /* ZYTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYTabBar.h; sourceTree = "<group>"; };
-		638FE7C41BEA4F6700C8778F /* ZYTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYTabBar.m; sourceTree = "<group>"; };
+		638FE7C31BEA4F6700C8778F /* ZYToolBars.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYToolBars.h; sourceTree = "<group>"; };
+		638FE7C41BEA4F6700C8778F /* ZYToolBars.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYToolBars.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,8 +160,8 @@
 		638FE7C21BEA4F3F00C8778F /* UtilViews */ = {
 			isa = PBXGroup;
 			children = (
-				638FE7C31BEA4F6700C8778F /* ZYTabBar.h */,
-				638FE7C41BEA4F6700C8778F /* ZYTabBar.m */,
+				638FE7C31BEA4F6700C8778F /* ZYToolBars.h */,
+				638FE7C41BEA4F6700C8778F /* ZYToolBars.m */,
 			);
 			path = UtilViews;
 			sourceTree = "<group>";
@@ -299,7 +299,7 @@
 				631CE5931BDD00EB00715430 /* ViewController.m in Sources */,
 				631CE5901BDD00EB00715430 /* AppDelegate.m in Sources */,
 				631CE58D1BDD00EB00715430 /* main.m in Sources */,
-				638FE7C51BEA4F6700C8778F /* ZYTabBar.m in Sources */,
+				638FE7C51BEA4F6700C8778F /* ZYToolBars.m in Sources */,
 				6357D0DD1BE3C22D00F8E94A /* BrokenGlass.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
