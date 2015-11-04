@@ -30,7 +30,11 @@
 @implementation ZYNavgationBar
 
 - (void)drawRect:(CGRect)rect {
-    self.backgroundColor = [UIColor redColor];
+    self.backgroundColor = [UIColor clearColor];
+    self.shadowImage = [[UIImage alloc] init];
+    self.barStyle = UIBarStyleBlackTranslucent;
+    [self setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
+    
 }
 
 @end
