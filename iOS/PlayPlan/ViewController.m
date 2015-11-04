@@ -22,46 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-//    [self loadTableView];
-    [self mainInterface];
-}
-
-- (void)mainInterface {
-    UIView *showView = ({
-        UIView *view = [[UIView alloc] initWithFrame:CGRectMake(SCREEN_SIZE.width * 0.15, SCREEN_SIZE.height * 0.15, SCREEN_SIZE.width * 0.7, SCREEN_SIZE.height * 0.7)];
-        view.backgroundColor = [UIColor redColor];
-        view.layer.borderColor = [UIColor blackColor].CGColor;
-        view.layer.borderWidth = 1.0;
-        view.tag = 100;
-        view;
-    });
-    
-    UIView *secondView = ({
-        UIView *view = [[UIView alloc] initWithFrame:CGRectMake(SCREEN_SIZE.width * 0.15, SCREEN_SIZE.height * 0.15, SCREEN_SIZE.width * 0.7, SCREEN_SIZE.height * 0.7)];
-        view.backgroundColor = [UIColor greenColor];
-        view.layer.borderColor = [UIColor blackColor].CGColor;
-        view.layer.borderWidth = 1.0;
-        view;
-    });
-    
-    UIView *thirdView = ({
-        UIView *view = [[UIView alloc] initWithFrame:CGRectMake(SCREEN_SIZE.width * 0.15 + 10, SCREEN_SIZE.height * 0.85, SCREEN_SIZE.width * 0.7 - 20, 10)];
-        view.backgroundColor = [UIColor clearColor];
-        view.layer.borderColor = [UIColor blackColor].CGColor;
-        view.layer.borderWidth = 1.0;
-        view;
-    });
-    
-    UIView *fourthView = ({
-        UIView *view = [[UIView alloc] initWithFrame:CGRectMake(SCREEN_SIZE.width * 0.15 + 20, SCREEN_SIZE.height * 0.85 + 10, SCREEN_SIZE.width * 0.7 - 40, 10)];
-        view.backgroundColor = [UIColor clearColor];
-        view.layer.borderColor = [UIColor blackColor].CGColor;
-        view.layer.borderWidth = 1.0;
-        view;
-    });
-    
-    [self.view addSubview:thirdView];
-    [self.view addSubview:fourthView];
+    [self loadTableView];
 }
 
 - (void)loadTableView {
