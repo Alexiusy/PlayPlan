@@ -21,6 +21,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor greenColor];
     // Do any additional setup after loading the view, typically from a nib.
     [self loadTableView];
 }
@@ -28,6 +29,7 @@
 - (void)loadTableView {
     self.tableview = ({
         UITableView *tableview = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, SCREEN_SIZE.width, SCREEN_SIZE.height - 64)];
+        tableview.backgroundColor = [UIColor clearColor];
         tableview.delegate = self;
         tableview.dataSource = self;
         tableview;
@@ -52,6 +54,7 @@
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
     }
+    cell.backgroundColor = [UIColor clearColor];
     cell.textLabel.text = [NSString stringWithFormat:@"Section = %@, row = %@", @(indexPath.section), @(indexPath.row)];
     return cell;
 }
