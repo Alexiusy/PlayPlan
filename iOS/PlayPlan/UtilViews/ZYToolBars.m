@@ -33,7 +33,6 @@
     self.backgroundColor = [UIColor clearColor];
     [self setBackgroundImage:[UIImage imageNamed:@"translucent"] forBarMetrics:UIBarMetricsDefault];
     self.barStyle = UIBarStyleBlackTranslucent;
-    self.alpha = 0;
 }
 
 @end
