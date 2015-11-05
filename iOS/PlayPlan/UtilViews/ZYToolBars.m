@@ -14,7 +14,6 @@
 // An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect {
     // Drawing code
-    self.translucent = YES;
 }
 
 @end
