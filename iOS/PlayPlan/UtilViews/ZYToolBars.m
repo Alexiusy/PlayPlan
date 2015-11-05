@@ -31,7 +31,6 @@
 
 - (void)drawRect:(CGRect)rect {
     self.backgroundColor = [UIColor clearColor];
-//    self.shadowImage = [UIImage imageNamed:@"translucent"];
     [self setBackgroundImage:[UIImage imageNamed:@"translucent"] forBarMetrics:UIBarMetricsDefault];
     self.barStyle = UIBarStyleBlackTranslucent;
     self.alpha = 0;
