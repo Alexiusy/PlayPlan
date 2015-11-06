@@ -45,6 +45,10 @@
     self.mainArray = [NSMutableArray arrayWithObjects:array1, array2, nil];
 }
 
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    
+}
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 10;
 }
