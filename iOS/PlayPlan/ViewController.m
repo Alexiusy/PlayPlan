@@ -22,7 +22,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = [UIColor redColor];
     // Do any additional setup after loading the view, typically from a nib.
     [self.navigationController.navigationBar lt_setBackgroundColor:[UIColor clearColor]];
     [self loadTableView];
@@ -39,7 +39,7 @@
 
 - (void)loadTableView {
     self.tableview = ({
-        UITableView *tableview = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, SCREEN_SIZE.width, SCREEN_SIZE.height - 64)];
+        UITableView *tableview = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_SIZE.width, SCREEN_SIZE.height)];
         tableview.delegate = self;
         tableview.dataSource = self;
         tableview;
@@ -93,22 +93,9 @@
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
     }
-    cell.backgroundColor = [UIColor clearColor];
+    cell.backgroundColor = [UIColor purpleColor];
     cell.textLabel.text = [NSString stringWithFormat:@"Section = %@, row = %@", @(indexPath.section), @(indexPath.row)];
     return cell;
-}
-
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        NSLog(@"Section = %@, row = %@", @(indexPath.section), @(indexPath.row));
-        [self.mainArray[indexPath.section] removeObjectAtIndex:indexPath.row];
-        NSLog(@"Section = %@, row = %@", @(indexPath.section), @(indexPath.row));
-    }
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end
