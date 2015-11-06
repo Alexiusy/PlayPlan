@@ -12,6 +12,19 @@
 
 @end
 
+/**
+ *  Customize our navigation bar.
+ */
+
+@interface UINavigationBar (ZYNavBar)
+
+- (void)setBackgroundColor:(UIColor *)backgroundColor;
+- (void)setAlpha:(CGFloat)alpha;
+- (void)setTranslationY:(CGFloat)translationY;
+- (void)reset;
+
+@end
+
 @interface ZYNavgationBar : UINavigationBar
 
 @end
