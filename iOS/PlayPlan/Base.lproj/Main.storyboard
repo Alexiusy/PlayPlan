@@ -37,7 +37,7 @@
         <scene sceneID="fdk-1h-Yvh">
             <objects>
                 <navigationController id="SJT-ZS-Suw" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="kvC-il-MEc" customClass="ZYNavgationBar">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="kvC-il-MEc">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "UINavigationBar+Awesome.h"
 
 #define SCREEN_SIZE [[UIScreen mainScreen] bounds].size
 
@@ -23,7 +24,13 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     // Do any additional setup after loading the view, typically from a nib.
+    [self.navigationController.navigationBar lt_setBackgroundColor:[UIColor clearColor]];
     [self loadTableView];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [self.navigationController.navigationBar lt_reset];
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
@@ -33,7 +40,6 @@
 - (void)loadTableView {
     self.tableview = ({
         UITableView *tableview = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, SCREEN_SIZE.width, SCREEN_SIZE.height - 64)];
-        tableview.backgroundColor = [UIColor clearColor];
         tableview.delegate = self;
         tableview.dataSource = self;
         tableview;
@@ -46,7 +52,32 @@
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    CGFloat offsetY = scrollView.contentOffset.y;
+    if (offsetY > 0) {
+        if (offsetY >= 44) {
+            [self setNavigationBarTransformProgress:1];
+        } else {
+            [self setNavigationBarTransformProgress:(offsetY / 44)];
+        }
+    } else {
+        [self setNavigationBarTransformProgress:0];
+        self.navigationController.navigationBar.backIndicatorImage = [UIImage new];
+    }
     
+//    UIColor * color = [UIColor colorWithRed:0/255.0 green:175/255.0 blue:240/255.0 alpha:1];
+//    CGFloat offsetY = scrollView.contentOffset.y;
+//    if (offsetY > 50) {
+//        CGFloat alpha = MIN(1, 1 - ((50 + 64 - offsetY) / 64));
+//        [self.navigationController.navigationBar lt_setBackgroundColor:[color colorWithAlphaComponent:alpha]];
+//    } else {
+//        [self.navigationController.navigationBar lt_setBackgroundColor:[color colorWithAlphaComponent:0]];
+//    }
+}
+
+- (void)setNavigationBarTransformProgress:(CGFloat)progress
+{
+    [self.navigationController.navigationBar lt_setTranslationY:(-44 * progress)];
+    [self.navigationController.navigationBar lt_setElementsAlpha:(1-progress)];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
