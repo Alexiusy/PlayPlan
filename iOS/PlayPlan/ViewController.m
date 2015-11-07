@@ -8,9 +8,6 @@
 
 #import "ViewController.h"
 
-#define SCREEN_SIZE [[UIScreen mainScreen] bounds].size
-#define NAVBAR_CHANGE_POINT 50
-
 @interface ViewController ()
 
 @property (nonatomic) UITableView *tableview;
@@ -30,7 +27,6 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:YES];
-//    [self.navigationController.navigationBar setShadowImage:[UIImage new]];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -54,7 +50,6 @@
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    NSLog(@"inset = %@, offset = %@, size = %@, mode = %@", NSStringFromUIEdgeInsets(scrollView.contentInset) , NSStringFromCGPoint(scrollView.contentOffset), NSStringFromCGSize(scrollView.contentSize), @(scrollView.contentMode));
 //    CGFloat offsetY = scrollView.contentOffset.y;
 //    if (offsetY > 0) {
 //        if (offsetY >= 44) {
@@ -68,8 +63,8 @@
 //        self.navigationController.navigationBar.backIndicatorImage = [UIImage new];
 //    }
     
-    #define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
-    UIColor * color = UIColorFromRGB(0x079889);
+    
+    UIColor *color = UIColorFromRGB(0x079889);
     
 //    UIColor * color = [UIColor colorWithRed:0/255.0 green:175/255.0 blue:240/255.0 alpha:1];
     CGFloat offsetY = scrollView.contentOffset.y;
@@ -102,16 +97,8 @@
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
     }
-//    cell.backgroundColor = [UIColor purpleColor];
     cell.textLabel.text = [NSString stringWithFormat:@"Section = %@, row = %@", @(indexPath.section), @(indexPath.row)];
     return cell;
-}
-
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-//    if (section != 0) return nil;
-    UIView *header = [[UIView alloc] initWithFrame:CGRectMake(0, 20, SCREEN_SIZE.width, 64)];
-    header.backgroundColor = [UIColor orangeColor];
-    return header;
 }
 
 @end

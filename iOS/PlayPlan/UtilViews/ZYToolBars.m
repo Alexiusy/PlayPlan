@@ -8,7 +8,7 @@
 
 #import "ZYToolBars.h"
 
-#define SCREEN_SIZE [[UIScreen mainScreen] bounds].size
+
 
 @implementation ZYTabBar
 

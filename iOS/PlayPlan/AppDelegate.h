@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PlayPlan.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 

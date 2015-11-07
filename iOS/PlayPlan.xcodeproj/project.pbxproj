@@ -57,6 +57,7 @@
 		6357D0DC1BE3C22D00F8E94A /* BrokenGlass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrokenGlass.m; sourceTree = "<group>"; };
 		638FE7C31BEA4F6700C8778F /* ZYToolBars.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYToolBars.h; sourceTree = "<group>"; };
 		638FE7C41BEA4F6700C8778F /* ZYToolBars.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYToolBars.m; sourceTree = "<group>"; };
+		638FE7C91BEE01B200C8778F /* PlayPlan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayPlan.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				631CE58C1BDD00EB00715430 /* main.m */,
+				638FE7C91BEE01B200C8778F /* PlayPlan.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";

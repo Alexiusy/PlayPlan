@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <objc/runtime.h>
+#import "PlayPlan.h"
 
 @interface ZYTabBar : UITabBar
 
