@@ -36,7 +36,7 @@ static char maskKey;
 - (void)setMaskBackgroundColor:(UIColor *)backgroundColor {
     if (!self.mask) {
         [self setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
-        self.mask = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_SIZE.width, 64)];
+        self.mask = [[UIView alloc] initWithFrame:CGRectMake(0, -20, SCREEN_SIZE.width, 64)];
         self.mask.userInteractionEnabled = NO;
         self.mask.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
         [self insertSubview:self.mask atIndex:0];

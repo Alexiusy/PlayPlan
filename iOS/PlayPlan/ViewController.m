@@ -24,11 +24,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    [self.navigationController.navigationBar setMaskBackgroundColor:[UIColor clearColor]];
     [self loadTableView];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:YES];
+//    [self.navigationController.navigationBar setShadowImage:[UIImage new]];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -41,7 +43,7 @@
 - (void)loadTableView {
     self.tableview = ({
         UITableView *tableview = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_SIZE.width, SCREEN_SIZE.height)];
-        UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_SIZE.width, 80)];
+        UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_SIZE.width, 164)];
         headerView.backgroundColor = [UIColor purpleColor];
         tableview.tableHeaderView = headerView;
         tableview.delegate = self;
@@ -52,27 +54,31 @@
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    CGFloat offsetY = scrollView.contentOffset.y;
-    if (offsetY > 0) {
-        if (offsetY >= 44) {
-            [self setNavigationBarTransformProgress:1];
-        } else {
-            [self setNavigationBarTransformProgress:(offsetY / 44)];
-        }
-        
-    } else {
-        [self setNavigationBarTransformProgress:0];
-        self.navigationController.navigationBar.backIndicatorImage = [UIImage new];
-    }
+    NSLog(@"inset = %@, offset = %@, size = %@, mode = %@", NSStringFromUIEdgeInsets(scrollView.contentInset) , NSStringFromCGPoint(scrollView.contentOffset), NSStringFromCGSize(scrollView.contentSize), @(scrollView.contentMode));
+//    CGFloat offsetY = scrollView.contentOffset.y;
+//    if (offsetY > 0) {
+//        if (offsetY >= 44) {
+//            [self setNavigationBarTransformProgress:1];
+//        } else {
+//            [self setNavigationBarTransformProgress:(offsetY / 44)];
+//        }
+//        
+//    } else {
+//        [self setNavigationBarTransformProgress:0];
+//        self.navigationController.navigationBar.backIndicatorImage = [UIImage new];
+//    }
+    
+    #define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+    UIColor * color = UIColorFromRGB(0x079889);
     
 //    UIColor * color = [UIColor colorWithRed:0/255.0 green:175/255.0 blue:240/255.0 alpha:1];
-//    CGFloat offsetY = scrollView.contentOffset.y;
-//    if (offsetY > 50) {
-//        CGFloat alpha = MIN(1, 1 - ((50 + 64 - offsetY) / 64));
-//        [self.navigationController.navigationBar setMaskBackgroundColor:[color colorWithAlphaComponent:alpha]];
-//    } else {
-//        [self.navigationController.navigationBar setMaskBackgroundColor:[color colorWithAlphaComponent:0]];
-//    }
+    CGFloat offsetY = scrollView.contentOffset.y;
+    if (offsetY > 50) {
+        CGFloat alpha = MIN(1, 1 - ((50 + 64 - offsetY) / 64));
+        [self.navigationController.navigationBar setMaskBackgroundColor:[color colorWithAlphaComponent:alpha]];
+    } else {
+        [self.navigationController.navigationBar setMaskBackgroundColor:[color colorWithAlphaComponent:0]];
+    }
 }
 
 - (void)setNavigationBarTransformProgress:(CGFloat)progress
