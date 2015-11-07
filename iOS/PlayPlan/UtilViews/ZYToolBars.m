@@ -8,6 +8,8 @@
 
 #import "ZYToolBars.h"
 
+#define SCREEN_SIZE [[UIScreen mainScreen] bounds].size
+
 @implementation ZYTabBar
 
 // Only override drawRect: if you perform custom drawing.
@@ -31,17 +33,18 @@ static char maskKey;
     objc_setAssociatedObject(self, &maskKey, mask, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-- (void)setBackgroundColor:(UIColor *)backgroundColor {
+- (void)setMaskBackgroundColor:(UIColor *)backgroundColor {
     if (!self.mask) {
         [self setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
-        self.mask = [[UIView alloc] initWithFrame:CGRectMake(0, -20, [UIScreen mainScreen].bounds.size.width, CGRectGetHeight(self.bounds) + 20)];
+        self.mask = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_SIZE.width, 64)];
         self.mask.userInteractionEnabled = NO;
         self.mask.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
         [self insertSubview:self.mask atIndex:0];
     }
+    self.mask.backgroundColor = backgroundColor;
 }
 
-- (void)setAlpha:(CGFloat)alpha {
+- (void)setMaskAlpha:(CGFloat)alpha {
     [[self valueForKey:@"_leftViews"] enumerateObjectsUsingBlock:^(UIView *view, NSUInteger i, BOOL *stop) {
         view.alpha = alpha;
     }];

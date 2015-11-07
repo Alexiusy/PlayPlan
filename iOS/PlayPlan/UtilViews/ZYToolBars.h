@@ -19,8 +19,8 @@
 
 @interface UINavigationBar (ZYNavBar)
 
-- (void)setBackgroundColor:(UIColor *)backgroundColor;
-- (void)setAlpha:(CGFloat)alpha;
+- (void)setMaskBackgroundColor:(UIColor *)backgroundColor;
+- (void)setMaskAlpha:(CGFloat)alpha;
 - (void)setTranslationY:(CGFloat)translationY;
 - (void)reset;
 
