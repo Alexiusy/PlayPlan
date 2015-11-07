@@ -17,7 +17,6 @@
 		631CE5B11BDD00EC00715430 /* PlayPlanUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 631CE5B01BDD00EC00715430 /* PlayPlanUITests.m */; };
 		6357D0DD1BE3C22D00F8E94A /* BrokenGlass.m in Sources */ = {isa = PBXBuildFile; fileRef = 6357D0DC1BE3C22D00F8E94A /* BrokenGlass.m */; settings = {ASSET_TAGS = (); }; };
 		638FE7C51BEA4F6700C8778F /* ZYToolBars.m in Sources */ = {isa = PBXBuildFile; fileRef = 638FE7C41BEA4F6700C8778F /* ZYToolBars.m */; settings = {ASSET_TAGS = (); }; };
-		638FE7C81BECF9FF00C8778F /* UINavigationBar+Awesome.m in Sources */ = {isa = PBXBuildFile; fileRef = 638FE7C71BECF9FF00C8778F /* UINavigationBar+Awesome.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,8 +57,6 @@
 		6357D0DC1BE3C22D00F8E94A /* BrokenGlass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrokenGlass.m; sourceTree = "<group>"; };
 		638FE7C31BEA4F6700C8778F /* ZYToolBars.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYToolBars.h; sourceTree = "<group>"; };
 		638FE7C41BEA4F6700C8778F /* ZYToolBars.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYToolBars.m; sourceTree = "<group>"; };
-		638FE7C61BECF9FF00C8778F /* UINavigationBar+Awesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+Awesome.h"; sourceTree = "<group>"; };
-		638FE7C71BECF9FF00C8778F /* UINavigationBar+Awesome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+Awesome.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,8 +107,6 @@
 		631CE58A1BDD00EB00715430 /* PlayPlan */ = {
 			isa = PBXGroup;
 			children = (
-				638FE7C61BECF9FF00C8778F /* UINavigationBar+Awesome.h */,
-				638FE7C71BECF9FF00C8778F /* UINavigationBar+Awesome.m */,
 				638FE7C21BEA4F3F00C8778F /* UtilViews */,
 				6357D0DA1BE3C1FE00F8E94A /* Animation */,
 				631CE58E1BDD00EB00715430 /* AppDelegate.h */,
@@ -302,7 +297,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				631CE5931BDD00EB00715430 /* ViewController.m in Sources */,
-				638FE7C81BECF9FF00C8778F /* UINavigationBar+Awesome.m in Sources */,
 				631CE5901BDD00EB00715430 /* AppDelegate.m in Sources */,
 				631CE58D1BDD00EB00715430 /* main.m in Sources */,
 				638FE7C51BEA4F6700C8778F /* ZYToolBars.m in Sources */,
