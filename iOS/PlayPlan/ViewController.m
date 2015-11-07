@@ -64,7 +64,7 @@
 //    }
     
     
-    UIColor *color = UIColorFromRGB(0x079889);
+    UIColor *color = UIColorFromHex(0x079889);
     
 //    UIColor * color = [UIColor colorWithRed:0/255.0 green:175/255.0 blue:240/255.0 alpha:1];
     CGFloat offsetY = scrollView.contentOffset.y;
