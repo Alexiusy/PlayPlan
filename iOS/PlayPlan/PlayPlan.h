@@ -9,6 +9,8 @@
 #ifndef PlayPlan_h
 #define PlayPlan_h
 
+#import "ZYToolBars.h"
+
 #define SCREEN_SIZE [[UIScreen mainScreen] bounds].size
 // 十六进制的每一位占用四位二进制，右移的位数根据二进制来判断
 #define UIColorFromHex(hex) [UIColor colorWithRed:((float)((hex & 0xFF0000) >> 16))/255.0 green:((float)((hex & 0xFF00) >> 8))/255.0 blue:((float)(hex & 0xFF))/255.0 alpha:1.0]

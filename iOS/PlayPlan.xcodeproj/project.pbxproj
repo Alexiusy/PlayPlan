@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		631CE58D1BDD00EB00715430 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 631CE58C1BDD00EB00715430 /* main.m */; };
 		631CE5901BDD00EB00715430 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 631CE58F1BDD00EB00715430 /* AppDelegate.m */; };
-		631CE5931BDD00EB00715430 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 631CE5921BDD00EB00715430 /* ViewController.m */; };
+		631CE5931BDD00EB00715430 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 631CE5921BDD00EB00715430 /* MainViewController.m */; };
 		631CE5961BDD00EB00715430 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 631CE5941BDD00EB00715430 /* Main.storyboard */; };
 		631CE5981BDD00EB00715430 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 631CE5971BDD00EB00715430 /* Assets.xcassets */; };
 		631CE59B1BDD00EB00715430 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 631CE5991BDD00EB00715430 /* LaunchScreen.storyboard */; };
@@ -17,6 +17,7 @@
 		631CE5B11BDD00EC00715430 /* PlayPlanUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 631CE5B01BDD00EC00715430 /* PlayPlanUITests.m */; };
 		6357D0DD1BE3C22D00F8E94A /* BrokenGlass.m in Sources */ = {isa = PBXBuildFile; fileRef = 6357D0DC1BE3C22D00F8E94A /* BrokenGlass.m */; settings = {ASSET_TAGS = (); }; };
 		638FE7C51BEA4F6700C8778F /* ZYToolBars.m in Sources */ = {isa = PBXBuildFile; fileRef = 638FE7C41BEA4F6700C8778F /* ZYToolBars.m */; settings = {ASSET_TAGS = (); }; };
+		638FE7CC1BEF322B00C8778F /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 638FE7CB1BEF322B00C8778F /* ProfileViewController.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,8 +42,8 @@
 		631CE58C1BDD00EB00715430 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		631CE58E1BDD00EB00715430 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		631CE58F1BDD00EB00715430 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		631CE5911BDD00EB00715430 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		631CE5921BDD00EB00715430 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		631CE5911BDD00EB00715430 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		631CE5921BDD00EB00715430 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		631CE5951BDD00EB00715430 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		631CE5971BDD00EB00715430 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		631CE59A1BDD00EB00715430 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -58,6 +59,8 @@
 		638FE7C31BEA4F6700C8778F /* ZYToolBars.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYToolBars.h; sourceTree = "<group>"; };
 		638FE7C41BEA4F6700C8778F /* ZYToolBars.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYToolBars.m; sourceTree = "<group>"; };
 		638FE7C91BEE01B200C8778F /* PlayPlan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayPlan.h; sourceTree = "<group>"; };
+		638FE7CA1BEF322B00C8778F /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		638FE7CB1BEF322B00C8778F /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,8 +115,10 @@
 				6357D0DA1BE3C1FE00F8E94A /* Animation */,
 				631CE58E1BDD00EB00715430 /* AppDelegate.h */,
 				631CE58F1BDD00EB00715430 /* AppDelegate.m */,
-				631CE5911BDD00EB00715430 /* ViewController.h */,
-				631CE5921BDD00EB00715430 /* ViewController.m */,
+				631CE5911BDD00EB00715430 /* MainViewController.h */,
+				631CE5921BDD00EB00715430 /* MainViewController.m */,
+				638FE7CA1BEF322B00C8778F /* ProfileViewController.h */,
+				638FE7CB1BEF322B00C8778F /* ProfileViewController.m */,
 				631CE5941BDD00EB00715430 /* Main.storyboard */,
 				631CE5971BDD00EB00715430 /* Assets.xcassets */,
 				631CE5991BDD00EB00715430 /* LaunchScreen.storyboard */,
@@ -298,10 +303,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				631CE5931BDD00EB00715430 /* ViewController.m in Sources */,
+				631CE5931BDD00EB00715430 /* MainViewController.m in Sources */,
 				631CE5901BDD00EB00715430 /* AppDelegate.m in Sources */,
 				631CE58D1BDD00EB00715430 /* main.m in Sources */,
 				638FE7C51BEA4F6700C8778F /* ZYToolBars.m in Sources */,
+				638FE7CC1BEF322B00C8778F /* ProfileViewController.m in Sources */,
 				6357D0DD1BE3C22D00F8E94A /* BrokenGlass.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
