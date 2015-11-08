@@ -96,8 +96,8 @@
 - (void)addPopView {
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, SCREEN_SIZE.height, SCREEN_SIZE.width, SCREEN_SIZE.height)];
     view.backgroundColor = [UIColor redColor];
-    [self.tableview addSubview:view];
-//    [self.view bringSubviewToFront:view];
+//    [self.tableview addSubview:view];
+    [self.view bringSubviewToFront:view];
     
     [UIView animateWithDuration:5 animations:^{
         view.transform = CGAffineTransformMakeTranslation(0, SCREEN_SIZE.height / 2);
