@@ -67,7 +67,7 @@
 - (void)setNavigationBarTransformProgress:(CGFloat)progress
 {
     [self.navigationController.navigationBar setTranslationY:(-44 * progress)];
-    [self.navigationController.navigationBar setMaskAlpha:(1-progress)];
+    [self.navigationController.navigationBar setMaskAlpha:(1 - progress)];
 }
 
 #pragma mark - TableView datasource and delegate
