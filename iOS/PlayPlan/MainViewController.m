@@ -97,7 +97,7 @@
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, SCREEN_SIZE.height, SCREEN_SIZE.width, SCREEN_SIZE.height)];
     view.backgroundColor = [UIColor redColor];
     [self.view addSubview:view];
-//    [self.view insertSubview:view aboveSubview:self.tableview];
+    [self.view insertSubview:view aboveSubview:self.tableview];
     
     [UIView animateWithDuration:5 animations:^{
         view.transform = CGAffineTransformMakeTranslation(0, SCREEN_SIZE.height / 2);
