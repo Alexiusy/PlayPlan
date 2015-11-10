@@ -97,10 +97,11 @@
     UIWindow *keyWindow = [UIApplication sharedApplication].keyWindow;
     
     UIView *overlay = [[UIView alloc] initWithFrame:keyWindow.frame];
-    UIControl *tap = [[UIControl alloc] initWithFrame:CGRectZero];
+    overlay.backgroundColor = [UIColor colorWithWhite:0.8 alpha:0.8];
+    UIControl *tap = [[UIControl alloc] initWithFrame:keyWindow.frame];
     [tap addTarget:self action:@selector(tap) forControlEvents:UIControlEventTouchUpInside];
     
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_SIZE.width, SCREEN_SIZE.height)];
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, SCREEN_SIZE.height, SCREEN_SIZE.width, SCREEN_SIZE.height)];
     view.backgroundColor = [UIColor redColor];
     
     [overlay addSubview:tap];
@@ -108,10 +109,13 @@
     
     [keyWindow addSubview:overlay];
     
-    [UIView animateWithDuration:5 animations:^{
-        view.transform = CGAffineTransformMakeTranslation(0, SCREEN_SIZE.height / 2);
+    [UIView animateWithDuration:0.5 animations:^{
+        view.transform = CGAffineTransformMakeTranslation(0, -SCREEN_SIZE.height / 2);
     }];
 }
 
+- (void)tap {
+    NSLog(@"tap");
+}
 
 @end
