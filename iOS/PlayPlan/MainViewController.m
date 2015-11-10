@@ -99,7 +99,7 @@
     
     UIWindow *keyWindow = [UIApplication sharedApplication].keyWindow;
     [keyWindow addSubview:view];
-    [self.view insertSubview:view atIndex:self.view.subviews.count];
+//    [self.view insertSubview:view atIndex:self.view.subviews.count];
     
     [UIView animateWithDuration:5 animations:^{
         view.transform = CGAffineTransformMakeTranslation(0, SCREEN_SIZE.height / 2);
