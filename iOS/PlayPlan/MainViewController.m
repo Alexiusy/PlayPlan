@@ -98,8 +98,9 @@
     view.backgroundColor = [UIColor redColor];
     
     UIWindow *keyWindow = [UIApplication sharedApplication].keyWindow;
+    UIView *overlay = [[UIView alloc] initWithFrame:keyWindow.frame];
+    
     [keyWindow addSubview:view];
-//    [self.view insertSubview:view atIndex:self.view.subviews.count];
     
     [UIView animateWithDuration:5 animations:^{
         view.transform = CGAffineTransformMakeTranslation(0, SCREEN_SIZE.height / 2);
