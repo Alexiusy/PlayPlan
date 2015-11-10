@@ -94,12 +94,17 @@
 }
 
 - (void)addPopView {
+    UIWindow *keyWindow = [UIApplication sharedApplication].keyWindow;
+    
+    UIView *overlay = [[UIView alloc] initWithFrame:keyWindow.frame];
+    UIControl *tap = [[UIControl alloc] initWithFrame:CGRectZero];
+    [tap addTarget:self action:@selector(tap) forControlEvents:UIControlEventTouchUpInside];
+    
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_SIZE.width, SCREEN_SIZE.height)];
     view.backgroundColor = [UIColor redColor];
     
-    UIWindow *keyWindow = [UIApplication sharedApplication].keyWindow;
-    UIView *overlay = [[UIView alloc] initWithFrame:keyWindow.frame];
-    UIControl *tap = [[UIControl alloc] initWithFrame:CGRectZero];
+    [overlay addSubview:tap];
+    [overlay addSubview:view];
     
     [keyWindow addSubview:overlay];
     
@@ -107,5 +112,6 @@
         view.transform = CGAffineTransformMakeTranslation(0, SCREEN_SIZE.height / 2);
     }];
 }
+
 
 @end
