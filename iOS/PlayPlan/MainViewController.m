@@ -94,7 +94,7 @@
 }
 
 - (void)addPopView {
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, SCREEN_SIZE.height, SCREEN_SIZE.width, SCREEN_SIZE.height)];
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_SIZE.width, SCREEN_SIZE.height)];
     view.backgroundColor = [UIColor redColor];
     
     UIWindow *keyWindow = [UIApplication sharedApplication].keyWindow;
