@@ -99,8 +99,9 @@
     
     UIWindow *keyWindow = [UIApplication sharedApplication].keyWindow;
     UIView *overlay = [[UIView alloc] initWithFrame:keyWindow.frame];
+    UIControl *tap = [[UIControl alloc] initWithFrame:CGRectZero];
     
-    [keyWindow addSubview:view];
+    [keyWindow addSubview:overlay];
     
     [UIView animateWithDuration:5 animations:^{
         view.transform = CGAffineTransformMakeTranslation(0, SCREEN_SIZE.height / 2);
