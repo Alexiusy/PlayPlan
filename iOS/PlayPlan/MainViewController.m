@@ -125,7 +125,7 @@
 - (void)tap:(UIControl *)tap {
     UIView *view = [[UIView new] viewWithTag:'view'];
     [UIView animateWithDuration:0.5 animations:^{
-        
+        view.transform = CGAffineTransformMakeTranslation(0, SCREEN_SIZE.height / 2);
     }];
     [tap.superview removeFromSuperview];
     NSLog(@"tap");
