@@ -99,9 +99,10 @@
     UIView *overlay = [[UIView alloc] initWithFrame:keyWindow.frame];
     overlay.backgroundColor = [UIColor colorWithWhite:0.8 alpha:0.8];
     UIControl *tap = [[UIControl alloc] initWithFrame:keyWindow.frame];
-    [tap addTarget:self action:@selector(tap) forControlEvents:UIControlEventTouchUpInside];
+    [tap addTarget:self action:@selector(tap:) forControlEvents:UIControlEventTouchUpInside];
     
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, SCREEN_SIZE.height, SCREEN_SIZE.width, SCREEN_SIZE.height)];
+    view.tag = 'view';
     view.backgroundColor = [UIColor redColor];
     
     [overlay addSubview:tap];
@@ -121,7 +122,7 @@
     return snapshot;
 }
 
-- (void)tap {
+- (void)tap:(UIControl *)tap {
     
     NSLog(@"tap");
 }
