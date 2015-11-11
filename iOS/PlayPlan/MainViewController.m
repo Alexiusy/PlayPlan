@@ -126,8 +126,12 @@
     UIView *view = [[UIView new] viewWithTag:'view'];
     [UIView animateWithDuration:0.5 animations:^{
         view.transform = CGAffineTransformMakeTranslation(0, SCREEN_SIZE.height / 2);
+    } completion:^(BOOL finished) {
+        [tap.superview removeFromSuperview];
+        [tap removeFromSuperview];
+        [view removeFromSuperview];
     }];
-    [tap.superview removeFromSuperview];
+    
     NSLog(@"tap");
 }
 
