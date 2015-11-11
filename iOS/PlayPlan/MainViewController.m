@@ -114,7 +114,15 @@
     }];
 }
 
+- (UIImage *)blurredImage {
+    UIGraphicsBeginImageContextWithOptions(self.view.bounds.size, NO, self.view.window.screen.scale);
+    [self.tableview drawViewHierarchyInRect:self.view.frame afterScreenUpdates:NO];
+    UIImage *snapshot = UIGraphicsGetImageFromCurrentImageContext();
+    return snapshot;
+}
+
 - (void)tap {
+    
     NSLog(@"tap");
 }
 
