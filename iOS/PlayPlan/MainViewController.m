@@ -124,6 +124,9 @@
 
 - (void)tap:(UIControl *)tap {
     UIView *view = [[UIView new] viewWithTag:'view'];
+    [UIView animateWithDuration:0.5 animations:^{
+        
+    }];
     [tap.superview removeFromSuperview];
     NSLog(@"tap");
 }
