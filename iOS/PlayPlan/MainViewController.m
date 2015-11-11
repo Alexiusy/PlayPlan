@@ -124,6 +124,7 @@
 
 - (void)tap:(UIControl *)tap {
     
+    [tap.superview removeFromSuperview];
     NSLog(@"tap");
 }
 
