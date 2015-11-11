@@ -123,7 +123,7 @@
 }
 
 - (void)tap:(UIControl *)tap {
-    
+    UIView *view = [[UIView new] viewWithTag:'view'];
     [tap.superview removeFromSuperview];
     NSLog(@"tap");
 }
