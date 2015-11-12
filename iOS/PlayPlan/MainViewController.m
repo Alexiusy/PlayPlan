@@ -118,8 +118,9 @@
 }
 
 - (void)dragView:(UIPanGestureRecognizer *)pan {
+    CGPoint offset = [pan translationInView:self.view];
     if (pan.view) {
-        pan.view.center = [pan translationInView:self.view];
+        pan.view.center = offset;
         [pan setTranslation:CGPointZero inView:self.view];
     }
 }
