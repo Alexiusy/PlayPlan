@@ -117,6 +117,10 @@
     }];
 }
 
+- (void)dragView:(UIPanGestureRecognizer *)pan {
+    
+}
+
 - (UIImage *)blurredImage {
     UIGraphicsBeginImageContextWithOptions(self.view.bounds.size, NO, self.view.window.screen.scale);
     [self.tableview drawViewHierarchyInRect:self.view.frame afterScreenUpdates:NO];
