@@ -118,7 +118,9 @@
 }
 
 - (void)dragView:(UIPanGestureRecognizer *)pan {
-    
+    if (pan.view) {
+        pan.view.center = [pan translationInView:self.view];
+    }
 }
 
 - (UIImage *)blurredImage {
