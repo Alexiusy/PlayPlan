@@ -102,6 +102,7 @@
     [tap addTarget:self action:@selector(tap:) forControlEvents:UIControlEventTouchUpInside];
     
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, SCREEN_SIZE.height, SCREEN_SIZE.width, SCREEN_SIZE.height)];
+    UIPanGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(dragView:)];
     view.tag = 'view';
     view.backgroundColor = [UIColor redColor];
     
