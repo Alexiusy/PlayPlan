@@ -27,6 +27,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:YES];
+    [self.navigationController.navigationItem setLeftBarButtonItem:[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(swipeDrawer)] animated:YES];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -121,8 +122,8 @@
     CGPoint offset = [pan translationInView:self.view];
     CGFloat moveHeight = offset.y - pan.view.center.y;
     if (pan.view) {
-        pan.view.transform = CGAffineTransformMakeTranslation(0, -offset.y);
-        [pan setTranslation:CGPointZero inView:self.view];
+        pan.view.transform = CGAffineTransformMakeTranslation(0, offset.y);
+//        [pan setTranslation:CGPointZero inView:self.view];
     }
 }
 
