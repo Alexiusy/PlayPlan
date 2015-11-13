@@ -131,24 +131,24 @@
     }];
 }
 
-//- (UIImage *)snapshot
-//{
-//    CGSize size = self.view.frame.size;
-//    UIGraphicsBeginImageContextWithOptions(size, NO, [UIScreen mainScreen].scale);
-//    [[UIApplication sharedApplication].keyWindow drawViewHierarchyInRect:self.view.frame afterScreenUpdates:YES];
-//    UIImage *snap = UIGraphicsGetImageFromCurrentImageContext();
-//    UIGraphicsEndImageContext();
-//    CGSize size2 = self.view.frame.size;
-//    // 看这里，看这里
-//    if (fabs(size.height - size2.height) > 0.0001 || fabs(size.width - size2.width) > 0.0001) {
-//        UIGraphicsBeginImageContextWithOptions(size2, NO, [UIScreen mainScreen].scale);
-//        [[UIApplication sharedApplication].keyWindow drawViewHierarchyInRect:self.view.frame afterScreenUpdates:YES];
-//        snap = UIGraphicsGetImageFromCurrentImageContext();
-//        UIGraphicsEndImageContext();
-//    }
-//    
-//    return snap;
-//}
+- (UIImage *)snapshot
+{
+    CGSize size = self.view.frame.size;
+    UIGraphicsBeginImageContextWithOptions(size, NO, [UIScreen mainScreen].scale);
+    [[UIApplication sharedApplication].keyWindow drawViewHierarchyInRect:self.view.frame afterScreenUpdates:YES];
+    UIImage *snap = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    CGSize size2 = self.view.frame.size;
+    // 看这里，看这里
+    if (fabs(size.height - size2.height) > 0.0001 || fabs(size.width - size2.width) > 0.0001) {
+        UIGraphicsBeginImageContextWithOptions(size2, NO, [UIScreen mainScreen].scale);
+        [[UIApplication sharedApplication].keyWindow drawViewHierarchyInRect:self.view.frame afterScreenUpdates:YES];
+        snap = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+    }
+    
+    return snap;
+}
 
 - (void)dragView:(UIPanGestureRecognizer *)pan {
     CGPoint offset = [pan translationInView:self.view];
