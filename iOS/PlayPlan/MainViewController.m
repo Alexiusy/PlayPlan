@@ -28,7 +28,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:YES];
     UIBarButtonItem *leftButton = [[UIBarButtonItem alloc] initWithTitle:@"Add" style:UIBarButtonItemStylePlain target:self action:nil];
-    
+    UINavigationItem *item = [[UINavigationItem alloc] initWithTitle:@"Main"];
     
     [self.navigationController.navigationItem setLeftBarButtonItem:[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(swipeDrawer)] animated:YES];
 }
