@@ -103,7 +103,16 @@
     UIWindow *keyWindow = [UIApplication sharedApplication].keyWindow;
     
     UIView *overlay = [[UIView alloc] initWithFrame:keyWindow.frame];
-    overlay.backgroundColor = [UIColor colorWithWhite:0.8 alpha:0.8];
+//    overlay.backgroundColor = [UIColor colorWithWhite:0.8 alpha:0.8];
+    
+//    UIImageView *image = [[UIImageView alloc] initWithFrame:keyWindow.frame];
+    
+    
+    [self.tableview drawViewHierarchyInRect:keyWindow.frame afterScreenUpdates:YES];
+//    image.image = [self blurryImage:[self snapshot] withBlurLevel:0.3];
+    
+//    [overlay addSubview:image];
+    
     UIControl *tap = [[UIControl alloc] initWithFrame:keyWindow.frame];
     [tap addTarget:self action:@selector(tap:) forControlEvents:UIControlEventTouchUpInside];
     
@@ -123,6 +132,25 @@
     }];
 }
 
+//- (UIImage *)snapshot
+//{
+//    CGSize size = self.view.frame.size;
+//    UIGraphicsBeginImageContextWithOptions(size, NO, [UIScreen mainScreen].scale);
+//    [[UIApplication sharedApplication].keyWindow drawViewHierarchyInRect:self.view.frame afterScreenUpdates:YES];
+//    UIImage *snap = UIGraphicsGetImageFromCurrentImageContext();
+//    UIGraphicsEndImageContext();
+//    CGSize size2 = self.view.frame.size;
+//    // 看这里，看这里
+//    if (fabs(size.height - size2.height) > 0.0001 || fabs(size.width - size2.width) > 0.0001) {
+//        UIGraphicsBeginImageContextWithOptions(size2, NO, [UIScreen mainScreen].scale);
+//        [[UIApplication sharedApplication].keyWindow drawViewHierarchyInRect:self.view.frame afterScreenUpdates:YES];
+//        snap = UIGraphicsGetImageFromCurrentImageContext();
+//        UIGraphicsEndImageContext();
+//    }
+//    
+//    return snap;
+//}
+
 - (void)dragView:(UIPanGestureRecognizer *)pan {
     CGPoint offset = [pan translationInView:self.view];
     CGFloat moveHeight = offset.y - pan.view.center.y;
@@ -132,12 +160,70 @@
     }
 }
 
-- (UIImage *)blurredImage {
-    UIGraphicsBeginImageContextWithOptions(self.view.bounds.size, NO, self.view.window.screen.scale);
-    [self.tableview drawViewHierarchyInRect:self.view.frame afterScreenUpdates:NO];
-    UIImage *snapshot = UIGraphicsGetImageFromCurrentImageContext();
-    return snapshot;
-}
+//- (UIImage *)blurryImage:(UIImage *)image withBlurLevel:(CGFloat)blur {
+//    if ((blur < 0.0f) || (blur > 1.0f)) {
+//        blur = 0.5f;
+//    }
+//    
+//    int boxSize = (int)(blur * 100);
+//    boxSize -= (boxSize % 2) + 1;
+//    
+//    CGImageRef img = image.CGImage;
+//    
+//    vImage_Buffer inBuffer, outBuffer;
+//    vImage_Error error;
+//    void *pixelBuffer;
+//    
+//    CGDataProviderRef inProvider = CGImageGetDataProvider(img);
+//    CFDataRef inBitmapData = CGDataProviderCopyData(inProvider);
+//    
+//    inBuffer.width = CGImageGetWidth(img);
+//    inBuffer.height = CGImageGetHeight(img);
+//    inBuffer.rowBytes = CGImageGetBytesPerRow(img);
+//    
+//    inBuffer.data = (void*)CFDataGetBytePtr(inBitmapData);
+//    
+//    pixelBuffer = malloc(CGImageGetBytesPerRow(img) * CGImageGetHeight(img));
+//    
+//    outBuffer.data = pixelBuffer;
+//    outBuffer.width = CGImageGetWidth(img);
+//    outBuffer.height = CGImageGetHeight(img);
+//    outBuffer.rowBytes = CGImageGetBytesPerRow(img);
+//    
+//    error = vImageBoxConvolve_ARGB8888(&inBuffer, &outBuffer, NULL,
+//                                       0, 0, boxSize, boxSize, NULL,
+//                                       kvImageEdgeExtend);
+//    
+//    
+//    if (error) {
+//        NSLog(@"error from convolution %ld", error);
+//    }
+//    
+//    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+//    CGContextRef ctx = CGBitmapContextCreate(
+//                                             outBuffer.data,
+//                                             outBuffer.width,
+//                                             outBuffer.height,
+//                                             8,
+//                                             outBuffer.rowBytes,
+//                                             colorSpace,
+//                                             CGImageGetBitmapInfo(image.CGImage));
+//    
+//    CGImageRef imageRef = CGBitmapContextCreateImage (ctx);
+//    UIImage *returnImage = [UIImage imageWithCGImage:imageRef];
+//    
+//    //clean up
+//    CGContextRelease(ctx);
+//    CGColorSpaceRelease(colorSpace);
+//    
+//    free(pixelBuffer);
+//    CFRelease(inBitmapData);
+//    
+//    CGColorSpaceRelease(colorSpace);
+//    CGImageRelease(imageRef);
+//    
+//    return returnImage;
+//}
 
 - (void)tap:(UIControl *)tap {
     UIView *view = [[UIView new] viewWithTag:'view'];

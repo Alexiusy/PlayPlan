@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Accelerate/Accelerate.h>
 #import "PlayPlan.h"
 
 @interface MainViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>

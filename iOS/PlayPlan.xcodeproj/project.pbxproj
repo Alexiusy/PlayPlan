@@ -18,6 +18,7 @@
 		6357D0DD1BE3C22D00F8E94A /* BrokenGlass.m in Sources */ = {isa = PBXBuildFile; fileRef = 6357D0DC1BE3C22D00F8E94A /* BrokenGlass.m */; settings = {ASSET_TAGS = (); }; };
 		638FE7C51BEA4F6700C8778F /* ZYToolBars.m in Sources */ = {isa = PBXBuildFile; fileRef = 638FE7C41BEA4F6700C8778F /* ZYToolBars.m */; settings = {ASSET_TAGS = (); }; };
 		638FE7CC1BEF322B00C8778F /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 638FE7CB1BEF322B00C8778F /* ProfileViewController.m */; settings = {ASSET_TAGS = (); }; };
+		638FE7CE1BF637FF00C8778F /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 638FE7CD1BF637FF00C8778F /* Accelerate.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		638FE7C91BEE01B200C8778F /* PlayPlan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayPlan.h; sourceTree = "<group>"; };
 		638FE7CA1BEF322B00C8778F /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		638FE7CB1BEF322B00C8778F /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		638FE7CD1BF637FF00C8778F /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				638FE7CE1BF637FF00C8778F /* Accelerate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,6 +134,7 @@
 		631CE58B1BDD00EB00715430 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				638FE7CD1BF637FF00C8778F /* Accelerate.framework */,
 				631CE58C1BDD00EB00715430 /* main.m */,
 				638FE7C91BEE01B200C8778F /* PlayPlan.h */,
 			);
