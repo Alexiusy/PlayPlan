@@ -105,7 +105,7 @@
     UIView *overlay = [[UIView alloc] initWithFrame:keyWindow.frame];
 //    overlay.backgroundColor = [UIColor colorWithWhite:0.8 alpha:0.8];
     
-//    UIImageView *image = [[UIImageView alloc] initWithFrame:keyWindow.frame];
+    UIImageView *image = [[UIImageView alloc] initWithFrame:keyWindow.frame];
     
     
     [self.tableview drawViewHierarchyInRect:keyWindow.frame afterScreenUpdates:YES];
