@@ -27,8 +27,12 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:YES];
-    UIBarButtonItem *leftButton = [[UIBarButtonItem alloc] initWithTitle:@"Drawer" style:UIBarButtonItemStylePlain target:self action:nil];
+    UIBarButtonItem *leftButton = [[UIBarButtonItem alloc] initWithTitle:@"Drawer" style:UIBarButtonItemStylePlain target:self action:@selector(showDrawer)];
     self.navigationItem.leftBarButtonItem = leftButton;
+}
+
+- (void)showDrawer {
+    NSLog(@"Show drawer.");
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
