@@ -150,14 +150,14 @@
     return snap;
 }
 
-//- (void)dragView:(UIPanGestureRecognizer *)pan {
-//    CGPoint offset = [pan translationInView:self.view];
-//    CGFloat moveHeight = offset.y - pan.view.center.y;
-//    if (pan.view) {
-//        pan.view.transform = CGAffineTransformMakeTranslation(0, offset.y);
-////        [pan setTranslation:CGPointZero inView:self.view];
-//    }
-//}
+- (void)dragView:(UIPanGestureRecognizer *)pan {
+    CGPoint offset = [pan translationInView:self.view];
+    CGFloat moveHeight = offset.y - pan.view.center.y;
+    if (pan.view) {
+        pan.view.transform = CGAffineTransformMakeTranslation(0, offset.y);
+//        [pan setTranslation:CGPointZero inView:self.view];
+    }
+}
 
 //- (UIImage *)blurryImage:(UIImage *)image withBlurLevel:(CGFloat)blur {
 //    if ((blur < 0.0f) || (blur > 1.0f)) {
