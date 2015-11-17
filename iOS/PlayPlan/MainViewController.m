@@ -112,9 +112,9 @@
 //    
 //    [overlay addSubview:image];
     
-    UIERealTimeBlurView *blurView = [[UIERealTimeBlurView alloc] initWithFrame:CGRectMake(60, 110, 200, 200)];
+    UIERealTimeBlurView *blurView = [[UIERealTimeBlurView alloc] initWithFrame:keyWindow.frame];
 //    blurView.alpha = 0.7;
-    [self.view addSubview:blurView];
+    [overlay addSubview:blurView];
     
     UIControl *tap = [[UIControl alloc] initWithFrame:keyWindow.frame];
     [tap addTarget:self action:@selector(tap:) forControlEvents:UIControlEventTouchUpInside];
@@ -135,25 +135,6 @@
     }];
 }
 
-- (UIImage *)snapshot
-{
-    CGSize size = self.view.frame.size;
-    UIGraphicsBeginImageContextWithOptions(size, NO, [UIScreen mainScreen].scale);
-    [[UIApplication sharedApplication].keyWindow drawViewHierarchyInRect:self.view.frame afterScreenUpdates:YES];
-    UIImage *snap = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    CGSize size2 = self.view.frame.size;
-    // 看这里，看这里
-    if (fabs(size.height - size2.height) > 0.0001 || fabs(size.width - size2.width) > 0.0001) {
-        UIGraphicsBeginImageContextWithOptions(size2, NO, [UIScreen mainScreen].scale);
-        [[UIApplication sharedApplication].keyWindow drawViewHierarchyInRect:self.view.frame afterScreenUpdates:YES];
-        snap = UIGraphicsGetImageFromCurrentImageContext();
-        UIGraphicsEndImageContext();
-    }
-    
-    return snap;
-}
-
 - (void)dragView:(UIPanGestureRecognizer *)pan {
     CGPoint offset = [pan translationInView:self.view];
     CGFloat moveHeight = offset.y - pan.view.center.y;
@@ -161,71 +142,6 @@
         pan.view.transform = CGAffineTransformMakeTranslation(0, offset.y);
 //        [pan setTranslation:CGPointZero inView:self.view];
     }
-}
-
-- (UIImage *)blurryImage:(UIImage *)image withBlurLevel:(CGFloat)blur {
-    if ((blur < 0.0f) || (blur > 1.0f)) {
-        blur = 0.5f;
-    }
-    
-    int boxSize = (int)(blur * 100);
-    boxSize -= (boxSize % 2) + 1;
-    
-    CGImageRef img = image.CGImage;
-    
-    vImage_Buffer inBuffer, outBuffer;
-    vImage_Error error;
-    void *pixelBuffer;
-    
-    CGDataProviderRef inProvider = CGImageGetDataProvider(img);
-    CFDataRef inBitmapData = CGDataProviderCopyData(inProvider);
-    
-    inBuffer.width = CGImageGetWidth(img);
-    inBuffer.height = CGImageGetHeight(img);
-    inBuffer.rowBytes = CGImageGetBytesPerRow(img);
-    
-    inBuffer.data = (void*)CFDataGetBytePtr(inBitmapData);
-    
-    pixelBuffer = malloc(CGImageGetBytesPerRow(img) * CGImageGetHeight(img));
-    
-    outBuffer.data = pixelBuffer;
-    outBuffer.width = CGImageGetWidth(img);
-    outBuffer.height = CGImageGetHeight(img);
-    outBuffer.rowBytes = CGImageGetBytesPerRow(img);
-    
-    error = vImageBoxConvolve_ARGB8888(&inBuffer, &outBuffer, NULL,
-                                       0, 0, boxSize, boxSize, NULL,
-                                       kvImageEdgeExtend);
-    
-    
-    if (error) {
-        NSLog(@"error from convolution %ld", error);
-    }
-    
-    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
-    CGContextRef ctx = CGBitmapContextCreate(
-                                             outBuffer.data,
-                                             outBuffer.width,
-                                             outBuffer.height,
-                                             8,
-                                             outBuffer.rowBytes,
-                                             colorSpace,
-                                             CGImageGetBitmapInfo(image.CGImage));
-    
-    CGImageRef imageRef = CGBitmapContextCreateImage (ctx);
-    UIImage *returnImage = [UIImage imageWithCGImage:imageRef];
-    
-    //clean up
-    CGContextRelease(ctx);
-    CGColorSpaceRelease(colorSpace);
-    
-    free(pixelBuffer);
-    CFRelease(inBitmapData);
-    
-    CGColorSpaceRelease(colorSpace);
-    CGImageRelease(imageRef);
-    
-    return returnImage;
 }
 
 - (void)tap:(UIControl *)tap {
@@ -237,8 +153,6 @@
         [tap removeFromSuperview];
         [view removeFromSuperview];
     }];
-    
-    NSLog(@"tap");
 }
 
 @end
