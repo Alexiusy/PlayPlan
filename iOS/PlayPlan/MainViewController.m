@@ -104,13 +104,17 @@
     
     UIView *overlay = [[UIView alloc] initWithFrame:keyWindow.frame];
     
-    UIImageView *image = [[UIImageView alloc] initWithFrame:keyWindow.frame];
+//    UIImageView *image = [[UIImageView alloc] initWithFrame:keyWindow.frame];
+//    
+//    
+//    [self.tableview drawViewHierarchyInRect:keyWindow.frame afterScreenUpdates:YES];
+//    image.image = [self blurryImage:[self snapshot] withBlurLevel:0.3];
+//    
+//    [overlay addSubview:image];
     
-    
-    [self.tableview drawViewHierarchyInRect:keyWindow.frame afterScreenUpdates:YES];
-    image.image = [self blurryImage:[self snapshot] withBlurLevel:0.3];
-    
-    [overlay addSubview:image];
+    UIERealTimeBlurView *blurView = [[UIERealTimeBlurView alloc] initWithFrame:CGRectMake(60, 110, 200, 200)];
+//    blurView.alpha = 0.7;
+    [self.view addSubview:blurView];
     
     UIControl *tap = [[UIControl alloc] initWithFrame:keyWindow.frame];
     [tap addTarget:self action:@selector(tap:) forControlEvents:UIControlEventTouchUpInside];
