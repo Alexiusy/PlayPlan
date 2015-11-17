@@ -10,6 +10,8 @@
 #define PlayPlan_h
 
 #import "ZYToolBars.h"
+#import "UIERealTimeBlurView.h"
+#import "UIImage+BoxBlur.h"
 
 #define SCREEN_SIZE [[UIScreen mainScreen] bounds].size
 // 十六进制的每一位占用四位二进制，右移的位数根据二进制来判断
