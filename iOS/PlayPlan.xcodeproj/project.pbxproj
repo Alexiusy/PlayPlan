@@ -12,35 +12,15 @@
 		631CE5961BDD00EB00715430 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 631CE5941BDD00EB00715430 /* Main.storyboard */; };
 		631CE5981BDD00EB00715430 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 631CE5971BDD00EB00715430 /* Assets.xcassets */; };
 		631CE59B1BDD00EB00715430 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 631CE5991BDD00EB00715430 /* LaunchScreen.storyboard */; };
-		631CE5A61BDD00EC00715430 /* PlayPlanTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 631CE5A51BDD00EC00715430 /* PlayPlanTests.m */; };
-		631CE5B11BDD00EC00715430 /* PlayPlanUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 631CE5B01BDD00EC00715430 /* PlayPlanUITests.m */; };
+		633A926D1BFCD2FC00BD3EE6 /* ZYToolBars.m in Sources */ = {isa = PBXBuildFile; fileRef = 633A926C1BFCD2FC00BD3EE6 /* ZYToolBars.m */; settings = {ASSET_TAGS = (); }; };
 		6357D0DD1BE3C22D00F8E94A /* BrokenGlass.m in Sources */ = {isa = PBXBuildFile; fileRef = 6357D0DC1BE3C22D00F8E94A /* BrokenGlass.m */; settings = {ASSET_TAGS = (); }; };
-		638FE7C51BEA4F6700C8778F /* ZYToolBars.m in Sources */ = {isa = PBXBuildFile; fileRef = 638FE7C41BEA4F6700C8778F /* ZYToolBars.m */; settings = {ASSET_TAGS = (); }; };
 		638FE7CE1BF637FF00C8778F /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 638FE7CD1BF637FF00C8778F /* Accelerate.framework */; };
 		638FE7E41BFCC42D00C8778F /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 638FE7D81BFCC42D00C8778F /* MainViewController.m */; settings = {ASSET_TAGS = (); }; };
 		638FE7E51BFCC42D00C8778F /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 638FE7DB1BFCC42D00C8778F /* ProfileViewController.m */; settings = {ASSET_TAGS = (); }; };
 		638FE7E61BFCC42D00C8778F /* UIERealTimeBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = 638FE7DE1BFCC42D00C8778F /* UIERealTimeBlurView.m */; settings = {ASSET_TAGS = (); }; };
 		638FE7E71BFCC42D00C8778F /* UIImage+BoxBlur.m in Sources */ = {isa = PBXBuildFile; fileRef = 638FE7E01BFCC42D00C8778F /* UIImage+BoxBlur.m */; settings = {ASSET_TAGS = (); }; };
-		638FE7E81BFCC42D00C8778F /* ZYToolBars.m in Sources */ = {isa = PBXBuildFile; fileRef = 638FE7E31BFCC42D00C8778F /* ZYToolBars.m */; settings = {ASSET_TAGS = (); }; };
 		638FE7EB1BFCCBA700C8778F /* Overlay.m in Sources */ = {isa = PBXBuildFile; fileRef = 638FE7EA1BFCCBA700C8778F /* Overlay.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		631CE5A21BDD00EC00715430 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 631CE5801BDD00EB00715430 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 631CE5871BDD00EB00715430;
-			remoteInfo = PlayPlan;
-		};
-		631CE5AD1BDD00EC00715430 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 631CE5801BDD00EB00715430 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 631CE5871BDD00EB00715430;
-			remoteInfo = PlayPlan;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		631CE5881BDD00EB00715430 /* PlayPlan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlayPlan.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -51,12 +31,12 @@
 		631CE5971BDD00EB00715430 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		631CE59A1BDD00EB00715430 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		631CE59C1BDD00EB00715430 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		631CE5A11BDD00EC00715430 /* PlayPlanTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlayPlanTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		631CE5A51BDD00EC00715430 /* PlayPlanTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlayPlanTests.m; sourceTree = "<group>"; };
 		631CE5A71BDD00EC00715430 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		631CE5AC1BDD00EC00715430 /* PlayPlanUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlayPlanUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		631CE5B01BDD00EC00715430 /* PlayPlanUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlayPlanUITests.m; sourceTree = "<group>"; };
 		631CE5B21BDD00EC00715430 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		633A926B1BFCD2FC00BD3EE6 /* ZYToolBars.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYToolBars.h; sourceTree = "<group>"; };
+		633A926C1BFCD2FC00BD3EE6 /* ZYToolBars.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYToolBars.m; sourceTree = "<group>"; };
 		6357D0DB1BE3C22D00F8E94A /* BrokenGlass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrokenGlass.h; sourceTree = "<group>"; };
 		6357D0DC1BE3C22D00F8E94A /* BrokenGlass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrokenGlass.m; sourceTree = "<group>"; };
 		638FE7C31BEA4F6700C8778F /* ZYToolBars.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYToolBars.h; sourceTree = "<group>"; };
@@ -71,8 +51,6 @@
 		638FE7DE1BFCC42D00C8778F /* UIERealTimeBlurView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIERealTimeBlurView.m; sourceTree = "<group>"; };
 		638FE7DF1BFCC42D00C8778F /* UIImage+BoxBlur.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+BoxBlur.h"; sourceTree = "<group>"; };
 		638FE7E01BFCC42D00C8778F /* UIImage+BoxBlur.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+BoxBlur.m"; sourceTree = "<group>"; };
-		638FE7E21BFCC42D00C8778F /* ZYToolBars.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYToolBars.h; sourceTree = "<group>"; };
-		638FE7E31BFCC42D00C8778F /* ZYToolBars.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYToolBars.m; sourceTree = "<group>"; };
 		638FE7E91BFCCBA700C8778F /* Overlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Overlay.h; sourceTree = "<group>"; };
 		638FE7EA1BFCCBA700C8778F /* Overlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Overlay.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -83,20 +61,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				638FE7CE1BF637FF00C8778F /* Accelerate.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		631CE59E1BDD00EC00715430 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		631CE5A91BDD00EC00715430 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,8 +81,6 @@
 			isa = PBXGroup;
 			children = (
 				631CE5881BDD00EB00715430 /* PlayPlan.app */,
-				631CE5A11BDD00EC00715430 /* PlayPlanTests.xctest */,
-				631CE5AC1BDD00EC00715430 /* PlayPlanUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -223,8 +185,8 @@
 		638FE7E11BFCC42D00C8778F /* UtilViews */ = {
 			isa = PBXGroup;
 			children = (
-				638FE7E21BFCC42D00C8778F /* ZYToolBars.h */,
-				638FE7E31BFCC42D00C8778F /* ZYToolBars.m */,
+				633A926B1BFCD2FC00BD3EE6 /* ZYToolBars.h */,
+				633A926C1BFCD2FC00BD3EE6 /* ZYToolBars.m */,
 			);
 			path = UtilViews;
 			sourceTree = "<group>";
@@ -249,42 +211,6 @@
 			productReference = 631CE5881BDD00EB00715430 /* PlayPlan.app */;
 			productType = "com.apple.product-type.application";
 		};
-		631CE5A01BDD00EC00715430 /* PlayPlanTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 631CE5B81BDD00EC00715430 /* Build configuration list for PBXNativeTarget "PlayPlanTests" */;
-			buildPhases = (
-				631CE59D1BDD00EC00715430 /* Sources */,
-				631CE59E1BDD00EC00715430 /* Frameworks */,
-				631CE59F1BDD00EC00715430 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				631CE5A31BDD00EC00715430 /* PBXTargetDependency */,
-			);
-			name = PlayPlanTests;
-			productName = PlayPlanTests;
-			productReference = 631CE5A11BDD00EC00715430 /* PlayPlanTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		631CE5AB1BDD00EC00715430 /* PlayPlanUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 631CE5BB1BDD00EC00715430 /* Build configuration list for PBXNativeTarget "PlayPlanUITests" */;
-			buildPhases = (
-				631CE5A81BDD00EC00715430 /* Sources */,
-				631CE5A91BDD00EC00715430 /* Frameworks */,
-				631CE5AA1BDD00EC00715430 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				631CE5AE1BDD00EC00715430 /* PBXTargetDependency */,
-			);
-			name = PlayPlanUITests;
-			productName = PlayPlanUITests;
-			productReference = 631CE5AC1BDD00EC00715430 /* PlayPlanUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -296,14 +222,6 @@
 				TargetAttributes = {
 					631CE5871BDD00EB00715430 = {
 						CreatedOnToolsVersion = 7.0.1;
-					};
-					631CE5A01BDD00EC00715430 = {
-						CreatedOnToolsVersion = 7.0.1;
-						TestTargetID = 631CE5871BDD00EB00715430;
-					};
-					631CE5AB1BDD00EC00715430 = {
-						CreatedOnToolsVersion = 7.0.1;
-						TestTargetID = 631CE5871BDD00EB00715430;
 					};
 				};
 			};
@@ -321,8 +239,6 @@
 			projectRoot = "";
 			targets = (
 				631CE5871BDD00EB00715430 /* PlayPlan */,
-				631CE5A01BDD00EC00715430 /* PlayPlanTests */,
-				631CE5AB1BDD00EC00715430 /* PlayPlanUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -338,20 +254,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		631CE59F1BDD00EC00715430 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		631CE5AA1BDD00EC00715430 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -362,9 +264,8 @@
 				631CE5901BDD00EB00715430 /* AppDelegate.m in Sources */,
 				638FE7E61BFCC42D00C8778F /* UIERealTimeBlurView.m in Sources */,
 				631CE58D1BDD00EB00715430 /* main.m in Sources */,
-				638FE7E81BFCC42D00C8778F /* ZYToolBars.m in Sources */,
 				638FE7EB1BFCCBA700C8778F /* Overlay.m in Sources */,
-				638FE7C51BEA4F6700C8778F /* ZYToolBars.m in Sources */,
+				633A926D1BFCD2FC00BD3EE6 /* ZYToolBars.m in Sources */,
 				638FE7E41BFCC42D00C8778F /* MainViewController.m in Sources */,
 				638FE7E51BFCC42D00C8778F /* ProfileViewController.m in Sources */,
 				638FE7E71BFCC42D00C8778F /* UIImage+BoxBlur.m in Sources */,
@@ -372,36 +273,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		631CE59D1BDD00EC00715430 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				631CE5A61BDD00EC00715430 /* PlayPlanTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		631CE5A81BDD00EC00715430 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				631CE5B11BDD00EC00715430 /* PlayPlanUITests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		631CE5A31BDD00EC00715430 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 631CE5871BDD00EB00715430 /* PlayPlan */;
-			targetProxy = 631CE5A21BDD00EC00715430 /* PBXContainerItemProxy */;
-		};
-		631CE5AE1BDD00EC00715430 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 631CE5871BDD00EB00715430 /* PlayPlan */;
-			targetProxy = 631CE5AD1BDD00EC00715430 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		631CE5941BDD00EB00715430 /* Main.storyboard */ = {
@@ -529,54 +401,6 @@
 			};
 			name = Release;
 		};
-		631CE5B91BDD00EC00715430 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = PlayPlanTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.zeacone.PlayPlanTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PlayPlan.app/PlayPlan";
-			};
-			name = Debug;
-		};
-		631CE5BA1BDD00EC00715430 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = PlayPlanTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.zeacone.PlayPlanTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PlayPlan.app/PlayPlan";
-			};
-			name = Release;
-		};
-		631CE5BC1BDD00EC00715430 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = PlayPlanUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.zeacone.PlayPlanUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = PlayPlan;
-				USES_XCTRUNNER = YES;
-			};
-			name = Debug;
-		};
-		631CE5BD1BDD00EC00715430 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = PlayPlanUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.zeacone.PlayPlanUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = PlayPlan;
-				USES_XCTRUNNER = YES;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -594,24 +418,6 @@
 			buildConfigurations = (
 				631CE5B61BDD00EC00715430 /* Debug */,
 				631CE5B71BDD00EC00715430 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		631CE5B81BDD00EC00715430 /* Build configuration list for PBXNativeTarget "PlayPlanTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				631CE5B91BDD00EC00715430 /* Debug */,
-				631CE5BA1BDD00EC00715430 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		631CE5BB1BDD00EC00715430 /* Build configuration list for PBXNativeTarget "PlayPlanUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				631CE5BC1BDD00EC00715430 /* Debug */,
-				631CE5BD1BDD00EC00715430 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

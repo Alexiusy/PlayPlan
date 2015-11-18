@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PlayPlan.h"
 
 @interface Overlay : UIView
+
++ (instancetype)sharedOverlay;
 
 @end
