@@ -104,16 +104,7 @@
     
     UIView *overlay = [[UIView alloc] initWithFrame:keyWindow.frame];
     
-//    UIImageView *image = [[UIImageView alloc] initWithFrame:keyWindow.frame];
-//    
-//    
-//    [self.tableview drawViewHierarchyInRect:keyWindow.frame afterScreenUpdates:YES];
-//    image.image = [self blurryImage:[self snapshot] withBlurLevel:0.3];
-//    
-//    [overlay addSubview:image];
-    
     UIERealTimeBlurView *blurView = [[UIERealTimeBlurView alloc] initWithFrame:keyWindow.frame];
-//    blurView.alpha = 0.7;
     [overlay addSubview:blurView];
     
     UIControl *tap = [[UIControl alloc] initWithFrame:keyWindow.frame];
@@ -137,7 +128,6 @@
 
 - (void)dragView:(UIPanGestureRecognizer *)pan {
     CGPoint offset = [pan translationInView:self.view];
-    CGFloat moveHeight = offset.y - pan.view.center.y;
     if (pan.view) {
         pan.view.transform = CGAffineTransformMakeTranslation(0, offset.y);
 //        [pan setTranslation:CGPointZero inView:self.view];
