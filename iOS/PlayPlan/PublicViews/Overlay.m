@@ -23,6 +23,17 @@
     return overlay;
 }
 
+- (void)tap:(UIControl *)tap {
+    UIView *view = [[UIView new] viewWithTag:'view'];
+    [UIView animateWithDuration:0.5 animations:^{
+        view.transform = CGAffineTransformMakeTranslation(0, SCREEN_SIZE.height / 2);
+    } completion:^(BOOL finished) {
+        [tap.superview removeFromSuperview];
+        [tap removeFromSuperview];
+        [view removeFromSuperview];
+    }];
+}
+
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
