@@ -23,6 +23,11 @@
     return overlay;
 }
 
+- (void)showOverlayWithBlur:(BOOL)blur {
+    UIControl *tap = [[UIControl alloc] initWithFrame:keyWindow.frame];
+    [tap addTarget:self action:@selector(tap:) forControlEvents:UIControlEventTouchUpInside];
+}
+
 - (void)tap:(UIControl *)tap {
     UIView *view = [[UIView new] viewWithTag:'view'];
     [UIView animateWithDuration:0.5 animations:^{
