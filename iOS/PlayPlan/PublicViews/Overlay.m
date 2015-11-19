@@ -13,18 +13,17 @@
 + (instancetype)sharedOverlay {
     static Overlay *overlay = nil;
     static dispatch_once_t onceToken;
-    // Get frame of key window.
-    UIWindow *keyWindow = [UIApplication sharedApplication].keyWindow;
     dispatch_once(&onceToken, ^{
-        UIERealTimeBlurView *blurView = [[UIERealTimeBlurView alloc] initWithFrame:keyWindow.frame];
-        overlay = [[Overlay alloc] initWithFrame:keyWindow.frame];
-        [overlay addSubview:blurView];
+        overlay = [[Overlay alloc] initWithFrame:KEY_WINDOW.frame];
     });
     return overlay;
 }
 
 - (void)showOverlayWithBlur:(BOOL)blur {
-    UIControl *tap = [[UIControl alloc] initWithFrame:keyWindow.frame];
+    
+    UIERealTimeBlurView *blurView = [[UIERealTimeBlurView alloc] initWithFrame:KEY_WINDOW.frame];
+    [self addSubview:blurView];
+    UIControl *tap = [[UIControl alloc] initWithFrame:KEY_WINDOW.frame];
     [tap addTarget:self action:@selector(tap:) forControlEvents:UIControlEventTouchUpInside];
 }
 
