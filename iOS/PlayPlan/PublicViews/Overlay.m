@@ -28,6 +28,7 @@
     [self addSubview:view];
     UIControl *tap = [[UIControl alloc] initWithFrame:KEY_WINDOW.frame];
     [tap addTarget:self action:@selector(tap:) forControlEvents:UIControlEventTouchUpInside];
+    [self addSubview:tap];
     
     [KEY_WINDOW addSubview:self];
 }
