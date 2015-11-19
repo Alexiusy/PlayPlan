@@ -101,26 +101,18 @@
 }
 
 - (void)addPopView {
-    UIWindow *keyWindow = [UIApplication sharedApplication].keyWindow;
-    
-    UIView *overlay = [[UIView alloc] initWithFrame:keyWindow.frame];
-    
-    UIERealTimeBlurView *blurView = [[UIERealTimeBlurView alloc] initWithFrame:keyWindow.frame];
-    [overlay addSubview:blurView];
-    
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, SCREEN_SIZE.height, SCREEN_SIZE.width, SCREEN_SIZE.height)];
-    UIPanGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(dragView:)];
-    [view addGestureRecognizer:panGesture];
-    view.tag = 'view';
-    view.backgroundColor = [UIColor redColor];
-    
-    [overlay addSubview:tap];
-    [overlay addSubview:view];
-    
-    [keyWindow addSubview:overlay];
+    UIView *popupView = ({
+        UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, SCREEN_SIZE.height, SCREEN_SIZE.width, SCREEN_SIZE.height)];
+        UIPanGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(dragView:)];
+        [view addGestureRecognizer:panGesture];
+        view.tag = 'view';
+        view.backgroundColor = [UIColor redColor];
+        view;
+    });
+    [[Overlay sharedOverlay] showView:popupView WithBlur:YES];
     
     [UIView animateWithDuration:0.5 animations:^{
-        view.transform = CGAffineTransformMakeTranslation(0, -SCREEN_SIZE.height / 2);
+        popupView.transform = CGAffineTransformMakeTranslation(0, -SCREEN_SIZE.height / 2);
     }];
 }
 

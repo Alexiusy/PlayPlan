@@ -19,12 +19,17 @@
     return overlay;
 }
 
-- (void)showOverlayWithBlur:(BOOL)blur {
-    
-    UIERealTimeBlurView *blurView = [[UIERealTimeBlurView alloc] initWithFrame:KEY_WINDOW.frame];
-    [self addSubview:blurView];
+- (void)showView:(UIView *)view WithBlur:(BOOL)blur {
+    // 添加模糊视图
+    if (blur) {
+        UIERealTimeBlurView *blurView = [[UIERealTimeBlurView alloc] initWithFrame:KEY_WINDOW.frame];
+        [self addSubview:blurView];
+    }
+    [self addSubview:view];
     UIControl *tap = [[UIControl alloc] initWithFrame:KEY_WINDOW.frame];
     [tap addTarget:self action:@selector(tap:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [KEY_WINDOW addSubview:self];
 }
 
 - (void)tap:(UIControl *)tap {
