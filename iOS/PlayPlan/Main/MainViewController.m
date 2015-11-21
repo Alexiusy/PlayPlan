@@ -32,6 +32,7 @@
 
 - (void)showDrawer {
     SideMenu *sideBar = [[SideMenu alloc] initWithFrame:CGRectMake(0, 0, SCREEN_SIZE.width / 2, SCREEN_SIZE.height)];
+    [[Overlay sharedOverlay] showView:sideBar WithBlur:YES];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
