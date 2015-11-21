@@ -15,7 +15,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         self.backgroundColor = [UIColor redColor];
-        [[Overlay sharedOverlay] showView:self WithBlur:YES];
+//        [[Overlay sharedOverlay] showView:self WithBlur:YES];
     }
     return self;
 }

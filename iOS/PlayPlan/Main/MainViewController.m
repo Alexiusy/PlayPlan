@@ -31,7 +31,6 @@
 }
 
 - (void)showDrawer {
-    UIWindow *keywindow = [UIApplication sharedApplication].keyWindow;
     SideMenu *sideBar = [[SideMenu alloc] initWithFrame:CGRectMake(0, 0, SCREEN_SIZE.width / 2, SCREEN_SIZE.height)];
     [keywindow addSubview:sideBar];
 }
