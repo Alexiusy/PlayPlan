@@ -28,6 +28,9 @@
     [super viewWillAppear:YES];
     UIBarButtonItem *leftButton = [[UIBarButtonItem alloc] initWithTitle:@"Drawer" style:UIBarButtonItemStylePlain target:self action:@selector(showDrawer)];
     self.navigationItem.leftBarButtonItem = leftButton;
+    
+    // 添加左侧边缘滑动手势
+    UIPinchGestureRecognizer
 }
 
 - (void)showDrawer {
