@@ -30,7 +30,7 @@
     self.navigationItem.leftBarButtonItem = leftButton;
     
     // 添加左侧边缘滑动手势
-    UIPinchGestureRecognizer
+    UIScreenEdgePanGestureRecognizer *edgePanGesture = [[UIScreenEdgePanGestureRecognizer alloc] initWithTarget:self action:@selector(edgePan:)];
 }
 
 - (void)showDrawer {
