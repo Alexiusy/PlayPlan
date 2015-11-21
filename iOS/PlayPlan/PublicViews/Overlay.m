@@ -20,6 +20,10 @@
 }
 
 - (void)showView:(UIView *)view WithBlur:(BOOL)blur {
+    // 先移除所有的子视图
+    for (UIView *subview in self.subviews) {
+        [subview removeFromSuperview];
+    }
     // 添加模糊视图
     if (blur) {
         UIERealTimeBlurView *blurView = [[UIERealTimeBlurView alloc] initWithFrame:KEY_WINDOW.frame];
