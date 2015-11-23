@@ -14,6 +14,7 @@
 		631CE59B1BDD00EB00715430 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 631CE5991BDD00EB00715430 /* LaunchScreen.storyboard */; };
 		633A926D1BFCD2FC00BD3EE6 /* ZYToolBars.m in Sources */ = {isa = PBXBuildFile; fileRef = 633A926C1BFCD2FC00BD3EE6 /* ZYToolBars.m */; settings = {ASSET_TAGS = (); }; };
 		633A92701BFE21CF00BD3EE6 /* SideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 633A926F1BFE21CF00BD3EE6 /* SideMenu.m */; settings = {ASSET_TAGS = (); }; };
+		633A92761C03544900BD3EE6 /* Transitions.m in Sources */ = {isa = PBXBuildFile; fileRef = 633A92751C03544900BD3EE6 /* Transitions.m */; settings = {ASSET_TAGS = (); }; };
 		6357D0DD1BE3C22D00F8E94A /* BrokenGlass.m in Sources */ = {isa = PBXBuildFile; fileRef = 6357D0DC1BE3C22D00F8E94A /* BrokenGlass.m */; settings = {ASSET_TAGS = (); }; };
 		638FE7CE1BF637FF00C8778F /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 638FE7CD1BF637FF00C8778F /* Accelerate.framework */; };
 		638FE7E41BFCC42D00C8778F /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 638FE7D81BFCC42D00C8778F /* MainViewController.m */; settings = {ASSET_TAGS = (); }; };
@@ -40,6 +41,8 @@
 		633A926C1BFCD2FC00BD3EE6 /* ZYToolBars.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYToolBars.m; sourceTree = "<group>"; };
 		633A926E1BFE21CF00BD3EE6 /* SideMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SideMenu.h; sourceTree = "<group>"; };
 		633A926F1BFE21CF00BD3EE6 /* SideMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideMenu.m; sourceTree = "<group>"; };
+		633A92741C03544900BD3EE6 /* Transitions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Transitions.h; sourceTree = "<group>"; };
+		633A92751C03544900BD3EE6 /* Transitions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Transitions.m; sourceTree = "<group>"; };
 		6357D0DB1BE3C22D00F8E94A /* BrokenGlass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrokenGlass.h; sourceTree = "<group>"; };
 		6357D0DC1BE3C22D00F8E94A /* BrokenGlass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrokenGlass.m; sourceTree = "<group>"; };
 		638FE7C31BEA4F6700C8778F /* ZYToolBars.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYToolBars.h; sourceTree = "<group>"; };
@@ -140,6 +143,8 @@
 			children = (
 				6357D0DB1BE3C22D00F8E94A /* BrokenGlass.h */,
 				6357D0DC1BE3C22D00F8E94A /* BrokenGlass.m */,
+				633A92741C03544900BD3EE6 /* Transitions.h */,
+				633A92751C03544900BD3EE6 /* Transitions.m */,
 			);
 			path = Animation;
 			sourceTree = "<group>";
@@ -222,6 +227,7 @@
 		631CE5801BDD00EB00715430 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = Zeacone;
 				TargetAttributes = {
@@ -268,6 +274,7 @@
 			files = (
 				631CE5901BDD00EB00715430 /* AppDelegate.m in Sources */,
 				638FE7E61BFCC42D00C8778F /* UIERealTimeBlurView.m in Sources */,
+				633A92761C03544900BD3EE6 /* Transitions.m in Sources */,
 				631CE58D1BDD00EB00715430 /* main.m in Sources */,
 				638FE7EB1BFCCBA700C8778F /* Overlay.m in Sources */,
 				633A926D1BFCD2FC00BD3EE6 /* ZYToolBars.m in Sources */,
@@ -387,11 +394,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = PlayPlan/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zeacone.PlayPlan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "PlayPlan/Animation/PlayPlan-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -399,11 +409,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = PlayPlan/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zeacone.PlayPlan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "PlayPlan/Animation/PlayPlan-Bridging-Header.h";
 			};
 			name = Release;
 		};
