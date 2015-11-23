@@ -18,6 +18,7 @@
     UIViewController *toVC = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
     CGRect finalRect = [transitionContext finalFrameForViewController:toVC];
     toVC.view.frame = CGRectOffset(finalRect, 0, [[UIScreen mainScreen]bounds].size.height);
+    [[transitionContext containerView]addSubview:toVC.view];
 }
 
 @end
