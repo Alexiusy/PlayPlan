@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
-@interface Transitions : NSObject
+@interface Transitions : NSObject <UIViewControllerAnimatedTransitioning>
 
 @end
