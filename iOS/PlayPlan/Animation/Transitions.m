@@ -8,23 +8,73 @@
 
 #import "Transitions.h"
 
-@implementation Transitions
+@implementation PresentAnimation
 
 - (NSTimeInterval)transitionDuration:(id<UIViewControllerContextTransitioning>)transitionContext {
-    return 0.5f;
+    return .5f;
 }
 
 - (void)animateTransition:(id<UIViewControllerContextTransitioning>)transitionContext {
-    UIViewController *toVC = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
-    CGRect finalRect = [transitionContext finalFrameForViewController:toVC];
-    toVC.view.frame = CGRectOffset(finalRect, 0, [[UIScreen mainScreen]bounds].size.height);
-    [[transitionContext containerView]addSubview:toVC.view];
+    // Get cntrollers from transition context.
+    UIViewController *destViewController = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
     
-    [UIView animateWithDuration:[self transitionDuration:transitionContext] delay:0.0 usingSpringWithDamping:0.6 initialSpringVelocity:0.0 options:UIViewAnimationOptionCurveLinear animations:^{
-        toVC.view.frame = finalRect;
+    // Get rect of destination view controller.
+    CGRect finalRect = [transitionContext finalFrameForViewController:destViewController];
+    
+    // Make sure that the controller come from the bottom.
+    destViewController.view.frame = CGRectOffset(finalRect, 0, [[UIScreen mainScreen]bounds].size.height);
+    
+    // Add controller's view to container view.
+    [[transitionContext containerView]addSubview:destViewController.view];
+    
+    // Do animate now.
+    CGFloat duration = [self transitionDuration:transitionContext];
+    [UIView animateWithDuration:duration
+                          delay:0.0
+         usingSpringWithDamping:0.6
+          initialSpringVelocity:0.0
+                        options:UIViewAnimationOptionCurveLinear
+                     animations:^{
+        destViewController.view.frame = finalRect;
     } completion:^(BOOL finished) {
         [transitionContext completeTransition:YES];
     }];
+}
+
+@end
+
+@implementation DismissAnimation
+
+- (NSTimeInterval)transitionDuration:(id<UIViewControllerContextTransitioning>)transitionContext {
+    return .5f;
+}
+
+- (void)animateTransition:(id<UIViewControllerContextTransitioning>)transitionContext {
+    
+}
+
+@end
+
+@implementation PushAnimation
+
+- (NSTimeInterval)transitionDuration:(id<UIViewControllerContextTransitioning>)transitionContext {
+    return .5f;
+}
+
+- (void)animateTransition:(id<UIViewControllerContextTransitioning>)transitionContext {
+    
+}
+
+@end
+
+@implementation PopAnimation
+
+- (NSTimeInterval)transitionDuration:(id<UIViewControllerContextTransitioning>)transitionContext {
+    return .5f;
+}
+
+- (void)animateTransition:(id<UIViewControllerContextTransitioning>)transitionContext {
+    
 }
 
 @end

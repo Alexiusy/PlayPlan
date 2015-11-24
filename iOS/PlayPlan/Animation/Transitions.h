@@ -6,9 +6,20 @@
 //  Copyright © 2015年 Zeacone. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-@interface Transitions : NSObject <UIViewControllerAnimatedTransitioning>
+@interface PresentAnimation : NSObject <UIViewControllerAnimatedTransitioning>
+
+@end
+
+@interface DismissAnimation : NSObject <UIViewControllerAnimatedTransitioning>
+
+@end
+
+@interface PushAnimation : NSObject <UIViewControllerAnimatedTransitioning>
+
+@end
+
+@interface PopAnimation : NSObject <UIViewControllerAnimatedTransitioning>
 
 @end
