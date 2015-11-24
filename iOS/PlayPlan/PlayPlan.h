@@ -12,6 +12,7 @@
 #import "Overlay.h"
 #import "ZYToolBars.h"
 #import "UIERealTimeBlurView.h"
+#import "Transitions.h"
 
 #define SCREEN_SIZE [[UIScreen mainScreen] bounds].size
 #define KEY_WINDOW [UIApplication sharedApplication].keyWindow
