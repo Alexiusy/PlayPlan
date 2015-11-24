@@ -26,16 +26,6 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:YES];
-    UIBarButtonItem *leftButton = [[UIBarButtonItem alloc] initWithTitle:@"Drawer" style:UIBarButtonItemStylePlain target:self action:@selector(showDrawer)];
-    self.navigationItem.leftBarButtonItem = leftButton;
-    
-    // 添加左侧边缘滑动手势
-    UIScreenEdgePanGestureRecognizer *edgePanGesture = [[UIScreenEdgePanGestureRecognizer alloc] initWithTarget:self action:@selector(edgePan:)];
-}
-
-- (void)showDrawer {
-    SideMenu *sideBar = [[SideMenu alloc] initWithFrame:CGRectMake(0, 0, SCREEN_SIZE.width / 2, SCREEN_SIZE.height)];
-    [[Overlay sharedOverlay] showView:sideBar WithBlur:YES];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {

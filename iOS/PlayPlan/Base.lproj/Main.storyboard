@@ -40,10 +40,10 @@
             </objects>
             <point key="canvasLocation" x="-3311" y="-960"/>
         </scene>
-        <!--View Controller-->
+        <!--Container Controller-->
         <scene sceneID="2Ay-gr-2Yr">
             <objects>
-                <viewController id="pNK-bv-Hpx" sceneMemberID="viewController">
+                <viewController id="pNK-bv-Hpx" customClass="ContainerController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1F2-UG-Sq6"/>
                         <viewControllerLayoutGuide type="bottom" id="urf-Jr-RQ9"/>
@@ -55,8 +55,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="woQ-Sm-Z1x"/>
                     <connections>
-                        <segue destination="nY2-8S-v2K" kind="presentation" id="1jV-oL-kEL"/>
-                        <segue destination="rQp-kr-e8F" kind="presentation" id="yMR-QM-sku"/>
+                        <segue destination="nY2-8S-v2K" kind="presentation" identifier="toMain" id="1jV-oL-kEL"/>
+                        <segue destination="rQp-kr-e8F" kind="presentation" identifier="toProfile" id="yMR-QM-sku"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eb5-xr-9F3" userLabel="First Responder" sceneMemberID="firstResponder"/>
