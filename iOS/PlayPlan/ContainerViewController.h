@@ -14,7 +14,7 @@
 #import "LocationViewController.h"
 #import "ProfileViewController.h"
 
-@interface ContainerViewController : UIViewController
+@interface ContainerViewController : UIViewController <MainDelegate, LocationDelegate, ProfileDelegate>
 
 @property (nonatomic, strong) UIStoryboard           *storyBoard;
 @property (nonatomic, strong) MainViewController     *mainController;

@@ -17,6 +17,11 @@
     // 添加初始化的controller
     self.storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     self.mainController = [self.storyBoard instantiateViewControllerWithIdentifier:@"mainController"];
+    self.mainController.delegate = self;
+    self.locationController = [self.storyBoard instantiateViewControllerWithIdentifier:@"locationController"];
+    self.locationController.delegate = self;
+    self.profileController = [self.storyBoard instantiateViewControllerWithIdentifier:@"profileController"];
+    self.profileController.delegate = self;
     [self addChildViewController:self.mainController];
     [self.view addSubview:self.mainController.view];
     
@@ -43,6 +48,20 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
+}
+
+#pragma mark - ---Delegate of controllers
+
+- (void)dismissMainViewController:(MainViewController *)mainViewController {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)dismissLocationViewController:(LocationViewController *)locationViewController {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)dismissProfileViewController:(ProfileViewController *)profileViewController {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

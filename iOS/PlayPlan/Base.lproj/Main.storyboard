@@ -57,7 +57,7 @@
                     <connections>
                         <segue destination="nY2-8S-v2K" kind="presentation" identifier="toMain" id="1jV-oL-kEL"/>
                         <segue destination="rQp-kr-e8F" kind="presentation" identifier="toProfile" id="yMR-QM-sku"/>
-                        <segue destination="ZyW-aO-cSp" kind="presentation" id="rzC-oR-7yC"/>
+                        <segue destination="ZyW-aO-cSp" kind="presentation" identifier="toLocation" id="rzC-oR-7yC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eb5-xr-9F3" userLabel="First Responder" sceneMemberID="firstResponder"/>

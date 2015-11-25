@@ -8,6 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+@class LocationViewController;
+
+@protocol LocationDelegate <NSObject>
+
+- (void)dismissLocationViewController:(LocationViewController *)locationViewController;
+
+@end
+
 @interface LocationViewController : UIViewController
+
+@property (nonatomic, assign) id<LocationDelegate> delegate;
 
 @end

@@ -15,7 +15,7 @@
 
 @protocol MainDelegate <NSObject>
 
-- (void)dismissViewController:(MainViewController *)mainViewController;
+- (void)dismissMainViewController:(MainViewController *)mainViewController;
 
 @end
 

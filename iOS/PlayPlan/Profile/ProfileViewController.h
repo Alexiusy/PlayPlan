@@ -11,12 +11,14 @@
 
 @class ProfileViewController;
 
-@protocol MainDelegate <NSObject>
+@protocol ProfileDelegate <NSObject>
 
-- (void)dismissViewController:(ProfileViewController *)mainViewController;
+- (void)dismissProfileViewController:(ProfileViewController *)profileViewController;
 
 @end
 
 @interface ProfileViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+
+@property (nonatomic, assign) id<ProfileDelegate> delegate;
 
 @end
