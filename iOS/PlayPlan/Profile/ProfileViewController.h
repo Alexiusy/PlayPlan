@@ -9,6 +9,14 @@
 #import <UIKit/UIKit.h>
 #import "PlayPlan.h"
 
+@class ProfileViewController;
+
+@protocol MainDelegate <NSObject>
+
+- (void)dismissViewController:(MainViewController *)mainViewController;
+
+@end
+
 @interface ProfileViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
 @end
