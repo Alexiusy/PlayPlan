@@ -11,11 +11,14 @@
 #import "PlayPlan.h"
 #import "SideMenu.h"
 #import "MainViewController.h"
+#import "LocationViewController.h"
 #import "ProfileViewController.h"
 
 @interface ContainerViewController : UIViewController
 
-@property (nonatomic, strong) MainViewController *mainController;
-@property (nonatomic, strong) ProfileViewController *profileController;
+@property (nonatomic, strong) UIStoryboard           *storyBoard;
+@property (nonatomic, strong) MainViewController     *mainController;
+@property (nonatomic, strong) LocationViewController *locationController;
+@property (nonatomic, strong) ProfileViewController  *profileController;
 
 @end

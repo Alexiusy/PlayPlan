@@ -14,6 +14,12 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor redColor];
     
+    // 添加初始化的controller
+    self.storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    self.mainController = [self.storyBoard instantiateViewControllerWithIdentifier:@"mainController"];
+    [self addChildViewController:self.mainController];
+    [self.view addSubview:self.mainController.view];
+    
     // 添加左侧边缘滑动手势
     UIScreenEdgePanGestureRecognizer *edgePanGesture = [[UIScreenEdgePanGestureRecognizer alloc] initWithTarget:self action:@selector(edgePan:)];
     [self.view addGestureRecognizer:edgePanGesture];
