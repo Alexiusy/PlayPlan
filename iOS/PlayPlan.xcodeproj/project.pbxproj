@@ -51,8 +51,6 @@
 		638B01F21C04C5AC00920A65 /* ContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContainerViewController.m; sourceTree = "<group>"; };
 		638B01F51C06136900920A65 /* LocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationViewController.h; sourceTree = "<group>"; };
 		638B01F61C06136900920A65 /* LocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationViewController.m; sourceTree = "<group>"; };
-		638FE7C31BEA4F6700C8778F /* ZYToolBars.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYToolBars.h; sourceTree = "<group>"; };
-		638FE7C41BEA4F6700C8778F /* ZYToolBars.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYToolBars.m; sourceTree = "<group>"; };
 		638FE7C91BEE01B200C8778F /* PlayPlan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayPlan.h; sourceTree = "<group>"; };
 		638FE7CD1BF637FF00C8778F /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		638FE7D71BFCC42D00C8778F /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
@@ -106,7 +104,6 @@
 				638FE7D61BFCC42D00C8778F /* Main */,
 				638FE7D91BFCC42D00C8778F /* Profile */,
 				638FE7DC1BFCC42D00C8778F /* PublicViews */,
-				638FE7C21BEA4F3F00C8778F /* UtilViews */,
 				6357D0DA1BE3C1FE00F8E94A /* Animation */,
 				631CE58E1BDD00EB00715430 /* AppDelegate.h */,
 				631CE58F1BDD00EB00715430 /* AppDelegate.m */,
@@ -165,15 +162,6 @@
 				638B01F61C06136900920A65 /* LocationViewController.m */,
 			);
 			path = Location;
-			sourceTree = "<group>";
-		};
-		638FE7C21BEA4F3F00C8778F /* UtilViews */ = {
-			isa = PBXGroup;
-			children = (
-				638FE7C31BEA4F6700C8778F /* ZYToolBars.h */,
-				638FE7C41BEA4F6700C8778F /* ZYToolBars.m */,
-			);
-			path = UtilViews;
 			sourceTree = "<group>";
 		};
 		638FE7D61BFCC42D00C8778F /* Main */ = {
