@@ -6,9 +6,9 @@
 //  Copyright © 2015年 Zeacone. All rights reserved.
 //
 
-#import "ContainerController.h"
+#import "ContainerViewController.h"
 
-@implementation ContainerController
+@implementation ContainerViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

@@ -13,7 +13,7 @@
 #import "MainViewController.h"
 #import "ProfileViewController.h"
 
-@interface ContainerController : UIViewController
+@interface ContainerViewController : UIViewController
 
 @property (nonatomic, strong) MainViewController *mainController;
 @property (nonatomic, strong) ProfileViewController *profileController;

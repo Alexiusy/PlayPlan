@@ -40,10 +40,10 @@
             </objects>
             <point key="canvasLocation" x="-3311" y="-960"/>
         </scene>
-        <!--Container Controller-->
+        <!--Container View Controller-->
         <scene sceneID="2Ay-gr-2Yr">
             <objects>
-                <viewController id="pNK-bv-Hpx" customClass="ContainerController" sceneMemberID="viewController">
+                <viewController id="pNK-bv-Hpx" customClass="ContainerViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1F2-UG-Sq6"/>
                         <viewControllerLayoutGuide type="bottom" id="urf-Jr-RQ9"/>
