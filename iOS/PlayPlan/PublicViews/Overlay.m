@@ -19,14 +19,14 @@
     return overlay;
 }
 
-- (void)showView:(UIView *)view WithBlur:(BOOL)blur {
+- (void)showView:(UIView *)view WithBlur:(BOOL)blur blurRect:(CGRect)blurRect {
     // 先移除所有的子视图
     for (UIView *subview in self.subviews) {
         [subview removeFromSuperview];
     }
     // 添加模糊视图
     if (blur) {
-        UIERealTimeBlurView *blurView = [[UIERealTimeBlurView alloc] initWithFrame:KEY_WINDOW.frame];
+        UIERealTimeBlurView *blurView = [[UIERealTimeBlurView alloc] initWithFrame:blurRect];
         [self addSubview:blurView];
     }
     [self addSubview:view];

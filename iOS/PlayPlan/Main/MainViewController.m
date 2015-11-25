@@ -101,7 +101,7 @@
         view.backgroundColor = [UIColor redColor];
         view;
     });
-    [[Overlay sharedOverlay] showView:popupView WithBlur:YES];
+    [[Overlay sharedOverlay] showView:popupView WithBlur:YES blurRect:KEY_WINDOW.frame];
     
     [UIView animateWithDuration:0.5 animations:^{
         popupView.transform = CGAffineTransformMakeTranslation(0, -SCREEN_SIZE.height / 2);
