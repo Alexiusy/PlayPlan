@@ -15,4 +15,7 @@
 
 @interface ContainerController : UIViewController
 
+@property (nonatomic, strong) MainViewController *mainController;
+@property (nonatomic, strong) ProfileViewController *profileController;
+
 @end

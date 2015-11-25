@@ -17,6 +17,7 @@
 		633A92761C03544900BD3EE6 /* Transitions.m in Sources */ = {isa = PBXBuildFile; fileRef = 633A92751C03544900BD3EE6 /* Transitions.m */; settings = {ASSET_TAGS = (); }; };
 		6357D0DD1BE3C22D00F8E94A /* BrokenGlass.m in Sources */ = {isa = PBXBuildFile; fileRef = 6357D0DC1BE3C22D00F8E94A /* BrokenGlass.m */; settings = {ASSET_TAGS = (); }; };
 		638B01F31C04C5AC00920A65 /* ContainerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 638B01F21C04C5AC00920A65 /* ContainerController.m */; settings = {ASSET_TAGS = (); }; };
+		638B01F71C06136900920A65 /* LocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 638B01F61C06136900920A65 /* LocationViewController.m */; settings = {ASSET_TAGS = (); }; };
 		638FE7CE1BF637FF00C8778F /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 638FE7CD1BF637FF00C8778F /* Accelerate.framework */; };
 		638FE7E41BFCC42D00C8778F /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 638FE7D81BFCC42D00C8778F /* MainViewController.m */; settings = {ASSET_TAGS = (); }; };
 		638FE7E51BFCC42D00C8778F /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 638FE7DB1BFCC42D00C8778F /* ProfileViewController.m */; settings = {ASSET_TAGS = (); }; };
@@ -48,6 +49,8 @@
 		6357D0DC1BE3C22D00F8E94A /* BrokenGlass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrokenGlass.m; sourceTree = "<group>"; };
 		638B01F11C04C5AC00920A65 /* ContainerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContainerController.h; sourceTree = "<group>"; };
 		638B01F21C04C5AC00920A65 /* ContainerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContainerController.m; sourceTree = "<group>"; };
+		638B01F51C06136900920A65 /* LocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationViewController.h; sourceTree = "<group>"; };
+		638B01F61C06136900920A65 /* LocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationViewController.m; sourceTree = "<group>"; };
 		638FE7C31BEA4F6700C8778F /* ZYToolBars.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYToolBars.h; sourceTree = "<group>"; };
 		638FE7C41BEA4F6700C8778F /* ZYToolBars.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYToolBars.m; sourceTree = "<group>"; };
 		638FE7C91BEE01B200C8778F /* PlayPlan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayPlan.h; sourceTree = "<group>"; };
@@ -99,6 +102,7 @@
 			children = (
 				638B01F11C04C5AC00920A65 /* ContainerController.h */,
 				638B01F21C04C5AC00920A65 /* ContainerController.m */,
+				638B01F41C06134000920A65 /* Location */,
 				638FE7D61BFCC42D00C8778F /* Main */,
 				638FE7D91BFCC42D00C8778F /* Profile */,
 				638FE7DC1BFCC42D00C8778F /* PublicViews */,
@@ -152,6 +156,15 @@
 				633A92751C03544900BD3EE6 /* Transitions.m */,
 			);
 			path = Animation;
+			sourceTree = "<group>";
+		};
+		638B01F41C06134000920A65 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				638B01F51C06136900920A65 /* LocationViewController.h */,
+				638B01F61C06136900920A65 /* LocationViewController.m */,
+			);
+			path = Location;
 			sourceTree = "<group>";
 		};
 		638FE7C21BEA4F3F00C8778F /* UtilViews */ = {
@@ -284,6 +297,7 @@
 				631CE58D1BDD00EB00715430 /* main.m in Sources */,
 				638FE7EB1BFCCBA700C8778F /* Overlay.m in Sources */,
 				633A926D1BFCD2FC00BD3EE6 /* ZYToolBars.m in Sources */,
+				638B01F71C06136900920A65 /* LocationViewController.m in Sources */,
 				638FE7E41BFCC42D00C8778F /* MainViewController.m in Sources */,
 				638FE7E51BFCC42D00C8778F /* ProfileViewController.m in Sources */,
 				633A92701BFE21CF00BD3EE6 /* SideMenu.m in Sources */,
