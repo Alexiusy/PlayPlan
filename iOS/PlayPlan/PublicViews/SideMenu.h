@@ -9,6 +9,15 @@
 #import <UIKit/UIKit.h>
 #import "PlayPlan.h"
 
-@interface SideMenu : UIView
+@protocol SideMenuDelegate <NSObject>
+
+- (void)sideMenu:(UIButton *)menu title:(NSString *)title;
 
 @end
+
+@interface SideMenu : UIView
+
+@property (nonatomic, assign) id<SideMenuDelegate> delegate;
+
+@end
+
