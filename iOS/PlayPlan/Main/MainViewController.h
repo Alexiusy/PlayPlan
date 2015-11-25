@@ -11,7 +11,16 @@
 #import "PlayPlan.h"
 #import "SideMenu.h"
 
+@class MainViewController;
+
+@protocol MainDelegate <NSObject>
+
+- (void)dismissViewController:(MainViewController *)mainViewController;
+
+@end
+
 @interface MainViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
+@property (nonatomic, assign) id<MainDelegate> delegate;
 
 @end
