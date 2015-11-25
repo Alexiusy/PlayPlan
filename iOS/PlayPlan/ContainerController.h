@@ -10,6 +10,8 @@
 #import <Accelerate/Accelerate.h>
 #import "PlayPlan.h"
 #import "SideMenu.h"
+#import "MainViewController.h"
+#import "ProfileViewController.h"
 
 @interface ContainerController : UIViewController
 

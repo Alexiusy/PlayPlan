@@ -16,6 +16,7 @@
     
     // 添加左侧边缘滑动手势
     UIScreenEdgePanGestureRecognizer *edgePanGesture = [[UIScreenEdgePanGestureRecognizer alloc] initWithTarget:self action:@selector(edgePan:)];
+    [self.view addGestureRecognizer:edgePanGesture];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -28,6 +29,10 @@
 - (void)showDrawer {
     SideMenu *sideBar = [[SideMenu alloc] initWithFrame:CGRectMake(0, 64, SCREEN_SIZE.width / 2, SCREEN_SIZE.height - 64)];
     [[Overlay sharedOverlay] showView:sideBar WithBlur:YES];
+}
+
+- (void)edgePan:(UIScreenEdgePanGestureRecognizer *)gesture {
+    
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
