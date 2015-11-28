@@ -25,10 +25,12 @@
 }
 
 - (void)layoutMenus {
+    Source *source = [[Source alloc] init];
     UITableView *menuTable = ({
         UITableView *tableView = [[UITableView alloc] initWithFrame:self.frame];
-        tableView.delegate = self;
-        tableView.dataSource = self;
+        tableView.delegate = source;
+        tableView.dataSource = source;
+        tableView.backgroundColor = [UIColor clearColor];
         tableView;
     });
     [self addSubview:menuTable];
@@ -41,5 +43,29 @@
     // Drawing code
 }
 */
+
+@end
+
+@implementation Source
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 5;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString *identifier = @"MenuCell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+    }
+    cell.textLabel.text = @"Menu";
+    cell.backgroundColor = [UIColor clearColor];
+    
+    return cell;
+}
 
 @end
