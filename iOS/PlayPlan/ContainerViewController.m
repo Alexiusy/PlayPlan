@@ -12,7 +12,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor redColor];
+    self.view.backgroundColor = [UIColor whiteColor];
     
     // 添加初始化的controller
     self.storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];

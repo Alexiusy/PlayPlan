@@ -14,7 +14,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        self.backgroundColor = [UIColor redColor];
+        self.backgroundColor = [UIColor whiteColor];
 //        [[Overlay sharedOverlay] showView:self WithBlur:YES];
     }
     return self;
@@ -22,6 +22,7 @@
 
 - (void)layoutSubviews {
     [super layoutSubviews];
+    [self layoutMenus];
 }
 
 - (void)layoutMenus {
