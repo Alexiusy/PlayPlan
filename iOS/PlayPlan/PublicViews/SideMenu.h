@@ -21,7 +21,7 @@
 
 @end
 
-@interface delegate : NSObject <UITableViewDataSource, UITableViewDelegate>
+@interface Source : NSObject <UITableViewDataSource, UITableViewDelegate>
 
 @end
 
