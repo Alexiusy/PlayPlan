@@ -19,6 +19,9 @@
 
 @property (nonatomic, assign) id<SideMenuDelegate> delegate;
 
+@property (nonatomic, strong) NSArray *menus;
+@property (nonatomic, strong) NSArray *icons;
+
 @end
 
 @interface Source : NSObject <UITableViewDataSource, UITableViewDelegate>
