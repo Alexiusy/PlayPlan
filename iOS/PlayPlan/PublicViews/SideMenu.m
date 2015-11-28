@@ -24,6 +24,13 @@
     [super layoutSubviews];
 }
 
+- (void)layoutMenus {
+    UITableView *menuTable = [[UITableView alloc] initWithFrame:self.frame];
+    menuTable.delegate = self;
+    menuTable.dataSource = self;
+    [self addSubview:menuTable];
+}
+
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
