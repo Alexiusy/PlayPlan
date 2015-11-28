@@ -25,9 +25,12 @@
 }
 
 - (void)layoutMenus {
-    UITableView *menuTable = [[UITableView alloc] initWithFrame:self.frame];
-    menuTable.delegate = self;
-    menuTable.dataSource = self;
+    UITableView *menuTable = ({
+        UITableView *tableView = [[UITableView alloc] initWithFrame:self.frame];
+        tableView.delegate = self;
+        tableView.dataSource = self;
+        tableView;
+    });
     [self addSubview:menuTable];
 }
 
