@@ -64,8 +64,22 @@
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
     UIGravityBehavior *gravity = [[UIGravityBehavior alloc] init];
     [gravity addItem:cell];
-    [gravity setAngle:0 magnitude:.4];
+    [gravity setAngle:0 magnitude:.1];
+    
+//    __weak typeof(self) weakSelf = self;
+//    __weak typeof(gravity) weakGravity = gravity;
+//    gravity.action = ^{
+//        __strong typeof(weakSelf) strongSelf = weakSelf;
+//        [strongSelf.dynamicAnimator removeBehavior:weakGravity];
+//    };
     [self.dynamicAnimator addBehavior:gravity];
+    
+    UICollisionBehavior *collision = [[UICollisionBehavior alloc] init];
+    [collision addItem:cell];
+    [collision setTranslatesReferenceBoundsIntoBoundary:YES];
+    [collision setTranslatesReferenceBoundsIntoBoundaryWithInsets:UIEdgeInsetsMake(0, 0, 0, 20)];
+    [collision setCollisionMode:UICollisionBehaviorModeBoundaries];
+    [self.dynamicAnimator addBehavior:collision];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
