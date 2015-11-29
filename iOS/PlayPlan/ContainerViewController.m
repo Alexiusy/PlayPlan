@@ -37,9 +37,9 @@
 }
 
 - (void)showDrawer {
-    SideMenu *sideBar = [[SideMenu alloc] initWithFrame:CGRectMake(0, 64, SCREEN_SIZE.width / 2, SCREEN_SIZE.height - 64)];
+    SideMenu *sideBar = [[SideMenu alloc] init];
     sideBar.delegate = self;
-    [[Overlay sharedOverlay] showView:sideBar WithBlur:YES blurRect:sideBar.frame];
+    [[Overlay sharedOverlay] showView:sideBar.view WithBlur:YES blurRect:sideBar.view.frame];
 }
 
 - (void)edgePan:(UIScreenEdgePanGestureRecognizer *)gesture {

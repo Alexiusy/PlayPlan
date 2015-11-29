@@ -15,7 +15,7 @@
 
 @end
 
-@interface SideMenu : UIView <UITableViewDataSource, UITableViewDelegate>
+@interface SideMenu : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, assign) id<SideMenuDelegate> delegate;
 
