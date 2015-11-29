@@ -10,27 +10,32 @@
 
 @implementation SideMenu
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    self.view.backgroundColor = [UIColor clearColor];
-    [self layoutMenus];
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        self.backgroundColor = [UIColor clearColor];
+        
+        self.menus = [[NSArray alloc] initWithObjects:@"Main", @"Activity", @"Location", @"Profile", nil];
+        self.icons = [NSArray new];
+    }
+    return self;
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    self.menus = [[NSArray alloc] initWithObjects:@"Main", @"Activity", @"Location", @"Profile", nil];
-    self.icons = [NSArray new];
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    [self layoutMenus];
 }
 
 - (void)layoutMenus {
     UITableView *menuTable = ({
-        UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds];
+        UITableView *tableView = [[UITableView alloc] initWithFrame:self.bounds];
         tableView.delegate = self;
         tableView.dataSource = self;
         tableView.backgroundColor = [UIColor clearColor];
         tableView;
     });
-    [self.view addSubview:menuTable];
+    [self addSubview:menuTable];
 }
 
 #pragma mark - ---Delegate and datasource of tableview
