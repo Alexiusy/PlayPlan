@@ -74,11 +74,18 @@
 //    };
     [self.dynamicAnimator addBehavior:gravity];
     
-    UICollisionBehavior *collision = [[UICollisionBehavior alloc] init];
-    [collision addItem:cell];
+    UICollisionBehavior *collision = [[UICollisionBehavior alloc] initWithItems:@[tableView, cell]];
     [collision setTranslatesReferenceBoundsIntoBoundary:YES];
     [collision setTranslatesReferenceBoundsIntoBoundaryWithInsets:UIEdgeInsetsMake(0, 0, 0, 20)];
     [collision setCollisionMode:UICollisionBehaviorModeBoundaries];
+    
+    __weak typeof(self) weakSelf = self;
+    __weak typeof(collision) weakCollision = collision;
+    gravity.action = ^{
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        [strongSelf.dynamicAnimator removeBehavior:weakCollision];
+    };
+    
     [self.dynamicAnimator addBehavior:collision];
 }
 
