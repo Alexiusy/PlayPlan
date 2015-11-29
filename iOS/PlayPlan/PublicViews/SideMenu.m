@@ -15,7 +15,9 @@
     self = [super initWithFrame:frame];
     if (self) {
         self.backgroundColor = [UIColor clearColor];
-        self.menu
+        
+        self.menus = [[NSArray alloc] initWithObjects:@"Main", @"Activity", @"Location", @"Profile", nil];
+        self.icons = [NSArray new];
     }
     return self;
 }
@@ -26,15 +28,42 @@
 }
 
 - (void)layoutMenus {
-    Source *source = [[Source alloc] init];
     UITableView *menuTable = ({
-        UITableView *tableView = [[UITableView alloc] initWithFrame:self.frame];
-        tableView.delegate = source;
-        tableView.dataSource = source;
+        UITableView *tableView = [[UITableView alloc] initWithFrame:self.bounds];
+        tableView.delegate = self;
+        tableView.dataSource = self;
         tableView.backgroundColor = [UIColor clearColor];
         tableView;
     });
     [self addSubview:menuTable];
+}
+
+#pragma mark - ---Delegate and datasource of tableview
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.menus.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString *identifier = @"MenuCell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+    }
+    cell.textLabel.text = self.menus[indexPath.row];
+    //    cell.imageView.image = self.icons[indexPath.row];
+    cell.backgroundColor = [UIColor clearColor];
+    
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (self.delegate && [self.delegate respondsToSelector:@selector(sideMenu:title:)]) {
+        [self.delegate sideMenu:tableView title:self.menus[indexPath.row]];
+    }
 }
 
 /*
@@ -44,29 +73,5 @@
     // Drawing code
 }
 */
-
-@end
-
-@implementation Source
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 5;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *identifier = @"MenuCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
-    if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
-    }
-    cell.textLabel.text = @"Menu";
-    cell.backgroundColor = [UIColor clearColor];
-    
-    return cell;
-}
 
 @end

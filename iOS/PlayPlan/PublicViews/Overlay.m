@@ -29,11 +29,11 @@
         UIERealTimeBlurView *blurView = [[UIERealTimeBlurView alloc] initWithFrame:blurRect];
         [self addSubview:blurView];
     }
-    [self addSubview:view];
     UIControl *tap = [[UIControl alloc] initWithFrame:KEY_WINDOW.frame];
     [tap addTarget:self action:@selector(tap:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:tap];
     
+    [self addSubview:view];
     [KEY_WINDOW addSubview:self];
 }
 

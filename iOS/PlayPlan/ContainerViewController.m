@@ -18,12 +18,11 @@
     self.storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     self.mainController = [self.storyBoard instantiateViewControllerWithIdentifier:@"mainController"];
     self.mainController.delegate = self;
-    self.locationController = [self.storyBoard instantiateViewControllerWithIdentifier:@"locationController"];
-    self.locationController.delegate = self;
-    self.profileController = [self.storyBoard instantiateViewControllerWithIdentifier:@"profileController"];
-    self.profileController.delegate = self;
-    [self addChildViewController:self.mainController];
-    [self.view addSubview:self.mainController.view];
+    
+//    self.currentViewController = [[UIViewController alloc] init];
+    self.currentViewController = self.mainController;
+    [self addChildViewController:self.currentViewController];
+    [self.view addSubview:self.currentViewController.view];
     
     // 添加左侧边缘滑动手势
     UIScreenEdgePanGestureRecognizer *edgePanGesture = [[UIScreenEdgePanGestureRecognizer alloc] initWithTarget:self action:@selector(edgePan:)];
@@ -40,11 +39,11 @@
 - (void)showDrawer {
     SideMenu *sideBar = [[SideMenu alloc] initWithFrame:CGRectMake(0, 64, SCREEN_SIZE.width / 2, SCREEN_SIZE.height - 64)];
     sideBar.delegate = self;
-    [[Overlay sharedOverlay] showView:sideBar WithBlur:YES blurRect:CGRectMake(0, 64, SCREEN_SIZE.width, SCREEN_SIZE.height - 64)];
+    [[Overlay sharedOverlay] showView:sideBar WithBlur:YES blurRect:sideBar.frame];
 }
 
 - (void)edgePan:(UIScreenEdgePanGestureRecognizer *)gesture {
-    
+    NSLog(@"Edge pan effected.");
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -63,6 +62,30 @@
 
 - (void)dismissProfileViewController:(ProfileViewController *)profileViewController {
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+#pragma mark - ---Delegate of SideMenu
+
+- (void)sideMenu:(UITableView *)menuTable title:(NSString *)title {
+    
+    // 移除当前控制器和试图
+    [self.currentViewController.view removeFromSuperview];
+    [self.currentViewController removeFromParentViewController];
+    
+    if ([title isEqualToString:@"Main"]) {
+        self.currentViewController = self.mainController;
+    } else if ([title isEqualToString:@"Location"]) {
+        self.locationController = [self.storyBoard instantiateViewControllerWithIdentifier:@"locationController"];
+        self.locationController.delegate = self;
+        self.currentViewController = self.locationController;
+    } else if ([title isEqualToString:@"Profile"]) {
+        self.profileController = [self.storyBoard instantiateViewControllerWithIdentifier:@"profileController"];
+        self.profileController.delegate = self;
+        self.currentViewController = self.profileController;
+    }
+    
+    [self addChildViewController:self.currentViewController];
+    [self.view addSubview:self.currentViewController.view];
 }
 
 @end

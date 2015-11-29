@@ -17,6 +17,7 @@
 @interface ContainerViewController : UIViewController <MainDelegate, LocationDelegate, ProfileDelegate, SideMenuDelegate>
 
 @property (nonatomic, strong) UIStoryboard           *storyBoard;
+@property (nonatomic, strong) UIViewController       *currentViewController;
 @property (nonatomic, strong) MainViewController     *mainController;
 @property (nonatomic, strong) LocationViewController *locationController;
 @property (nonatomic, strong) ProfileViewController  *profileController;

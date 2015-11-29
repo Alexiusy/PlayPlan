@@ -11,19 +11,15 @@
 
 @protocol SideMenuDelegate <NSObject>
 
-- (void)sideMenu:(UIButton *)menu title:(NSString *)title;
+- (void)sideMenu:(UITableView *)menuTable title:(NSString *)title;
 
 @end
 
-@interface SideMenu : UIView
+@interface SideMenu : UIView <UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, assign) id<SideMenuDelegate> delegate;
 
 @property (nonatomic, strong) NSArray *menus;
 @property (nonatomic, strong) NSArray *icons;
-
-@end
-
-@interface Source : NSObject <UITableViewDataSource, UITableViewDelegate>
 
 @end
