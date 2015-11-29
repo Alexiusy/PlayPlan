@@ -15,6 +15,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         self.backgroundColor = [UIColor clearColor];
+        self.dynamicAnimator = [[UIDynamicAnimator alloc] initWithReferenceView:self];
         
         self.menus = [[NSArray alloc] initWithObjects:@"Main", @"Activity", @"Location", @"Profile", nil];
         self.icons = [NSArray new];
@@ -61,7 +62,10 @@
 }
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+    UIGravityBehavior *gravity = [[UIGravityBehavior alloc] init];
+    [gravity addItem:cell];
+    [gravity setAngle:0 magnitude:.4];
+    [self.dynamicAnimator addBehavior:gravity];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {

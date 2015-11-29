@@ -17,6 +17,7 @@
 
 @interface SideMenu : UIView <UITableViewDataSource, UITableViewDelegate>
 
+@property (nonatomic, strong) UIDynamicAnimator *dynamicAnimator;
 @property (nonatomic, assign) id<SideMenuDelegate> delegate;
 
 @property (nonatomic, strong) NSArray *menus;
