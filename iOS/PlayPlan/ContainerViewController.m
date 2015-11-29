@@ -32,6 +32,8 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
+    self.DynamicAnimator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
+    
     UIBarButtonItem *leftButton = [[UIBarButtonItem alloc] initWithTitle:@"Drawer" style:UIBarButtonItemStylePlain target:self action:@selector(showDrawer)];
     self.navigationItem.leftBarButtonItem = leftButton;
 }
