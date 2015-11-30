@@ -62,31 +62,15 @@
 }
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
-    UIGravityBehavior *gravity = [[UIGravityBehavior alloc] init];
-    [gravity addItem:cell];
-    [gravity setAngle:0 magnitude:.1];
-    
-//    __weak typeof(self) weakSelf = self;
-//    __weak typeof(gravity) weakGravity = gravity;
-//    gravity.action = ^{
-//        __strong typeof(weakSelf) strongSelf = weakSelf;
-//        [strongSelf.dynamicAnimator removeBehavior:weakGravity];
-//    };
-    [self.dynamicAnimator addBehavior:gravity];
-    
-    UICollisionBehavior *collision = [[UICollisionBehavior alloc] initWithItems:@[tableView, cell]];
-    [collision setTranslatesReferenceBoundsIntoBoundary:YES];
-    [collision setTranslatesReferenceBoundsIntoBoundaryWithInsets:UIEdgeInsetsMake(0, 0, 0, 20)];
-    [collision setCollisionMode:UICollisionBehaviorModeBoundaries];
-    
-    __weak typeof(self) weakSelf = self;
-    __weak typeof(collision) weakCollision = collision;
-    gravity.action = ^{
-        __strong typeof(weakSelf) strongSelf = weakSelf;
-        [strongSelf.dynamicAnimator removeBehavior:weakCollision];
-    };
-    
-    [self.dynamicAnimator addBehavior:collision];
+    [UIView animateWithDuration:.5
+                          delay:0.0
+         usingSpringWithDamping:.6
+          initialSpringVelocity:.4
+                        options:UIViewAnimationOptionCurveEaseInOut animations:^{
+        CGAffineTransformMakeTranslation(30, 50);
+    } completion:^(BOOL finished) {
+        
+    }];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
