@@ -110,8 +110,12 @@
 
 - (void)dragView:(UIPanGestureRecognizer *)pan {
     CGPoint offset = [pan translationInView:self.view];
+    
     if (pan.view) {
-        pan.view.transform = CGAffineTransformMakeTranslation(0, offset.y);
+        
+        CGRect original = pan.view.frame;
+        NSLog(@"%@, %@, %@", @(original.origin.y), @(offset.y), @(original.origin.y - offset.y));
+        pan.view.transform = CGAffineTransformMakeTranslation(0, offset.y - original.origin.y);
 //        [pan setTranslation:CGPointZero inView:self.view];
     }
 }
