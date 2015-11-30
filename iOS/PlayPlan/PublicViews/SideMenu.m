@@ -67,7 +67,7 @@
          usingSpringWithDamping:.6
           initialSpringVelocity:.4
                         options:UIViewAnimationOptionCurveEaseInOut animations:^{
-        CGAffineTransformMakeTranslation(30, 50);
+        CGAffineTransformMakeTranslation(30, 0);
     } completion:^(BOOL finished) {
         
     }];
