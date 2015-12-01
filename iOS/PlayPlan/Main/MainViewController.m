@@ -103,8 +103,13 @@
     });
     [[Overlay sharedOverlay] showView:popupView WithBlur:YES blurRect:KEY_WINDOW.frame];
     
-    [UIView animateWithDuration:0.5 animations:^{
+    [UIView animateWithDuration:0.5 delay:0.0 usingSpringWithDamping:0.4 initialSpringVelocity:0.6 options:UIViewAnimationOptionCurveEaseInOut animations:^{
         popupView.transform = CGAffineTransformMakeTranslation(0, -SCREEN_SIZE.height / 2);
+    } completion:^(BOOL finished) {
+        
+    }];
+    [UIView animateWithDuration:0.5 animations:^{
+        
     }];
 }
 
@@ -116,7 +121,6 @@
         CGRect original = pan.view.frame;
         NSLog(@"%@, %@, %@", @(original.origin.y), @(offset.y), @(original.origin.y - offset.y));
         pan.view.transform = CGAffineTransformMakeTranslation(0, offset.y - original.origin.y);
-//        [pan setTranslation:CGPointZero inView:self.view];
     }
 }
 
