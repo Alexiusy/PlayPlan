@@ -106,7 +106,7 @@
     [UIView animateWithDuration:0.5
                           delay:0.0
          usingSpringWithDamping:0.4
-          initialSpringVelocity:0.6
+          initialSpringVelocity:0.0
                         options:UIViewAnimationOptionCurveEaseInOut
                      animations:^{
         popupView.transform = CGAffineTransformMakeTranslation(0, -SCREEN_SIZE.height / 2);
@@ -117,12 +117,9 @@
 
 - (void)dragView:(UIPanGestureRecognizer *)pan {
     CGPoint offset = [pan translationInView:self.view];
-    
     if (pan.view) {
-        
-        CGRect original = pan.view.frame;
-        NSLog(@"%@, %@, %@", @(original.origin.y), @(offset.y), @(original.origin.y - offset.y));
-        pan.view.transform = CGAffineTransformMakeTranslation(0, offset.y - original.origin.y);
+        CGRect original = pan.view.bounds;
+        pan.view.transform = CGAffineTransformMakeTranslation(0, offset.y - original.size.height / 2);
     }
 }
 
