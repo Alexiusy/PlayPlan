@@ -103,7 +103,12 @@
     });
     [[Overlay sharedOverlay] showView:popupView WithBlur:YES blurRect:KEY_WINDOW.frame];
     
-    [UIView animateWithDuration:0.5 delay:0.0 usingSpringWithDamping:0.4 initialSpringVelocity:0.6 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+    [UIView animateWithDuration:0.5
+                          delay:0.0
+         usingSpringWithDamping:0.4
+          initialSpringVelocity:0.6
+                        options:UIViewAnimationOptionCurveEaseInOut
+                     animations:^{
         popupView.transform = CGAffineTransformMakeTranslation(0, -SCREEN_SIZE.height / 2);
     } completion:^(BOOL finished) {
         
