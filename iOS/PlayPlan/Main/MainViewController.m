@@ -128,9 +128,11 @@
 - (void)swipeView:(UISwipeGestureRecognizer *)swipe {
     switch (swipe.direction) {
         case UISwipeGestureRecognizerDirectionUp:
-            
+            // TODO: 添加上滑到顶部的方法
             break;
-            
+        case UISwipeGestureRecognizerDirectionDown:
+            // TODO: 添加下滑消失的方法
+            break;
         default:
             break;
     }
