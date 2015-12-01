@@ -97,6 +97,8 @@
         UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, SCREEN_SIZE.height, SCREEN_SIZE.width, SCREEN_SIZE.height)];
         UIPanGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(dragView:)];
         [view addGestureRecognizer:panGesture];
+        UISwipeGestureRecognizer *swipeGesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeView:)];
+        [view addGestureRecognizer:swipeGesture];
         view.tag = 'view';
         view.backgroundColor = [UIColor redColor];
         view;
@@ -120,6 +122,17 @@
     if (pan.view) {
         CGRect original = pan.view.bounds;
         pan.view.transform = CGAffineTransformMakeTranslation(0, offset.y - original.size.height / 2);
+    }
+}
+
+- (void)swipeView:(UISwipeGestureRecognizer *)swipe {
+    switch (swipe.direction) {
+        case UISwipeGestureRecognizerDirectionUp:
+            
+            break;
+            
+        default:
+            break;
     }
 }
 
