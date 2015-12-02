@@ -96,6 +96,7 @@
     UIView *popupView = ({
         UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, SCREEN_SIZE.height, SCREEN_SIZE.width, SCREEN_SIZE.height)];
         UIPanGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(dragView:)];
+        panGesture.delegate = self;
         [view addGestureRecognizer:panGesture];
         UISwipeGestureRecognizer *swipeGesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeView:)];
         [view addGestureRecognizer:swipeGesture];
@@ -128,6 +129,7 @@
     switch (swipe.direction) {
         case UISwipeGestureRecognizerDirectionUp:
             // TODO: 添加上滑到顶部的方法
+            swipe.view.transform = CGAffineTransformMakeTranslation(0, -swipe.view.bounds.size.height);
             break;
         case UISwipeGestureRecognizerDirectionDown:
             // TODO: 添加下滑消失的方法
