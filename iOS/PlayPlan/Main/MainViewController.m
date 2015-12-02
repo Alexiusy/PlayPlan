@@ -122,18 +122,4 @@
     }
 }
 
-- (void)swipeView:(UISwipeGestureRecognizer *)swipe {
-    switch (swipe.direction) {
-        case UISwipeGestureRecognizerDirectionUp:
-            // TODO: 添加上滑到顶部的方法
-            swipe.view.transform = CGAffineTransformMakeTranslation(0, -swipe.view.bounds.size.height);
-            break;
-        case UISwipeGestureRecognizerDirectionDown:
-            // TODO: 添加下滑消失的方法
-            break;
-        default:
-            break;
-    }
-}
-
 @end
