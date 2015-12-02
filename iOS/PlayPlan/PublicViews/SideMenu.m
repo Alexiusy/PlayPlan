@@ -62,14 +62,24 @@
 }
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
-    [UIView animateWithDuration:.5
+    cell.transform = CGAffineTransformMakeTranslation(-500, 200);
+    UIGravityBehavior *gravity = [[UIGravityBehavior alloc] initWithItems:@[cell]];
+    [gravity setAngle:0 magnitude:.2];
+    [self.dynamicAnimator addBehavior:gravity];
+    
+    UICollisionBehavior *collision = [[UICollisionBehavior alloc] initWithItems:@[cell]];
+    [collision setTranslatesReferenceBoundsIntoBoundaryWithInsets:UIEdgeInsetsMake(100, 0, 0, 200)];
+    [collision setCollisionMode:UICollisionBehaviorModeBoundaries];
+    [self.dynamicAnimator addBehavior:collision];
+    
+    [UIView animateWithDuration:5
                           delay:0.0
-         usingSpringWithDamping:.6
-          initialSpringVelocity:.4
+         usingSpringWithDamping:.4
+          initialSpringVelocity:.0
                         options:UIViewAnimationOptionCurveEaseInOut animations:^{
         CGAffineTransformMakeTranslation(30, 0);
     } completion:^(BOOL finished) {
-        
+//        cell.transform = CGAffineTransformMakeTranslation(120, 0);
     }];
 }
 
