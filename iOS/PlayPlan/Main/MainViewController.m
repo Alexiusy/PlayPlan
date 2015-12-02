@@ -99,7 +99,6 @@
         [view addGestureRecognizer:panGesture];
         UISwipeGestureRecognizer *swipeGesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeView:)];
         [view addGestureRecognizer:swipeGesture];
-        view.tag = 'view';
         view.backgroundColor = [UIColor redColor];
         view;
     });
