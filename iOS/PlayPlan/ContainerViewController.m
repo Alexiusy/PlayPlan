@@ -36,6 +36,7 @@
         button.layer.cornerRadius = 25;
         button;
     });
+    [self.view addSubview:globalFloatingButton];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
