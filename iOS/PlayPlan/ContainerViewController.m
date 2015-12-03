@@ -29,6 +29,7 @@
     [self.view addGestureRecognizer:edgePanGesture];
     
     // 添加浮动按钮
+    UIButton *globalFloatingButton = [[UIButton alloc] init];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
