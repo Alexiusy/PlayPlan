@@ -27,6 +27,8 @@
     // 添加左侧边缘滑动手势
     UIScreenEdgePanGestureRecognizer *edgePanGesture = [[UIScreenEdgePanGestureRecognizer alloc] initWithTarget:self action:@selector(edgePan:)];
     [self.view addGestureRecognizer:edgePanGesture];
+    
+    // 添加浮动按钮
 }
 
 - (void)viewWillAppear:(BOOL)animated {
