@@ -32,6 +32,7 @@
     UIButton *globalFloatingButton = ({
         UIButton *button = [[UIButton alloc] init];
         [button setFrame:CGRectMake(SCREEN_SIZE.width - 50, SCREEN_SIZE.height - 50, 50, 50)];
+        [button addTarget:self action:@selector(showTabbar:) forControlEvents:UIControlEventTouchUpInside];
         button;
     });
 }
