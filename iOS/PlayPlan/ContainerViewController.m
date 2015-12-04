@@ -41,7 +41,7 @@
 
 - (void)showTabbar:(UIButton *)sender {
     if (sender.selected) {
-        <#statements#>
+        
     }
 }
 
