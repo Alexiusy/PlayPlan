@@ -40,9 +40,7 @@
 }
 
 - (void)showTabbar:(UIButton *)sender {
-    if (sender.selected) {
-        
-    }
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
