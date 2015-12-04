@@ -12,18 +12,18 @@
 		631CE5961BDD00EB00715430 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 631CE5941BDD00EB00715430 /* Main.storyboard */; };
 		631CE5981BDD00EB00715430 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 631CE5971BDD00EB00715430 /* Assets.xcassets */; };
 		631CE59B1BDD00EB00715430 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 631CE5991BDD00EB00715430 /* LaunchScreen.storyboard */; };
-		633A926D1BFCD2FC00BD3EE6 /* ZYToolBars.m in Sources */ = {isa = PBXBuildFile; fileRef = 633A926C1BFCD2FC00BD3EE6 /* ZYToolBars.m */; settings = {ASSET_TAGS = (); }; };
-		633A92701BFE21CF00BD3EE6 /* SideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 633A926F1BFE21CF00BD3EE6 /* SideMenu.m */; settings = {ASSET_TAGS = (); }; };
-		633A92761C03544900BD3EE6 /* Transitions.m in Sources */ = {isa = PBXBuildFile; fileRef = 633A92751C03544900BD3EE6 /* Transitions.m */; settings = {ASSET_TAGS = (); }; };
-		6357D0DD1BE3C22D00F8E94A /* BrokenGlass.m in Sources */ = {isa = PBXBuildFile; fileRef = 6357D0DC1BE3C22D00F8E94A /* BrokenGlass.m */; settings = {ASSET_TAGS = (); }; };
-		638B01F31C04C5AC00920A65 /* ContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 638B01F21C04C5AC00920A65 /* ContainerViewController.m */; settings = {ASSET_TAGS = (); }; };
-		638B01F71C06136900920A65 /* LocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 638B01F61C06136900920A65 /* LocationViewController.m */; settings = {ASSET_TAGS = (); }; };
+		633A926D1BFCD2FC00BD3EE6 /* ZYToolBars.m in Sources */ = {isa = PBXBuildFile; fileRef = 633A926C1BFCD2FC00BD3EE6 /* ZYToolBars.m */; };
+		633A92701BFE21CF00BD3EE6 /* SideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 633A926F1BFE21CF00BD3EE6 /* SideMenu.m */; };
+		633A92761C03544900BD3EE6 /* Transitions.m in Sources */ = {isa = PBXBuildFile; fileRef = 633A92751C03544900BD3EE6 /* Transitions.m */; };
+		6357D0DD1BE3C22D00F8E94A /* BrokenGlass.m in Sources */ = {isa = PBXBuildFile; fileRef = 6357D0DC1BE3C22D00F8E94A /* BrokenGlass.m */; };
+		638B01F31C04C5AC00920A65 /* ContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 638B01F21C04C5AC00920A65 /* ContainerViewController.m */; };
+		638B01F71C06136900920A65 /* LocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 638B01F61C06136900920A65 /* LocationViewController.m */; };
 		638FE7CE1BF637FF00C8778F /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 638FE7CD1BF637FF00C8778F /* Accelerate.framework */; };
-		638FE7E41BFCC42D00C8778F /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 638FE7D81BFCC42D00C8778F /* MainViewController.m */; settings = {ASSET_TAGS = (); }; };
-		638FE7E51BFCC42D00C8778F /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 638FE7DB1BFCC42D00C8778F /* ProfileViewController.m */; settings = {ASSET_TAGS = (); }; };
-		638FE7E61BFCC42D00C8778F /* UIERealTimeBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = 638FE7DE1BFCC42D00C8778F /* UIERealTimeBlurView.m */; settings = {ASSET_TAGS = (); }; };
-		638FE7E71BFCC42D00C8778F /* UIImage+BoxBlur.m in Sources */ = {isa = PBXBuildFile; fileRef = 638FE7E01BFCC42D00C8778F /* UIImage+BoxBlur.m */; settings = {ASSET_TAGS = (); }; };
-		638FE7EB1BFCCBA700C8778F /* Overlay.m in Sources */ = {isa = PBXBuildFile; fileRef = 638FE7EA1BFCCBA700C8778F /* Overlay.m */; settings = {ASSET_TAGS = (); }; };
+		638FE7E41BFCC42D00C8778F /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 638FE7D81BFCC42D00C8778F /* MainViewController.m */; };
+		638FE7E51BFCC42D00C8778F /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 638FE7DB1BFCC42D00C8778F /* ProfileViewController.m */; };
+		638FE7E61BFCC42D00C8778F /* UIERealTimeBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = 638FE7DE1BFCC42D00C8778F /* UIERealTimeBlurView.m */; };
+		638FE7E71BFCC42D00C8778F /* UIImage+BoxBlur.m in Sources */ = {isa = PBXBuildFile; fileRef = 638FE7E01BFCC42D00C8778F /* UIImage+BoxBlur.m */; };
+		638FE7EB1BFCCBA700C8778F /* Overlay.m in Sources */ = {isa = PBXBuildFile; fileRef = 638FE7EA1BFCCBA700C8778F /* Overlay.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -239,6 +239,7 @@
 				TargetAttributes = {
 					631CE5871BDD00EB00715430 = {
 						CreatedOnToolsVersion = 7.0.1;
+						DevelopmentTeam = 42QAYWNUN9;
 					};
 				};
 			};
@@ -403,8 +404,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = PlayPlan/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zeacone.PlayPlan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -418,8 +420,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = PlayPlan/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zeacone.PlayPlan;
 				PRODUCT_NAME = "$(TARGET_NAME)";

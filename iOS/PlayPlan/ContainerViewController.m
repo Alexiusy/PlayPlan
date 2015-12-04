@@ -39,6 +39,10 @@
     [self.view addSubview:globalFloatingButton];
 }
 
+- (void)showTabbar:(UIButton *)sender {
+    
+}
+
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
