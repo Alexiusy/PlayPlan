@@ -40,7 +40,9 @@
 }
 
 - (void)showTabbar:(UIButton *)sender {
-    
+    if (sender.isSelected) {
+        // TODO: 添加导航条并且实现伸展动画
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {
