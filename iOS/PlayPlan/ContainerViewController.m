@@ -41,9 +41,9 @@
 
 - (void)showTabbar:(UIButton *)sender {
     if (sender.isSelected) {
-        // TODO: 添加导航条并且实现伸展动画
+        // TODO: 添加导航条并实现伸展动画
     } else {
-        //TODO: 收起导航条并且实现收缩动画
+        //TODO: 收起导航条并实现收缩动画
     }
 }
 
