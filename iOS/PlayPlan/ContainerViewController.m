@@ -32,14 +32,14 @@
     UIButton *globalFloatingButton = ({
         UIButton *button = [[UIButton alloc] init];
         [button setFrame:CGRectMake(SCREEN_SIZE.width - 50, SCREEN_SIZE.height - 50, 50, 50)];
-        [button addTarget:self action:@selector(showTabbar:) forControlEvents:UIControlEventTouchUpInside];
+        [button addTarget:self action:@selector(showMenuBar:) forControlEvents:UIControlEventTouchUpInside];
         button.layer.cornerRadius = 25;
         button;
     });
     [self.view addSubview:globalFloatingButton];
 }
 
-- (void)showTabbar:(UIButton *)sender {
+- (void)showMenuBar:(UIButton *)sender {
     if (sender.isSelected) {
         // TODO: 添加导航条并实现伸展动画
     } else {
