@@ -14,8 +14,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        self.backgroundColor = [UIColor clearColor];
-        self.dynamicAnimator = [[UIDynamicAnimator alloc] initWithReferenceView:self];
+        self.backgroundColor = [UIColor blueColor];
         
         self.menus = [[NSArray alloc] initWithObjects:@"Main", @"Activity", @"Location", @"Profile", nil];
         self.icons = [NSArray new];
@@ -34,6 +33,7 @@
         tableView.delegate = self;
         tableView.dataSource = self;
         tableView.backgroundColor = [UIColor clearColor];
+        tableView.rowHeight = 60;
         tableView;
     });
     [self addSubview:menuTable];
@@ -54,6 +54,7 @@
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
+    
     cell.textLabel.text = self.menus[indexPath.row];
     //    cell.imageView.image = self.icons[indexPath.row];
     cell.backgroundColor = [UIColor clearColor];
@@ -62,25 +63,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
-    cell.transform = CGAffineTransformMakeTranslation(-500, 200);
-    UIGravityBehavior *gravity = [[UIGravityBehavior alloc] initWithItems:@[cell]];
-    [gravity setAngle:0 magnitude:.2];
-    [self.dynamicAnimator addBehavior:gravity];
     
-    UICollisionBehavior *collision = [[UICollisionBehavior alloc] initWithItems:@[cell]];
-    [collision setTranslatesReferenceBoundsIntoBoundaryWithInsets:UIEdgeInsetsMake(100, 0, 0, 200)];
-    [collision setCollisionMode:UICollisionBehaviorModeBoundaries];
-    [self.dynamicAnimator addBehavior:collision];
-    
-    [UIView animateWithDuration:5
-                          delay:0.0
-         usingSpringWithDamping:.4
-          initialSpringVelocity:.0
-                        options:UIViewAnimationOptionCurveEaseInOut animations:^{
-        CGAffineTransformMakeTranslation(30, 0);
-    } completion:^(BOOL finished) {
-//        cell.transform = CGAffineTransformMakeTranslation(120, 0);
-    }];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {

@@ -19,24 +19,64 @@
     self.mainController = [self.storyBoard instantiateViewControllerWithIdentifier:@"mainController"];
     self.mainController.delegate = self;
     
-//    self.currentViewController = [[UIViewController alloc] init];
+    // 将初始化的Controller设置为当前正在使用的Controller
     self.currentViewController = self.mainController;
     [self addChildViewController:self.currentViewController];
     [self.view addSubview:self.currentViewController.view];
     
-    // 添加左侧边缘滑动手势
-    UIScreenEdgePanGestureRecognizer *edgePanGesture = [[UIScreenEdgePanGestureRecognizer alloc] initWithTarget:self action:@selector(edgePan:)];
-    [self.view addGestureRecognizer:edgePanGesture];
+    // 添加抽屉按钮，以及所需要的动力学动画手势等
+    self.dynamicAnimator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
+    sideBar = [[SideMenu alloc] initWithFrame:CGRectMake(-SCREEN_SIZE.width / 2, 64, SCREEN_SIZE.width / 2, SCREEN_SIZE.height - 64)];
+    sideBar.delegate = self;
+    [self.view addSubview:sideBar];
     
-    // 添加浮动按钮
-    UIButton *globalFloatingButton = ({
-        UIButton *button = [[UIButton alloc] init];
-        [button setFrame:CGRectMake(SCREEN_SIZE.width - 50, SCREEN_SIZE.height - 50, 50, 50)];
-        [button addTarget:self action:@selector(showMenuBar:) forControlEvents:UIControlEventTouchUpInside];
-        button.layer.cornerRadius = 25;
-        button;
-    });
-    [self.view addSubview:globalFloatingButton];
+//    UIScreenEdgePanGestureRecognizer *edgePanGesture = [[UIScreenEdgePanGestureRecognizer alloc] initWithTarget:self action:@selector(edgePan:)];
+//    [edgePanGesture setDelegate:self];
+//    [edgePanGesture setEdges:UIRectEdgeLeft];
+//    [self.view addGestureRecognizer:edgePanGesture];
+    
+    UISwipeGestureRecognizer *swipeGesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(edgePan:)];
+    [swipeGesture setDelegate:self];
+//    [swipeGesture setDirection:UISwipeGestureRecognizerDirectionLeft];
+    [self.view addGestureRecognizer:swipeGesture];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    UIBarButtonItem *leftButton = [[UIBarButtonItem alloc] initWithTitle:@"Left" style:UIBarButtonItemStylePlain target:self action:@selector(showDrawer)];
+    self.navigationItem.leftBarButtonItem = leftButton;
+}
+
+- (void)showDrawer {
+    [self toggleMenu:NO];
+}
+
+- (void)toggleMenu:(BOOL)shouldOpenMenu {
+    
+    [self.dynamicAnimator removeAllBehaviors];
+    
+    CGFloat gravityDirectionX = shouldOpenMenu ? 1.0 : -1.0;
+    CGFloat pushMagnitude = shouldOpenMenu ? 20.0 : -20.0;
+    CGFloat boundaryPointX = shouldOpenMenu ? SCREEN_SIZE.width / 2 : -SCREEN_SIZE.width / 2;
+    
+    UIGravityBehavior *gravityBehavior = [[UIGravityBehavior alloc] initWithItems:@[sideBar]];
+    gravityBehavior.gravityDirection = CGVectorMake(gravityDirectionX, 0.0);
+    [self.dynamicAnimator addBehavior:gravityBehavior];
+    
+    UICollisionBehavior *collisionBehavior = [[UICollisionBehavior alloc] initWithItems:@[sideBar]];
+    [collisionBehavior addBoundaryWithIdentifier:@"menuBoundary"
+                                       fromPoint:CGPointMake(boundaryPointX, 20.0)
+                                         toPoint:CGPointMake(boundaryPointX, SCREEN_SIZE.height)];
+    [self.dynamicAnimator addBehavior:collisionBehavior];
+    
+    UIPushBehavior *pushBehavior = [[UIPushBehavior alloc] initWithItems:@[sideBar] mode:UIPushBehaviorModeInstantaneous];
+    pushBehavior.magnitude = pushMagnitude;
+    [self.dynamicAnimator addBehavior:pushBehavior];
+    
+    UIDynamicItemBehavior *menuViewBehavior = [[UIDynamicItemBehavior alloc] initWithItems:@[sideBar]];
+    menuViewBehavior.elasticity = 0.4;
+    [self.dynamicAnimator addBehavior:menuViewBehavior];
 }
 
 - (void)showMenuBar:(UIButton *)sender {
@@ -47,27 +87,19 @@
     }
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
+- (void)edgePan:(UISwipeGestureRecognizer *)gesture {
+//    UIVisualEffectView *visualEffectView = [[UIVisualEffectView alloc] initWithFrame:self.view.frame];
+//    visualEffectView.effect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
+//    visualEffectView.alpha = 0.3;
+//    [self.view addSubview:visualEffectView];
     
-    self.DynamicAnimator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
-    
-    UIBarButtonItem *leftButton = [[UIBarButtonItem alloc] initWithTitle:@"Drawer" style:UIBarButtonItemStylePlain target:self action:@selector(showDrawer)];
-    self.navigationItem.leftBarButtonItem = leftButton;
-}
-
-- (void)showDrawer {
-    SideMenu *sideBar = [[SideMenu alloc] initWithFrame:CGRectMake(0, 64, SCREEN_SIZE.width / 2, SCREEN_SIZE.height - 64)];
-    sideBar.delegate = self;
-    [[Overlay sharedOverlay] showView:sideBar WithBlur:YES blurRect:sideBar.frame];
-}
-
-- (void)edgePan:(UIScreenEdgePanGestureRecognizer *)gesture {
-    NSLog(@"Edge pan effected.");
-}
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    
+    if (gesture.direction == UISwipeGestureRecognizerDirectionRight) {
+        [self toggleMenu:YES];
+    } else if (gesture.direction == UISwipeGestureRecognizerDirectionLeft) {
+        [self toggleMenu:NO];
+    }
+//    NSLog(@"Edge pan effected.");
+//    [self toggleMenu:YES];
 }
 
 #pragma mark - ---Delegate of controllers

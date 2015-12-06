@@ -14,9 +14,12 @@
 #import "LocationViewController.h"
 #import "ProfileViewController.h"
 
-@interface ContainerViewController : UIViewController <MainDelegate, LocationDelegate, ProfileDelegate, SideMenuDelegate>
+@interface ContainerViewController : UIViewController <MainDelegate, LocationDelegate, ProfileDelegate, SideMenuDelegate> {
+    SideMenu *sideBar;
+    BOOL shouldShow;
+}
 
-@property (nonatomic, strong) UIDynamicAnimator      *DynamicAnimator;
+@property (nonatomic, strong) UIDynamicAnimator      *dynamicAnimator;
 @property (nonatomic, strong) UIStoryboard           *storyBoard;
 @property (nonatomic, strong) UIViewController       *currentViewController;
 @property (nonatomic, strong) MainViewController     *mainController;
