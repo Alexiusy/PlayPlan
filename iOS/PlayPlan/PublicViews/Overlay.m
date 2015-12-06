@@ -24,7 +24,6 @@
     for (UIView *subview in self.subviews) {
         [subview removeFromSuperview];
     }
-    // 添加模糊视图
     
     UIControl *tap = [[UIControl alloc] initWithFrame:KEY_WINDOW.frame];
     [tap addTarget:self action:@selector(tap:) forControlEvents:UIControlEventTouchUpInside];
