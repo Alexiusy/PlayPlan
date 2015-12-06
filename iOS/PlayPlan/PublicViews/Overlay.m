@@ -26,8 +26,6 @@
     }
     // 添加模糊视图
     if (blur) {
-        UIERealTimeBlurView *blurView = [[UIERealTimeBlurView alloc] initWithFrame:blurRect];
-        [self addSubview:blurView];
     }
     UIControl *tap = [[UIControl alloc] initWithFrame:KEY_WINDOW.frame];
     [tap addTarget:self action:@selector(tap:) forControlEvents:UIControlEventTouchUpInside];
