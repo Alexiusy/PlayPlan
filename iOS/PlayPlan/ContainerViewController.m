@@ -26,19 +26,17 @@
     
     // 添加抽屉按钮，以及所需要的动力学动画手势等
     self.dynamicAnimator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
-    sideBar = [[SideMenu alloc] initWithFrame:CGRectMake(-SCREEN_SIZE.width / 2, 64, SCREEN_SIZE.width / 2, SCREEN_SIZE.height - 64)];
+    sideBar = [[SideMenu alloc] initWithFrame:CGRectMake(-SCREEN_SIZE.width / 2, 20, SCREEN_SIZE.width / 2, SCREEN_SIZE.height - 20)];
     sideBar.delegate = self;
     [self.view addSubview:sideBar];
     
-//    UIScreenEdgePanGestureRecognizer *edgePanGesture = [[UIScreenEdgePanGestureRecognizer alloc] initWithTarget:self action:@selector(edgePan:)];
-//    [edgePanGesture setDelegate:self];
-//    [edgePanGesture setEdges:UIRectEdgeLeft];
-//    [self.view addGestureRecognizer:edgePanGesture];
-    
     UISwipeGestureRecognizer *swipeGesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(edgePan:)];
-    [swipeGesture setDelegate:self];
-//    [swipeGesture setDirection:UISwipeGestureRecognizerDirectionLeft];
     [self.view addGestureRecognizer:swipeGesture];
+    
+    UISwipeGestureRecognizer *closeMenuBarGesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(edgePan:)];
+    [closeMenuBarGesture setDirection:UISwipeGestureRecognizerDirectionLeft];
+    [sideBar addGestureRecognizer:closeMenuBarGesture];
+    [self.view addGestureRecognizer:closeMenuBarGesture];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
