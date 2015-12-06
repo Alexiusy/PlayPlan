@@ -21,8 +21,6 @@
 		638FE7CE1BF637FF00C8778F /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 638FE7CD1BF637FF00C8778F /* Accelerate.framework */; };
 		638FE7E41BFCC42D00C8778F /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 638FE7D81BFCC42D00C8778F /* MainViewController.m */; };
 		638FE7E51BFCC42D00C8778F /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 638FE7DB1BFCC42D00C8778F /* ProfileViewController.m */; };
-		638FE7E61BFCC42D00C8778F /* UIERealTimeBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = 638FE7DE1BFCC42D00C8778F /* UIERealTimeBlurView.m */; };
-		638FE7E71BFCC42D00C8778F /* UIImage+BoxBlur.m in Sources */ = {isa = PBXBuildFile; fileRef = 638FE7E01BFCC42D00C8778F /* UIImage+BoxBlur.m */; };
 		638FE7EB1BFCCBA700C8778F /* Overlay.m in Sources */ = {isa = PBXBuildFile; fileRef = 638FE7EA1BFCCBA700C8778F /* Overlay.m */; };
 /* End PBXBuildFile section */
 
@@ -57,10 +55,6 @@
 		638FE7D81BFCC42D00C8778F /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		638FE7DA1BFCC42D00C8778F /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		638FE7DB1BFCC42D00C8778F /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
-		638FE7DD1BFCC42D00C8778F /* UIERealTimeBlurView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIERealTimeBlurView.h; sourceTree = "<group>"; };
-		638FE7DE1BFCC42D00C8778F /* UIERealTimeBlurView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIERealTimeBlurView.m; sourceTree = "<group>"; };
-		638FE7DF1BFCC42D00C8778F /* UIImage+BoxBlur.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+BoxBlur.h"; sourceTree = "<group>"; };
-		638FE7E01BFCC42D00C8778F /* UIImage+BoxBlur.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+BoxBlur.m"; sourceTree = "<group>"; };
 		638FE7E91BFCCBA700C8778F /* Overlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Overlay.h; sourceTree = "<group>"; };
 		638FE7EA1BFCCBA700C8778F /* Overlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Overlay.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -185,10 +179,6 @@
 		638FE7DC1BFCC42D00C8778F /* PublicViews */ = {
 			isa = PBXGroup;
 			children = (
-				638FE7DD1BFCC42D00C8778F /* UIERealTimeBlurView.h */,
-				638FE7DE1BFCC42D00C8778F /* UIERealTimeBlurView.m */,
-				638FE7DF1BFCC42D00C8778F /* UIImage+BoxBlur.h */,
-				638FE7E01BFCC42D00C8778F /* UIImage+BoxBlur.m */,
 				638FE7E91BFCCBA700C8778F /* Overlay.h */,
 				638FE7EA1BFCCBA700C8778F /* Overlay.m */,
 				633A926E1BFE21CF00BD3EE6 /* SideMenu.h */,
@@ -280,7 +270,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				631CE5901BDD00EB00715430 /* AppDelegate.m in Sources */,
-				638FE7E61BFCC42D00C8778F /* UIERealTimeBlurView.m in Sources */,
 				633A92761C03544900BD3EE6 /* Transitions.m in Sources */,
 				638B01F31C04C5AC00920A65 /* ContainerViewController.m in Sources */,
 				631CE58D1BDD00EB00715430 /* main.m in Sources */,
@@ -290,7 +279,6 @@
 				638FE7E41BFCC42D00C8778F /* MainViewController.m in Sources */,
 				638FE7E51BFCC42D00C8778F /* ProfileViewController.m in Sources */,
 				633A92701BFE21CF00BD3EE6 /* SideMenu.m in Sources */,
-				638FE7E71BFCC42D00C8778F /* UIImage+BoxBlur.m in Sources */,
 				6357D0DD1BE3C22D00F8E94A /* BrokenGlass.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
