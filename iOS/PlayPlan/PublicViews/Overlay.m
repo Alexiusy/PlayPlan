@@ -25,6 +25,13 @@
         [subview removeFromSuperview];
     }
     
+    if (blur) {
+        UIVisualEffectView *visualEffectView = [[UIVisualEffectView alloc] initWithFrame:blurRect];
+        UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleExtraLight];
+        visualEffectView.effect = blurEffect;//[UIVibrancyEffect effectForBlurEffect:blurEffect];
+        [self addSubview:visualEffectView];
+    }
+    
     UIControl *tap = [[UIControl alloc] initWithFrame:KEY_WINDOW.frame];
     [tap addTarget:self action:@selector(tap:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:tap];
