@@ -93,8 +93,6 @@
 }
 
 - (void)addPopView {
-    // Add mask view.
-    [[Overlay sharedOverlay] showOnView:self.view WithBlur:YES blurRect:self.view.frame];
     
     UIView *popupView = ({
         UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, SCREEN_SIZE.height, SCREEN_SIZE.width, SCREEN_SIZE.height)];
@@ -103,7 +101,8 @@
         view.backgroundColor = [UIColor redColor];
         view;
     });
-    [self.view addSubview:popupView];
+    
+    [[Overlay sharedOverlay] showView:popupView On:self.view WithBlur:YES Rect:self.view.frame];
     
     [UIView animateWithDuration:0.5
                           delay:0.0

@@ -22,6 +22,7 @@
 - (void)showView:(UIView *)subView On:(UIView *)superView WithBlur:(BOOL)blur Rect:(CGRect)rect {
     
     self.frame = rect;
+    
     // 先移除所有的子视图
     for (UIView *subview in self.subviews) {
         [subview removeFromSuperview];
@@ -38,17 +39,20 @@
     [tap addTarget:self action:@selector(tap:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:tap];
     
+    [self addSubview:subView];
+    
     [superView addSubview:self];
 }
 
 - (void)tap:(UIControl *)tap {
-    [self removeFromSuperview];
+    
     UIView *view = [[UIView new] viewWithTag:'view'];
     [UIView animateWithDuration:0.5 animations:^{
         view.transform = CGAffineTransformMakeTranslation(0, SCREEN_SIZE.height / 2);
     } completion:^(BOOL finished) {
-        [tap.superview removeFromSuperview];
-        [tap removeFromSuperview];
+        for (UIView *subview in self.subviews) {
+            [subview removeFromSuperview];
+        }
         [self removeFromSuperview];
     }];
 }
