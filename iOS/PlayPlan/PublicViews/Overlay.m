@@ -20,6 +20,8 @@
 }
 
 - (void)showOnView:(UIView *)view WithBlur:(BOOL)blur blurRect:(CGRect)blurRect {
+    
+    self.frame = blurRect;
     // 先移除所有的子视图
     for (UIView *subview in self.subviews) {
         [subview removeFromSuperview];
@@ -40,13 +42,14 @@
 }
 
 - (void)tap:(UIControl *)tap {
+    [self removeFromSuperview];
     UIView *view = [[UIView new] viewWithTag:'view'];
     [UIView animateWithDuration:0.5 animations:^{
         view.transform = CGAffineTransformMakeTranslation(0, SCREEN_SIZE.height / 2);
     } completion:^(BOOL finished) {
         [tap.superview removeFromSuperview];
         [tap removeFromSuperview];
-        [view removeFromSuperview];
+        [self removeFromSuperview];
     }];
 }
 

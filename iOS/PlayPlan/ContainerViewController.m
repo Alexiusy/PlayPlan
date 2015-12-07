@@ -52,7 +52,7 @@
 
 - (void)toggleMenu:(BOOL)shouldOpenMenu {
     
-    [[Overlay sharedOverlay] showOnView:nil WithBlur:YES blurRect:KEY_WINDOW.frame];
+    [[Overlay sharedOverlay] showOnView:self.view WithBlur:YES blurRect:self.view.frame];
     
     [self.dynamicAnimator removeAllBehaviors];
     [self.view bringSubviewToFront:sideBar];

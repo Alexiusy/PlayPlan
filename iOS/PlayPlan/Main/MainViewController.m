@@ -100,7 +100,7 @@
         view.backgroundColor = [UIColor redColor];
         view;
     });
-    [[Overlay sharedOverlay] showView:popupView WithBlur:YES blurRect:KEY_WINDOW.frame];
+    [[Overlay sharedOverlay] showOnView:self.view WithBlur:YES blurRect:self.view.frame];
     
     [UIView animateWithDuration:0.5
                           delay:0.0
