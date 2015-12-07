@@ -41,6 +41,8 @@
         UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_SIZE.width, 164)];
         headerView.backgroundColor = [UIColor purpleColor];
         tableview.tableHeaderView = headerView;
+        tableview.separatorStyle = UITableViewCellSeparatorStyleNone;
+        tableview.separatorInset = UIEdgeInsetsZero;
         tableview.delegate = self;
         tableview.dataSource = self;
         tableview;
