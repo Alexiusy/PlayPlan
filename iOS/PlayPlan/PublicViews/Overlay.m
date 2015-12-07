@@ -14,12 +14,12 @@
     static Overlay *overlay = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        overlay = [[Overlay alloc] initWithFrame:KEY_WINDOW.frame];
+        overlay = [[Overlay alloc] init];
     });
     return overlay;
 }
 
-- (void)showView:(UIView *)view WithBlur:(BOOL)blur blurRect:(CGRect)blurRect {
+- (void)showOnView:(UIView *)view WithBlur:(BOOL)blur blurRect:(CGRect)blurRect {
     // 先移除所有的子视图
     for (UIView *subview in self.subviews) {
         [subview removeFromSuperview];
@@ -32,12 +32,11 @@
         [self addSubview:visualEffectView];
     }
     
-    UIControl *tap = [[UIControl alloc] initWithFrame:KEY_WINDOW.frame];
+    UIControl *tap = [[UIControl alloc] initWithFrame:blurRect];
     [tap addTarget:self action:@selector(tap:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:tap];
     
-    [self addSubview:view];
-    [KEY_WINDOW addSubview:self];
+    [view addSubview:self];
 }
 
 - (void)tap:(UIControl *)tap {
