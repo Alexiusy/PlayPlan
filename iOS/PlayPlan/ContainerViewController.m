@@ -52,7 +52,7 @@
 
 - (void)toggleMenu:(BOOL)shouldOpenMenu {
     
-    [[Overlay sharedOverlay] showView:nil On:self.view WithBlur:YES Rect:self.view.frame];
+    !shouldOpenMenu ? : [[Overlay sharedOverlay] showView:nil On:self.view WithBlur:YES Rect:self.view.frame];
     
     [self.dynamicAnimator removeAllBehaviors];
     [self.view bringSubviewToFront:sideBar];
@@ -91,18 +91,11 @@
 }
 
 - (void)edgePan:(UISwipeGestureRecognizer *)gesture {
-//    UIVisualEffectView *visualEffectView = [[UIVisualEffectView alloc] initWithFrame:self.view.frame];
-//    visualEffectView.effect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
-//    visualEffectView.alpha = 0.3;
-//    [self.view addSubview:visualEffectView];
-    
     if (gesture.direction == UISwipeGestureRecognizerDirectionRight) {
         [self toggleMenu:YES];
     } else if (gesture.direction == UISwipeGestureRecognizerDirectionLeft) {
         [self toggleMenu:NO];
     }
-//    NSLog(@"Edge pan effected.");
-//    [self toggleMenu:YES];
 }
 
 #pragma mark - ---Delegate of controllers
