@@ -19,26 +19,26 @@
     return overlay;
 }
 
-- (void)showOnView:(UIView *)view WithBlur:(BOOL)blur blurRect:(CGRect)blurRect {
+- (void)showView:(UIView *)subView On:(UIView *)superView WithBlur:(BOOL)blur Rect:(CGRect)rect {
     
-    self.frame = blurRect;
+    self.frame = rect;
     // 先移除所有的子视图
     for (UIView *subview in self.subviews) {
         [subview removeFromSuperview];
     }
     
     if (blur) {
-        UIVisualEffectView *visualEffectView = [[UIVisualEffectView alloc] initWithFrame:blurRect];
+        UIVisualEffectView *visualEffectView = [[UIVisualEffectView alloc] initWithFrame:rect];
         UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleExtraLight];
         visualEffectView.effect = blurEffect;//[UIVibrancyEffect effectForBlurEffect:blurEffect];
         [self addSubview:visualEffectView];
     }
     
-    UIControl *tap = [[UIControl alloc] initWithFrame:blurRect];
+    UIControl *tap = [[UIControl alloc] initWithFrame:rect];
     [tap addTarget:self action:@selector(tap:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:tap];
     
-    [view addSubview:self];
+    [superView addSubview:self];
 }
 
 - (void)tap:(UIControl *)tap {
