@@ -12,6 +12,6 @@
 @interface Overlay : UIView
 
 + (instancetype)sharedOverlay;
-- (void)showView:(UIView *)view WithBlur:(BOOL)blur blurRect:(CGRect)blurRect;
+- (void)showOnView:(UIView *)view WithBlur:(BOOL)blur blurRect:(CGRect)blurRect;
 
 @end

@@ -52,8 +52,12 @@
 
 - (void)toggleMenu:(BOOL)shouldOpenMenu {
     
+    [[Overlay sharedOverlay] showOnView:nil WithBlur:YES blurRect:KEY_WINDOW.frame];
+    
     [self.dynamicAnimator removeAllBehaviors];
-    [[Overlay sharedOverlay] showView:nil WithBlur:YES blurRect:KEY_WINDOW.frame];
+    [self.view bringSubviewToFront:sideBar];
+    
+    
     
     CGFloat gravityDirectionX = shouldOpenMenu ? 1.0 : -1.0;
     CGFloat pushMagnitude = shouldOpenMenu ? 20.0 : -20.0;
