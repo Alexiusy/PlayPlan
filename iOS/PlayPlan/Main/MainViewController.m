@@ -93,6 +93,9 @@
 }
 
 - (void)addPopView {
+    // Add mask view.
+    [[Overlay sharedOverlay] showOnView:self.view WithBlur:YES blurRect:self.view.frame];
+    
     UIView *popupView = ({
         UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, SCREEN_SIZE.height, SCREEN_SIZE.width, SCREEN_SIZE.height)];
         UIPanGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(dragView:)];
@@ -100,9 +103,6 @@
         view.backgroundColor = [UIColor redColor];
         view;
     });
-    
-    [[Overlay sharedOverlay] showOnView:self.view WithBlur:YES blurRect:self.view.frame];
-    
     [self.view addSubview:popupView];
     
     [UIView animateWithDuration:0.5
