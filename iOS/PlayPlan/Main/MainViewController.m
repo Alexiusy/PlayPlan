@@ -136,4 +136,8 @@
     }
 }
 
+- (void)swipeView:(UISwipeGestureRecognizer *)swipe {
+    
+}
+
 @end
