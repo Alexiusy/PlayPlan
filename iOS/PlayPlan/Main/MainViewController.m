@@ -107,6 +107,8 @@
         
         // Add swipe gesture.
         UISwipeGestureRecognizer *swipeGesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeView:)];
+        swipeGesture.delegate = self;
+        
         view.backgroundColor = [UIColor redColor];
         view;
     });
