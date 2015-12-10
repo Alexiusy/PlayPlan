@@ -109,7 +109,11 @@
         // Add swipe gesture.
         UISwipeGestureRecognizer *swipeGesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeView:)];
         swipeGesture.delegate = self;
+        swipeGesture.direction = UISwipeGestureRecognizerDirectionUp | UISwipeGestureRecognizerDirectionDown;
         [view addGestureRecognizer:swipeGesture];
+        
+        // Add this to
+        [panGesture requireGestureRecognizerToFail:swipeGesture];
         
         view;
     });
@@ -128,8 +132,11 @@
     }];
 }
 
-- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
-    
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(nonnull UIGestureRecognizer *)otherGestureRecognizer {
+    if ([otherGestureRecognizer isKindOfClass:[UISwipeGestureRecognizer class]]) {
+        return YES;
+    }
+    return NO;
 }
 
 - (void)dragView:(UIPanGestureRecognizer *)pan {
@@ -141,7 +148,7 @@
 }
 
 - (void)swipeView:(UISwipeGestureRecognizer *)swipe {
-    
+    NSLog(@"You just swiped.");
 }
 
 @end
