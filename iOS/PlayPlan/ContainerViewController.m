@@ -52,7 +52,13 @@
 
 - (void)toggleMenu:(BOOL)shouldOpenMenu {
     
-    !shouldOpenMenu ? : [[Overlay sharedOverlay] showView:nil On:self.view WithBlur:YES Rect:self.view.frame];
+    if (!shouldOpenMenu) {
+        [Overlay sharedOverlay].clickHandler = ^{
+            [[Overlay sharedOverlay] removeFromSuperview];
+        };
+    } else {
+        [[Overlay sharedOverlay] showView:nil On:self.view WithBlur:YES Rect:self.view.frame];
+    }
     
     [self.dynamicAnimator removeAllBehaviors];
     [self.view bringSubviewToFront:sideBar];
