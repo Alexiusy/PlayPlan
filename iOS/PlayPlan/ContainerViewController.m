@@ -110,7 +110,7 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (void)dismissLocationViewController:(LocationViewController *)locationViewController {
+- (void)dismissLocationViewController:(NearbyViewController *)locationViewController {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

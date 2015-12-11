@@ -8,15 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@class LocationViewController;
+@class NearbyViewController;
 
 @protocol LocationDelegate <NSObject>
 
-- (void)dismissLocationViewController:(LocationViewController *)locationViewController;
+- (void)dismissLocationViewController:(NearbyViewController *)locationViewController;
 
 @end
 
-@interface LocationViewController : UIViewController
+@interface NearbyViewController : UIViewController
 
 @property (nonatomic, assign) id<LocationDelegate> delegate;
 

@@ -6,13 +6,13 @@
 //  Copyright © 2015年 Zeacone. All rights reserved.
 //
 
-#import "LocationViewController.h"
+#import "NearbyViewController.h"
 
-@interface LocationViewController ()
+@interface NearbyViewController ()
 
 @end
 
-@implementation LocationViewController
+@implementation NearbyViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
