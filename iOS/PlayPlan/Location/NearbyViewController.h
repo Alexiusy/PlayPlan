@@ -1,5 +1,5 @@
 //
-//  LocationViewController.h
+//  NearbyViewController.h
 //  PlayPlan
 //
 //  Created by Zeacone on 15/11/26.
@@ -10,14 +10,14 @@
 
 @class NearbyViewController;
 
-@protocol LocationDelegate <NSObject>
+@protocol NearbyDelegate <NSObject>
 
-- (void)dismissLocationViewController:(NearbyViewController *)locationViewController;
+- (void)dismissNearbyViewController:(NearbyViewController *)nearbyViewController;
 
 @end
 
 @interface NearbyViewController : UIViewController
 
-@property (nonatomic, assign) id<LocationDelegate> delegate;
+@property (nonatomic, assign) id<NearbyDelegate> delegate;
 
 @end

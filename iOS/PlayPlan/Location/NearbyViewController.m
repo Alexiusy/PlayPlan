@@ -1,5 +1,5 @@
 //
-//  LocationViewController.m
+//  NearbyViewController.m
 //  PlayPlan
 //
 //  Created by Zeacone on 15/11/26.

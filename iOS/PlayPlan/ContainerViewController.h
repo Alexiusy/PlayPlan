@@ -14,7 +14,7 @@
 #import "NearbyViewController.h"
 #import "ProfileViewController.h"
 
-@interface ContainerViewController : UIViewController <MainDelegate, LocationDelegate, ProfileDelegate, SideMenuDelegate> {
+@interface ContainerViewController : UIViewController <MainDelegate, NearbyDelegate, ProfileDelegate, SideMenuDelegate> {
     SideMenu *sideBar;
     BOOL shouldShow;
 }
@@ -23,7 +23,7 @@
 @property (nonatomic, strong) UIStoryboard           *storyBoard;
 @property (nonatomic, strong) UIViewController       *currentViewController;
 @property (nonatomic, strong) MainViewController     *mainController;
-@property (nonatomic, strong) NearbyViewController *locationController;
+@property (nonatomic, strong) NearbyViewController *nearbyController;
 @property (nonatomic, strong) ProfileViewController  *profileController;
 
 @end

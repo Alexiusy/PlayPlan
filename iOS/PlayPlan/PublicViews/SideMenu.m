@@ -16,7 +16,7 @@
     if (self) {
         self.backgroundColor = [UIColor blueColor];
         
-        self.menus = [[NSArray alloc] initWithObjects:@"Main", @"Activity", @"Location", @"Profile", nil];
+        self.menus = [[NSArray alloc] initWithObjects:@"Main", @"Activity", @"Nearby", @"Profile", nil];
         self.icons = [NSArray new];
     }
     return self;

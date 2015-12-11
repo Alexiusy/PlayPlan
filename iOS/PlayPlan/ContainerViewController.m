@@ -110,7 +110,7 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (void)dismissLocationViewController:(NearbyViewController *)locationViewController {
+- (void)dismissNearbyViewController:(NearbyViewController *)nearbyViewController {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
@@ -128,10 +128,10 @@
     
     if ([title isEqualToString:@"Main"]) {
         self.currentViewController = self.mainController;
-    } else if ([title isEqualToString:@"Location"]) {
-        self.locationController = [self.storyBoard instantiateViewControllerWithIdentifier:@"locationController"];
-        self.locationController.delegate = self;
-        self.currentViewController = self.locationController;
+    } else if ([title isEqualToString:@"Nearby"]) {
+        self.nearbyController = [self.storyBoard instantiateViewControllerWithIdentifier:@"nearbyController"];
+        self.nearbyController.delegate = self;
+        self.currentViewController = self.nearbyController;
     } else if ([title isEqualToString:@"Profile"]) {
         self.profileController = [self.storyBoard instantiateViewControllerWithIdentifier:@"profileController"];
         self.profileController.delegate = self;

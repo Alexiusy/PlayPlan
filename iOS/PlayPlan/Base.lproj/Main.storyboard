@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="xmg-Yu-w6s">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="xmg-Yu-w6s">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
     </dependencies>
     <scenes>
@@ -60,7 +61,7 @@
                     <connections>
                         <segue destination="nY2-8S-v2K" kind="presentation" identifier="toMain" id="1jV-oL-kEL"/>
                         <segue destination="rQp-kr-e8F" kind="presentation" identifier="toProfile" id="yMR-QM-sku"/>
-                        <segue destination="ZyW-aO-cSp" kind="presentation" identifier="toLocation" id="rzC-oR-7yC"/>
+                        <segue destination="ZyW-aO-cSp" kind="presentation" identifier="toNearby" id="rzC-oR-7yC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eb5-xr-9F3" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -90,7 +91,7 @@
         <!--Nearby View Controller-->
         <scene sceneID="aK5-96-wTM">
             <objects>
-                <viewController storyboardIdentifier="locationController" id="ZyW-aO-cSp" customClass="NearbyViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="nearbyController" id="ZyW-aO-cSp" customClass="NearbyViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="i55-tQ-JRK"/>
                         <viewControllerLayoutGuide type="bottom" id="ZXy-7w-iIt"/>
