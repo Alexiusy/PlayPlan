@@ -32,19 +32,7 @@
     [self.navigationController.navigationBar reset];
 }
 
-#pragma mark - Config View
-
-- (void)loadTableView {
-    self.tableview = ({
-        UITableView *tableview = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_SIZE.width, SCREEN_SIZE.height)];
-        UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_SIZE.width, 164)];
-        headerView.backgroundColor = [UIColor purpleColor];
-        tableview.tableHeaderView = headerView;
-        tableview.delegate = self;
-        tableview.dataSource = self;
-        tableview;
-    });
-    [self.view addSubview:self.tableview];
+  [self.view addSubview:self.tableview];
 }
 
 
