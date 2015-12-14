@@ -6,15 +6,15 @@
 //  Copyright © 2015年 Zeacone. All rights reserved.
 //
 
-#import "ProfileViewController.h"
+#import "ExplorerViewController.h"
 
-@interface ProfileViewController ()
+@interface ExplorerViewController ()
 
 @property (nonatomic) UITableView *tableview;
 
 @end
 
-@implementation ProfileViewController
+@implementation ExplorerViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

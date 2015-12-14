@@ -9,16 +9,16 @@
 #import <UIKit/UIKit.h>
 #import "PlayPlan.h"
 
-@class ProfileViewController;
+@class ExplorerViewController;
 
-@protocol ProfileDelegate <NSObject>
+@protocol ExplorerDelegate <NSObject>
 
-- (void)dismissProfileViewController:(ProfileViewController *)profileViewController;
+- (void)dismissExplorerViewController:(ExplorerViewController *)explorerViewController;
 
 @end
 
-@interface ProfileViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@interface ExplorerViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
-@property (nonatomic, assign) id<ProfileDelegate> delegate;
+@property (nonatomic, assign) id<ExplorerDelegate> delegate;
 
 @end
