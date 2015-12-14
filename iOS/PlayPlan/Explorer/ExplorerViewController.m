@@ -20,7 +20,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self.navigationController.navigationBar setMaskBackgroundColor:[UIColor clearColor]];
-    [self loadTableView];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
