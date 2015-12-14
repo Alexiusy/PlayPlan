@@ -27,13 +27,7 @@
     [super viewWillAppear:YES];
 }
 
-- (void)viewWillDisappear:(BOOL)animated {
-    [super viewWillDisappear:animated];
-    [self.navigationController.navigationBar reset];
-}
 
-  [self.view addSubview:self.tableview];
-}
 
 
 - (void)didReceiveMemoryWarning {
