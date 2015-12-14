@@ -47,38 +47,6 @@
     [self.view addSubview:self.tableview];
 }
 
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    
-    UIColor *color = UIColorFromHex(0x079889);
-    
-    //    UIColor * color = [UIColor colorWithRed:0/255.0 green:175/255.0 blue:240/255.0 alpha:1];
-    CGFloat offsetY = scrollView.contentOffset.y;
-    if (offsetY > 50) {
-        CGFloat alpha = MIN(1, 1 - ((50 + 64 - offsetY) / 64));
-        [self.navigationController.navigationBar setMaskBackgroundColor:[color colorWithAlphaComponent:alpha]];
-    } else {
-        [self.navigationController.navigationBar setMaskBackgroundColor:[color colorWithAlphaComponent:0]];
-    }
-}
-
-#pragma mark - TableView datasource and delegate
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 10;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 4;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
-    if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
-    }
-    cell.textLabel.text = [NSString stringWithFormat:@"Section = %@, row = %@", @(indexPath.section), @(indexPath.row)];
-    return cell;
-}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
