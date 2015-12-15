@@ -25,7 +25,9 @@
     return 1;
 }
 
-
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 5;
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
