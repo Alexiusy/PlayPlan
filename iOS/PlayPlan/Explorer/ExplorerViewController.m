@@ -30,7 +30,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+    static NSString *identifier = @"identifier";
 }
 
 - (void)didReceiveMemoryWarning {
