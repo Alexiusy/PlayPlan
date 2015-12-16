@@ -10,6 +10,8 @@
 
 @interface NearbyViewController ()
 
+@property (nonatomic, strong) UIScrollView *scroll;
+
 @end
 
 @implementation NearbyViewController
