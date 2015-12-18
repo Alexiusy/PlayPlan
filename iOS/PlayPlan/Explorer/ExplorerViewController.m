@@ -10,7 +10,6 @@
 
 @interface ExplorerViewController ()
 
-@property (nonatomic) UITableView *tableview;
 
 @end
 
